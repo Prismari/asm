@@ -197,9 +197,13 @@ typedef struct		s_player
 	char					*comment;
 	struct s_instruction	*instr;
 	struct s_instruction	*last_instr;
+	struct s_label			*labels;
+	struct s_label			*last_label;
+	struct s_label			*flag_lable_exist;
 	int						sum_size_exec_code;
 	int						num_row;
 	int						num_col;
+
 }					t_player;
 
 typedef struct		s_label
@@ -215,18 +219,20 @@ typedef struct		s_label
 ** Assembler
 */
 
-void		error(char *str);
-void		error_file(char *str, int col, int row);
-char		*ft_strndup(const char *src, int i);
-int			is_comment(int chr);
-t_player	*init_player(void);
-int			is_whitespace(int c);
-t_instruction	*init_instr(char *label);
-int		check_name_comment(int fd, t_player *player);
+void			error(char *str);
+void			error_file(char *str, int col, int row);
+char			*ft_strndup(const char *src, int i);
+int				is_comment(int chr);
+t_player		*init_player(void);
+int				is_whitespace(int c);
+t_instruction	*init_instr(char *label); //??????
+t_label			*init_lable(char *label);
+int				check_name_comment(int fd, t_player *player);
 int				skip_tab_space(t_player *player, char *line, int flag);
+void			handling_token(t_player *player, int len, char *line);
+int 			search_length_token(t_player *player, char	*line);
+void			add_instruction(t_player *player, t_instruction *instr);
+int 			handling_label(t_player *player, char *line, int len);
+int 			is_instruction(t_player *player, char *line);
 
-/*
-** Disassembler
-*/
-void			disassemble(int fd);
 #endif

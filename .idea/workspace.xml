@@ -12,7 +12,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4fb1f1c-bae4-4444-b809-a5927f11f9c9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lable_handle.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asm.c" beforeDir="false" afterPath="$PROJECT_DIR$/asm.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/2.cor" beforeDir="false" afterPath="$PROJECT_DIR$/champ_test/2.cor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/2.s" beforeDir="false" afterPath="$PROJECT_DIR$/champ_test/2.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/corewar.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/corewar.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/init.c" beforeDir="false" afterPath="$PROJECT_DIR$/init.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tokenize.c" beforeDir="false" afterPath="$PROJECT_DIR$/tokenize.c" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,7 +36,15 @@
   </component>
   <component name="ProjectId" id="1RQDkH0mwCDBZzmx5xqmMw9bbrw" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="restartRequiresConfirmation" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/champ_test" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -44,7 +59,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="asm" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="asm" TARGET_NAME="asm" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="asm" RUN_TARGET_NAME="asm">
+    <configuration name="asm" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="./champ_test/2.s" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="asm" TARGET_NAME="asm" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="asm" RUN_TARGET_NAME="asm">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -60,8 +75,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1569590567644</updated>
-      <workItem from="1569590569005" duration="276000" />
+      <workItem from="1569590569005" duration="7094000" />
     </task>
+    <task id="LOCAL-00001" summary="init project">
+      <created>1569590889675</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1569590889675</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -77,5 +100,31 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init project" />
+    <option name="LAST_COMMIT_MESSAGE" value="init project" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/asm.c</url>
+          <line>92</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/asm.c</url>
+          <line>60</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="CMakeRunConfiguration">
+        <watch expression="line[player-&gt;num_col]" language="ObjectiveC" />
+        <watch expression="line[player-&gt;num_col + len]" language="ObjectiveC" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

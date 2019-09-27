@@ -25,6 +25,9 @@ t_player	*init_player(void)
 	player->instr = NULL;
 	player->last_instr = NULL;
 	player->sum_size_exec_code = 0;
+	player->last_label = NULL;
+	player->labels = NULL;
+	player->flag_lable_exist = NULL;
 	return (player);
 }
 
@@ -39,6 +42,18 @@ t_instruction	*init_instr(char *label)
 	op->size_exec_code = 0;
 	op->next = NULL;
 	return (op);
+}
+
+t_label	*init_lable(char *label)
+{
+	t_label *new;
+	if (!(new = malloc(sizeof(t_label))))
+		return (NULL);
+	new->instr = NULL;
+	new->l_name = label;
+	new->next = NULL;
+	new->sum_size_exec_code = 0;
+	return (new);
 }
 
 t_tokens		*init_tokens(char *data, t_type type, unsigned short size)
