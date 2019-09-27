@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "includes/corewar.h"
-#include <stdio.h>
+
 
 int		check_extension(char *filename)
 {
@@ -29,43 +29,24 @@ int		check_extension(char *filename)
 	return (0);
 }
 
-void	add_instruction(t_player *player, t_instruction *instr)
-{
-	t_instruction *tmp;
+//void	add_instruction(t_player *player, t_instruction *instr)
+//{
+//	t_instruction *tmp;
+//
+//	tmp = player->instr;
+//	if (!tmp)
+//		player->instr = instr;
+//	else
+//	{
+//		while (tmp->next)
+//			tmp = tmp->next;
+//		tmp->next = instr;
+//	}
+//}
 
-	tmp = player->instr;
-	if (!tmp)
-		player->instr = instr;
-	else
-	{
-		while (tmp->next)
-			tmp = tmp->next;
-		tmp->next = instr;
-	}
-}
 
-int 	is_label(char *line, t_player *player, int len)
-{
-	len--;
-	if (line[player->num_col + len] == LABEL_CHAR)
-		return (1);
-	return (0);
-}
 
-int 	is_instruction(t_player *player, char *line)
-{
-	int len_token;
-	int i;
 
-	i = 0;
-	len_token = search_length_token(player, line);
-	while (i++ < 16)
-		if (!ft_strcmp(ft_strsub(line, player->num_col, len_token), g_ins[i - 1].name))
-			break ;
-	if (i < 16)
-		return (len_token);
-	return (0);
-}
 
 
 // ВОТ ОТСЮДА НАЧИНАЮ МЕНЯТЬ НЕ ТРОГАЯ ТОКЕНИЗАЦИЮ
@@ -126,7 +107,7 @@ void	assemble(int fd)
 {
 	t_player *header;
 
-	if (!(header = init_player()))
+	if (!(header = init_player(fd)))
 		error("Error allocating header memory");
 	if (!check_name_comment(fd, header))
 		error("Error reading of name or comment");

@@ -18,6 +18,7 @@
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <fcntl.h>
+#include <stdio.h>
 # define OFFSET_CMD_NAME 5
 # define OFFSET_CMD_COMMENT 8
 # define QUOTE 1
@@ -195,6 +196,7 @@ typedef struct		s_player
 {
 	char					*name;
 	char					*comment;
+	int 					fd;
 	struct s_instruction	*instr;
 	struct s_instruction	*last_instr;
 	struct s_label			*labels;
@@ -212,6 +214,7 @@ typedef struct		s_label
     struct s_instruction	*instr;
     int						sum_size_exec_code;
     struct s_label			*next;
+	struct s_label			*prev;
 }					t_label;
 
 
@@ -223,7 +226,7 @@ void			error(char *str);
 void			error_file(char *str, int col, int row);
 char			*ft_strndup(const char *src, int i);
 int				is_comment(int chr);
-t_player		*init_player(void);
+t_player		*init_player(int fd);
 int				is_whitespace(int c);
 t_instruction	*init_instr(char *label); //??????
 t_label			*init_lable(char *label);
@@ -234,5 +237,6 @@ int 			search_length_token(t_player *player, char	*line);
 void			add_instruction(t_player *player, t_instruction *instr);
 int 			handling_label(t_player *player, char *line, int len);
 int 			is_instruction(t_player *player, char *line);
+int 			is_label(char *line, t_player *player, int len);
 
 #endif

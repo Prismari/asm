@@ -4,6 +4,14 @@
 
 #include "includes/corewar.h"
 
+int 	is_label(char *line, t_player *player, int len)
+{
+	len--;
+	if (line[player->num_col + len] == LABEL_CHAR)
+		return (1);
+	return (0);
+}
+
 void	check_label(t_player *player, char *label)
 {
 	printf("label [%s]\n", label);
@@ -24,9 +32,9 @@ void	check_label(t_player *player, char *label)
 	else
 	{
 		player->last_label->next = new_label;
+		new_label->prev = player->last_label;
 		player->last_label = player->last_label->next;
 	}
-
 }
 
 int 	handling_label(t_player *player, char *line, int len)
@@ -52,13 +60,14 @@ int 	handling_label(t_player *player, char *line, int len)
 			player->num_col += len;
 			printf("instr after label\n");
 			//ФУНКЦИЯ КОТОРАЯ ЗАПИСЫВАЕТ АРГУМЕНТЫ
+			break ;
 		}
 		else
 		{
 			printf("nothing after label\n");
 			break;
 		}
-
 	}
-	return 1;
+
+	return (0);
 }

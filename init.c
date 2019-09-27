@@ -12,7 +12,7 @@
 
 #include "includes/corewar.h"
 
-t_player	*init_player(void)
+t_player	*init_player(int fd)
 {
 	t_player *player;
 
@@ -20,6 +20,7 @@ t_player	*init_player(void)
 		return (NULL);
 	player->name = NULL;
 	player->comment = NULL;
+	player->fd = fd;
 	player->num_row = 0;
 	player->num_col = 0;
 	player->instr = NULL;
@@ -52,6 +53,7 @@ t_label	*init_lable(char *label)
 	new->instr = NULL;
 	new->l_name = label;
 	new->next = NULL;
+	new->prev = NULL;
 	new->sum_size_exec_code = 0;
 	return (new);
 }
