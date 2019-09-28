@@ -32,13 +32,14 @@ t_player	*init_player(int fd)
 	return (player);
 }
 
-t_instruction	*init_instr(char *label)
+t_instruction	*init_instr(char *instr)
 {
 	t_instruction *op;
 	if (!(op = malloc(sizeof(t_instruction))))
 		return (NULL);
-	op->label = label;
+	op->instr = instr;
 	op->code_op = 0;
+	op->label = NULL;
 	op->tokens = NULL;
 	op->size_exec_code = 0;
 	op->next = NULL;

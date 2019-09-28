@@ -184,10 +184,11 @@ typedef struct		s_tokens
 
 typedef struct		s_instruction
 {
-	char					*label;
+	char					*instr;
 	unsigned short			code_op;
 	unsigned short			count_args;
 	struct s_tokens			*tokens;
+	struct s_label			*label;
 	int						size_exec_code;
 	struct s_instruction	*next; 
 }					t_instruction;
@@ -238,5 +239,7 @@ void			add_instruction(t_player *player, t_instruction *instr);
 int 			handling_label(t_player *player, char *line, int len);
 int 			is_instruction(t_player *player, char *line);
 int 			is_label(char *line, t_player *player, int len);
+void			check_instruction(t_player *player, char *instr);
+void			check_lable_links(t_label *labels);
 
 #endif

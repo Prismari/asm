@@ -29,20 +29,20 @@ int		check_extension(char *filename)
 	return (0);
 }
 
-//void	add_instruction(t_player *player, t_instruction *instr)
-//{
-//	t_instruction *tmp;
-//
-//	tmp = player->instr;
-//	if (!tmp)
-//		player->instr = instr;
-//	else
-//	{
-//		while (tmp->next)
-//			tmp = tmp->next;
-//		tmp->next = instr;
-//	}
-//}
+void	add_instruction(t_player *player, t_instruction *instr)
+{
+	t_instruction *tmp;
+
+	tmp = player->instr;
+	if (!tmp)
+		player->instr = instr;
+	else
+	{
+		while (tmp->next)
+			tmp = tmp->next;
+		tmp->next = instr;
+	}
+}
 
 
 
@@ -53,6 +53,7 @@ int		check_extension(char *filename)
 void	search_instruction(t_player *player, char *line)
 {
 	int		len_token;
+	int		tmp_len_instr;
 
 	while (line[player->num_col])
 	{
@@ -62,7 +63,7 @@ void	search_instruction(t_player *player, char *line)
 			player->num_col++;
 		else if (is_whitespace(line[player->num_col]))
 		{
-			printf("SKIP\n");
+//			printf("SKIP\n");
 			skip_tab_space(player, line, SKIP_QUOTE);
 		}
 		else
@@ -70,24 +71,49 @@ void	search_instruction(t_player *player, char *line)
 			len_token = search_length_token(player, line);
 			if (is_label(line, player, len_token))
 			{
-				printf("is_lable\n");
+//				printf("is_lable\n");
 				handling_label(player, line, len_token - 1);
-				printf("TOKEN [%s]\n", ft_strsub(line, player->num_col, len_token));
+//				printf("TOKEN [%s]\n", ft_strsub(line, player->num_col, len_token));
 			}
-			else if ((is_instruction(player, line)))
+			else if ((tmp_len_instr = is_instruction(player, line)))
 			{
-				printf("is_instr\n");
-				printf("TOKEN [%s]\n", ft_strsub(line, player->num_col, len_token));
+				check_instruction(player, ft_strsub(line, player->num_col, tmp_len_instr));
+//				printf("is_instr\n");
+//				printf("TOKEN [%s]\n", ft_strsub(line, player->num_col, len_token));
 			}
 
 //			    //
 			//handling_token(player, len_token - 1, line);                       //      TOKEN
 			player->num_col += len_token;                                           //
 		}                                                                           //
-		printf("###########################\n");
+//		printf("###########################\n");
 	}
-	if (player->last_instr && player->last_instr->count_args)
-		error_file("Invalid count args", player->num_col + 1, player->num_row);
+//	if (player->last_instr && player->last_instr->count_args)
+//		error_file("Invalid count args", player->num_col + 1, player->num_row);
+}
+
+void	printf_struct(t_player *player)
+{
+	t_label *tmp;
+	t_instruction *tmp_i;
+
+	tmp = player->labels;
+	tmp_i = player->instr;
+
+	while (tmp_i)
+	{
+		if (tmp_i->label)
+			printf("link with label - %s:\n", tmp_i->label->l_name);
+		printf("instr - %s\n", tmp_i->instr);
+		tmp_i = tmp_i->next;
+	}
+	printf("\nLABLES\n\n");
+	while (tmp)
+	{
+		printf("lable - %s link with instr - %s\n", tmp->l_name, tmp->instr->instr);
+		tmp = tmp->next;
+	}
+
 }
 
 void	reading_body_champion(int fd, t_player *player)
@@ -112,6 +138,7 @@ void	assemble(int fd)
 	if (!check_name_comment(fd, header))
 		error("Error reading of name or comment");
 	reading_body_champion(fd, header);
+	printf_struct(header);
 }
 
 int	main(int argc, char **argv)

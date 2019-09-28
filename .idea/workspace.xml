@@ -12,11 +12,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4fb1f1c-bae4-4444-b809-a5927f11f9c9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/instructions.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/asm.c" beforeDir="false" afterPath="$PROJECT_DIR$/asm.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/2.cor" beforeDir="false" afterPath="$PROJECT_DIR$/champ_test/2.cor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/2.s" beforeDir="false" afterPath="$PROJECT_DIR$/champ_test/2.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/3.s" beforeDir="false" afterPath="$PROJECT_DIR$/champ_test/3.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/corewar.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/corewar.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/init.c" beforeDir="false" afterPath="$PROJECT_DIR$/init.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instructions.c" beforeDir="false" afterPath="$PROJECT_DIR$/instructions.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lable_handle.c" beforeDir="false" afterPath="$PROJECT_DIR$/lable_handle.c" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -73,7 +76,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1569590567644</updated>
-      <workItem from="1569590569005" duration="9004000" />
+      <workItem from="1569590569005" duration="9080000" />
+      <workItem from="1569661919729" duration="7507000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <created>1569590889675</created>
@@ -93,7 +97,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -107,19 +113,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/lable_handle.c</url>
-          <line>66</line>
-          <option name="timeStamp" value="15" />
+          <url>file://$PROJECT_DIR$/asm.c</url>
+          <line>139</line>
+          <option name="timeStamp" value="32" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/lable_handle.c</url>
-          <line>41</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/lable_handle.c</url>
-          <line>33</line>
-          <option name="timeStamp" value="17" />
+          <url>file://$PROJECT_DIR$/asm.c</url>
+          <line>109</line>
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -127,7 +128,10 @@
       <configuration name="CMakeRunConfiguration">
         <watch expression="line[player-&gt;num_col]" language="ObjectiveC" />
         <watch expression="line[player-&gt;num_col + len]" language="ObjectiveC" />
-        <watch expression="ft_strsub(line, player-&gt;num_col, len)" language="ObjectiveC" />
+        <watch expression="ft_strsub(line, player-&gt;num_col, len_token)" language="ObjectiveC" />
+        <watch expression="player-&gt;labels" language="ObjectiveC" />
+        <watch expression="player-&gt;instr" language="ObjectiveC" />
+        <watch expression="player-&gt;num_col" language="ObjectiveC" />
       </configuration>
     </watches-manager>
   </component>

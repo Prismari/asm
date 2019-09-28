@@ -14,7 +14,7 @@ int 	is_label(char *line, t_player *player, int len)
 
 void	check_label(t_player *player, char *label)
 {
-	printf("label [%s]\n", label);
+//	printf("label [%s]\n", label);
 	int	i;
 	t_label *new_label;
 
@@ -46,25 +46,26 @@ int 	handling_label(t_player *player, char *line, int len)
 	{
 		if (is_comment(line[player->num_col]))
 		{
-			printf("nothing after label\n");
+//			printf("nothing after label\n");
 			break;
 		}
 		else if (is_whitespace(line[player->num_col]))
 		{
-			printf("SKIP\n");
+//			printf("SKIP\n");
 			skip_tab_space(player, line, SKIP_QUOTE);
 		}
 		else if ((len = is_instruction(player, line)))
 		{
-			printf("TOKEN [%s]\n", ft_strsub(line, player->num_col, len));
+//			printf("TOKEN [%s]\n", ft_strsub(line, player->num_col, len));
 			player->num_col += len;
-			printf("instr after label\n");
+//			printf("instr after label\n");
+			check_instruction(player, ft_strsub(line, player->num_col - len, len));
 			//ФУНКЦИЯ КОТОРАЯ ЗАПИСЫВАЕТ АРГУМЕНТЫ
 			break ;
 		}
 		else
 		{
-			printf("nothing after label\n");
+//			printf("nothing after label\n");
 			break;
 		}
 	}
