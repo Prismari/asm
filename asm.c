@@ -77,7 +77,7 @@ void	search_instruction(t_player *player, char *line)
 			}
 			else if ((tmp_len_instr = is_instruction(player, line)))
 			{
-				check_instruction(player, ft_strsub(line, player->num_col, tmp_len_instr));
+				check_instruction(player, ft_strsub(line, player->num_col, tmp_len_instr), &(line[player->num_col + tmp_len_instr]));
 //				printf("is_instr\n");
 //				printf("TOKEN [%s]\n", ft_strsub(line, player->num_col, len_token));
 			}

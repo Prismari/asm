@@ -33,10 +33,7 @@ int	is_comment(int chr)
 	return (chr == ALT_COMMENT_CHAR || chr == COMMENT_CHAR);
 }
 
-int		is_whitespace(int c)
-{
-	return (c == '\t' || c == '\v' || c == '\f' || c == '\r' || c == ' ');
-}
+
 
 int	skip_tab_space(t_player *player, char *line, int flag)
 {

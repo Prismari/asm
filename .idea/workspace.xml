@@ -12,15 +12,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4fb1f1c-bae4-4444-b809-a5927f11f9c9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/ft_split_spaces.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/asm.c" beforeDir="false" afterPath="$PROJECT_DIR$/asm.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/2.cor" beforeDir="false" afterPath="$PROJECT_DIR$/champ_test/2.cor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/champ_test/2.s" beforeDir="false" afterPath="$PROJECT_DIR$/champ_test/2.s" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/3.s" beforeDir="false" afterPath="$PROJECT_DIR$/champ_test/3.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/corewar.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/corewar.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/init.c" beforeDir="false" afterPath="$PROJECT_DIR$/init.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/instructions.c" beforeDir="false" afterPath="$PROJECT_DIR$/instructions.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lable_handle.c" beforeDir="false" afterPath="$PROJECT_DIR$/lable_handle.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils.c" beforeDir="false" afterPath="$PROJECT_DIR$/utils.c" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +76,8 @@
       <option name="presentableId" value="Default" />
       <updated>1569590567644</updated>
       <workItem from="1569590569005" duration="9080000" />
-      <workItem from="1569661919729" duration="7507000" />
+      <workItem from="1569661919729" duration="7733000" />
+      <workItem from="1569677566571" duration="2655000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <created>1569590889675</created>
@@ -122,6 +122,11 @@
           <line>109</line>
           <option name="timeStamp" value="33" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/instructions.c</url>
+          <line>76</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
@@ -132,6 +137,8 @@
         <watch expression="player-&gt;labels" language="ObjectiveC" />
         <watch expression="player-&gt;instr" language="ObjectiveC" />
         <watch expression="player-&gt;num_col" language="ObjectiveC" />
+        <watch expression="args[2]" language="ObjectiveC" />
+        <watch expression="count_word(s)" language="ObjectiveC" />
       </configuration>
     </watches-manager>
   </component>

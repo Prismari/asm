@@ -59,16 +59,12 @@ int 	handling_label(t_player *player, char *line, int len)
 //			printf("TOKEN [%s]\n", ft_strsub(line, player->num_col, len));
 			player->num_col += len;
 //			printf("instr after label\n");
-			check_instruction(player, ft_strsub(line, player->num_col - len, len));
+			check_instruction(player, ft_strsub(line, player->num_col - len, len), &(line[player->num_col]));
 			//ФУНКЦИЯ КОТОРАЯ ЗАПИСЫВАЕТ АРГУМЕНТЫ
 			break ;
 		}
 		else
-		{
-//			printf("nothing after label\n");
-			break;
-		}
+			error_file("Syntax error", player->num_col, player->num_row);
 	}
-
 	return (0);
 }

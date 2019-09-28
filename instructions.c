@@ -34,7 +34,7 @@ int 	is_instruction(t_player *player, char *line)
 	return (0);
 }
 
-void	check_instruction(t_player *player, char *instr)
+void	check_instruction(t_player *player, char *instr, char *line)
 {
 //	printf("instr [%s]\n", instr);
 	t_instruction *new_instr;
@@ -56,10 +56,29 @@ void	check_instruction(t_player *player, char *instr)
 		link_lable_to_instr(new_instr, player->flag_lable_exist);
 		player->flag_lable_exist = NULL;
 	}
-
+	check_arguments(player, line);
 }
 
-//int 	check_arguments()
-//{
-//
-//}
+void	del_comment(char *line)
+{
+	int i;
+
+	i = 0;
+	while (line[i] && line[i] != '#')
+		i++;
+	line[i] = '\0';
+}
+
+int 	check_arguments(t_player *player, char *arg_line)
+{
+	char **args;
+
+	del_comment(arg_line);
+	args = ft_split_spaces(arg_line);
+	while (*args != NULL)
+	{
+		printf("arg - %s\n", *args);
+		args++;
+	}
+	return (0);
+}
