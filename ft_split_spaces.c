@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "./libft/libft.h"
-
+#include "includes/corewar.h"
 
 int		is_whitespace(int c)
 {
@@ -28,9 +28,9 @@ static int		word_count(char const *s)
 	while (s[i])
 	{
 		if (!(is_whitespace(s[i])) && (is_whitespace(s[i + 1])
-			|| s[i + 1] == '\0' || s[i + 1] == ',') && s[i] != ',')
+			|| s[i + 1] == '\0' || s[i + 1] == SEPARATOR_CHAR) && s[i] != SEPARATOR_CHAR)
 			w++;
-		if ( s[i] == ',')
+		if ( s[i] == SEPARATOR_CHAR)
 			w++;
 		i++;
 	}
@@ -44,11 +44,11 @@ static int		word_size(const char *s)
 	i = 0;
 	while (is_whitespace(*s) && *s != '\0')
 		s++;
-	if (*s == ',')
+	if (*s == SEPARATOR_CHAR)
 		return (1);
 	while (!(is_whitespace(*s)) && *s != '\0')
 	{
-		if (*s == ',')
+		if (*s == SEPARATOR_CHAR)
 			break;
 		s++;
 		i++;
@@ -86,8 +86,8 @@ char			**ft_split_argument(char const *s)
 	j = 0;
 	if (!s)
 		return (NULL);
-	if ((w_count = word_count(s)) > 5)
-		exit(1);                            // ВЫВЕСТИ ОШИБКУ - СЛИШКОМ МНОГО АРГУМЕНТОВ
+	if ((w_count = word_count(s)) > 5) //!= num
+		exit(1);                            // TODO: ВЫВЕСТИ ОШИБКУ - СЛИШКОМ МНОГО АРГУМЕНТОВ
 	if (!(res = (char **)malloc(sizeof(char *) * (w_count + 1))))
 		return (NULL);
 	while (j < w_count)
@@ -97,12 +97,12 @@ char			**ft_split_argument(char const *s)
 			return (NULL);
 		while (is_whitespace(*s) && s != '\0')
 			s++;
-		if (*s == ',')
+		if (*s == SEPARATOR_CHAR)
 			res[j][i++] = *s++;
 		while (!(is_whitespace(*s)) && *s)
 		{
 			res[j][i++] = *s++;
-			if (*s == ',')
+			if (*s == SEPARATOR_CHAR)
 				break;
 		}
 		res[j][i] = '\0';

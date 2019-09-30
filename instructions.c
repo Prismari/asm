@@ -23,24 +23,26 @@ int 	is_instruction(t_player *player, char *line)
 {
 	int len_token;
 	int i;
+	char *instr;
 
 	i = 0;
 	len_token = search_length_token(player, line);
+	instr = ft_strsub(line, player->num_col, len_token);
 	while (i++ < 16)
-		if (!ft_strcmp(ft_strsub(line, player->num_col, len_token), g_ins[i - 1].name))
+		if (!ft_strcmp(instr, g_ins[i - 1].name))
 			break ;
 	if (i <= 16)
+	{
+		player->num_col += len_token;
+		check_instruction(player, instr, &(line[player->num_col]), i);
 		return (len_token);
+	}
+
 	return (0);
 }
 
-void	check_instruction(t_player *player, char *instr, char *line)
+void	ft_link_new_instr(t_instruction *new_instr, t_player *player)
 {
-//	printf("instr [%s]\n", instr);
-	t_instruction *new_instr;
-
-	if (!(new_instr = init_instr(instr)))
-		error("Memory allocation error");
 	if (player->instr == NULL)
 	{
 		player->instr = new_instr;
@@ -56,6 +58,18 @@ void	check_instruction(t_player *player, char *instr, char *line)
 		link_lable_to_instr(new_instr, player->flag_lable_exist);
 		player->flag_lable_exist = NULL;
 	}
+}
+
+void	check_instruction(t_player *player, char *instr, char *line, int i)
+{
+//	printf("instr [%s]\n", instr);
+	t_instruction *new_instr;
+
+	if (!(new_instr = init_instr(instr)))
+		error("Memory allocation error");
+	ft_link_new_instr(new_instr, player);
+	player->last_instr->code_op = g_ins[i - 1].code;
+	player->last_instr->count_args = g_ins[i - 1].args_num;
 	check_arguments(player, line);
 }
 
@@ -69,12 +83,48 @@ void	del_comment(char *line)
 	line[i] = '\0';
 }
 
+void 	check_arg_num(char **args, t_instruction *instr)
+{
+	int i;
+	int separ;
+	t_type	type;
+
+
+
+	i = 0;
+	separ = 0;
+	while (args[i])
+	{
+		if (i % 2 == 1 && args[i][0] != SEPARATOR_CHAR)
+			exit(1); // TODO: ВЫВЕСТИ ОШИБКУ - НЕТ ЗАПЯТОЙ МЕЖДУ АРГУМЕНТАМИ
+		else
+		{
+			separ++;
+			i++;
+		}
+		type = know_type(args[i]);
+
+	}
+	if (i - separ !=  g_ins[instr->code_op - 1].args_num)
+		exit(1); // TODO: ВЫВЕСТИ ОШИБКУ - НЕ ВЕРНОЕ КОЛИЧЕСТВО АРГУМЕНТОВ
+}
+
 int 	check_arguments(t_player *player, char *arg_line)
 {
 	char **args;
 
 	del_comment(arg_line);
 	args = ft_split_argument(arg_line);
+	if (args == NULL)
+		error("No arguments"); // TODO: обработать ошибку - нет аргументов
+	else
+	{
+		check_arg_num(args, player->last_instr);
+		//TODO: проверить есть ли между аргументами запятая
+		// совпадает ли количество аргументов
+		// верны ли типы аргументов
+
+	}
 	while (*args != NULL)
 	{
 		printf("arg - %s\n", *args);

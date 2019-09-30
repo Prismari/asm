@@ -54,12 +54,12 @@ int 	handling_label(t_player *player, char *line, int len)
 //			printf("SKIP\n");
 			skip_tab_space(player, line, SKIP_QUOTE);
 		}
-		else if ((len = is_instruction(player, line)))
+		else if (is_instruction(player, line))
 		{
 //			printf("TOKEN [%s]\n", ft_strsub(line, player->num_col, len));
-			player->num_col += len;
+			//player->num_col += len;
 //			printf("instr after label\n");
-			check_instruction(player, ft_strsub(line, player->num_col - len, len), &(line[player->num_col]));
+			//check_instruction(player, ft_strsub(line, player->num_col - len, len), &(line[player->num_col]));
 			//ФУНКЦИЯ КОТОРАЯ ЗАПИСЫВАЕТ АРГУМЕНТЫ
 			break ;
 		}
