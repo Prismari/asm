@@ -241,6 +241,6 @@ int 			is_instruction(t_player *player, char *line);
 int 			is_label(char *line, t_player *player, int len);
 void			check_instruction(t_player *player, char *instr, char *line);
 void			check_lable_links(t_label *labels);
-char			**ft_split_spaces(char const *s);
+char			**ft_split_argument(char const *s);
 int 			check_arguments(t_player *player, char *instr);
 #endif

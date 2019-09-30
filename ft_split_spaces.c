@@ -18,73 +18,96 @@ int		is_whitespace(int c)
 	return (c == '\t' || c == '\v' || c == '\f' || c == '\r' || c == ' ');
 }
 
-static int			count_word(char const *s)
+static int		word_count(char const *s)
 {
-	char	*s1;
-	int		count;
+	int	w;
+	int	i;
 
-	count = 0;
-	if (s == NULL)
-		return (0);
-	s1 = (char *)s;
-	while (*s1 != '\0')
+	w = 0;
+	i = 0;
+	while (s[i])
 	{
-		while (is_whitespace(*s1) && *s1 != '\0')
-			s1++;
-		if (!(is_whitespace(*s1)) && *s1 != '\0')
-		{
-			count++;
-			while (!(is_whitespace(*s1)) && *s1 != '\0')
-				s1++;
-		}
+		if (!(is_whitespace(s[i])) && (is_whitespace(s[i + 1])
+			|| s[i + 1] == '\0' || s[i + 1] == ',') && s[i] != ',')
+			w++;
+		if ( s[i] == ',')
+			w++;
+		i++;
 	}
-	return (count);
+	return (w);
 }
 
-static char			**ft_del(char **buf, int size)
+static int		word_size(const char *s)
 {
 	int i;
 
 	i = 0;
-	while (i != size)
-		free(buf[i++]);
-	free(buf);
-	return (NULL);
+	while (is_whitespace(*s) && *s != '\0')
+		s++;
+	if (*s == ',')
+		return (1);
+	while (!(is_whitespace(*s)) && *s != '\0')
+	{
+		if (*s == ',')
+			break;
+		s++;
+		i++;
+	}
+	return (i);
 }
 
-static char			**ft_fillarray(char *s1, char **buf)
+static char		*word_allocation(char **arr, char *word, int size)
 {
-	int		end_word;
-	int		i;
+	int i;
 
 	i = 0;
-	while (*s1 != '\0')
+	word = (char *)malloc(sizeof(char) * (size + 1));
+	if (!word)
 	{
-		end_word = 0;
-		while (is_whitespace(*s1) && *s1 != '\0')
-			s1++;
-		if (*s1 == '\0')
-			break ;
-		while (!(is_whitespace(*s1)) && *s1 != '\0')
-			s1 = s1 + end_word++ * 0 + 1;
-		if ((buf[i] = ft_strnew(end_word)) == NULL)
-			return (ft_del(buf, count_word(s1)));
-		ft_strncpy(buf[i++], s1 - end_word, end_word);
+		while (arr[i])
+		{
+			free(arr[i]);
+			i++;
+		}
+		free(arr);
+		arr = NULL;
+		return (NULL);
 	}
-	buf[i] = NULL;
-	return (buf);
+	return (word);
 }
 
-char				**ft_split_spaces(char const *s)
+char			**ft_split_argument(char const *s)
 {
-	char	*s1;
-	char	**buf;
+	char	**res;
+	int		w_count;
+	int		i;
+	int		j;
 
-	if (s == NULL)
+	j = 0;
+	if (!s)
 		return (NULL);
-	s1 = (char *)s;
-	if ((buf = (char **)malloc(sizeof(buf) * (count_word(s) + 1))) == NULL)
+	if ((w_count = word_count(s)) > 5)
+		exit(1);                            // ВЫВЕСТИ ОШИБКУ - СЛИШКОМ МНОГО АРГУМЕНТОВ
+	if (!(res = (char **)malloc(sizeof(char *) * (w_count + 1))))
 		return (NULL);
-	ft_fillarray(s1, buf);
-	return (buf);
+	while (j < w_count)
+	{
+		i = 0;
+		if (!(res[j] = word_allocation(res, res[j], word_size(s))))
+			return (NULL);
+		while (is_whitespace(*s) && s != '\0')
+			s++;
+		if (*s == ',')
+			res[j][i++] = *s++;
+		while (!(is_whitespace(*s)) && *s)
+		{
+			res[j][i++] = *s++;
+			if (*s == ',')
+				break;
+		}
+		res[j][i] = '\0';
+		j++;
+	}
+	res[j] = 0;
+	return (res);
 }

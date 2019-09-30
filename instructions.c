@@ -74,7 +74,7 @@ int 	check_arguments(t_player *player, char *arg_line)
 	char **args;
 
 	del_comment(arg_line);
-	args = ft_split_spaces(arg_line);
+	args = ft_split_argument(arg_line);
 	while (*args != NULL)
 	{
 		printf("arg - %s\n", *args);
