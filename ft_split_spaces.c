@@ -86,8 +86,9 @@ char			**ft_split_argument(char const *s)
 	j = 0;
 	if (!s)
 		return (NULL);
-	if ((w_count = word_count(s)) > 5) //!= num
-		exit(1);                            // TODO: ВЫВЕСТИ ОШИБКУ - СЛИШКОМ МНОГО АРГУМЕНТОВ
+	w_count = word_count(s);
+//	if ((w_count = word_count(s)) > 5) //!= num
+//		exit(1);                            // TODO: ВЫВЕСТИ ОШИБКУ - СЛИШКОМ МНОГО АРГУМЕНТОВ
 	if (!(res = (char **)malloc(sizeof(char *) * (w_count + 1))))
 		return (NULL);
 	while (j < w_count)

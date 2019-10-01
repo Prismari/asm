@@ -98,7 +98,7 @@ void	check_separator_char(int *sep, int *i, char *c)
 	}
 }
 
-void 	check_arg_num(char **args, t_instruction *instr)
+void 	check_arg_num(char **args, t_instruction *instr, t_player *player)
 {
 	int i;
 	int num;
@@ -111,6 +111,10 @@ void 	check_arg_num(char **args, t_instruction *instr)
 	{
 		if (i % 2 == 1)
 			check_separator_char(&separ, &i, args[i]);
+		if (i - separ >=  g_ins[instr->code_op - 1].args_num)
+			error_name("Invalid parameter count for instruction", instr->instr);
+		if (args[i] == NULL)
+			error_file("Syntax error", player->num_col, player->num_row);//TODO: НЕТ ПОДСЧЕТА НОМЕРА ЭЛЕМЕНТА СТРОКИ ДЛЯ ВЫВОДА ОШИБОК
 		if (!(type = know_type(args[i])))
 			exit(1); // TODO: ВЫВЕСТИ ОШИБКУ - НЕВЕРНЫЙ ТИП АРГУМЕНТА
 		check_type_arg(type, g_ins[instr->code_op - 1].args_types[separ], instr, separ);
@@ -118,7 +122,7 @@ void 	check_arg_num(char **args, t_instruction *instr)
 		i++;
 	}
 	if (i - separ !=  g_ins[instr->code_op - 1].args_num)
-		exit(1); // TODO: ВЫВЕСТИ ОШИБКУ - НЕ ВЕРНОЕ КОЛИЧЕСТВО АРГУМЕНТОВ
+		error_name("Invalid parameter count for instruction", instr->instr); // TODO: ВЫВЕСТИ ОШИБКУ - НЕ ВЕРНОЕ КОЛИЧЕСТВО АРГУМЕНТОВ
 }
 
 int 	calculate_size(t_instruction *instr)
@@ -149,8 +153,8 @@ int 	check_arguments(t_player *player, char *arg_line)
 		error("No arguments"); // TODO: обработать ошибку - нет аргументов
 	else
 	{
-		check_arg_num(args, player->last_instr);
-		args = NULL;
+		check_arg_num(args, player->last_instr, player);
+		//args = NULL;
 		player->last_instr->size_exec_code = calculate_size(player->last_instr);
 	}
 	while (player->last_instr->args[i]!= NULL)

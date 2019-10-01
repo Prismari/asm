@@ -23,3 +23,9 @@ void	error_file(char *str, int col, int row)
 	ft_printf("[%d:%d] %s\n", row, col, str);
 	exit(1);
 }
+
+void 	error_name(char *str, char *name)
+{
+	ft_printf("%s %s\n", str, name);
+	exit(1);
+}
