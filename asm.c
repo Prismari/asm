@@ -44,16 +44,10 @@ void	add_instruction(t_player *player, t_instruction *instr)
 	}
 }
 
-
-
-
-
-
 // ВОТ ОТСЮДА НАЧИНАЮ МЕНЯТЬ НЕ ТРОГАЯ ТОКЕНИЗАЦИЮ
 void	search_instruction(t_player *player, char *line)
 {
 	int		len_token;
-	int		tmp_len_instr;
 
 	while (line[player->num_col])
 	{
@@ -62,34 +56,21 @@ void	search_instruction(t_player *player, char *line)
 		if (line[player->num_col] == SEPARATOR_CHAR) // INSTRACTIONS
 			player->num_col++;
 		else if (is_whitespace(line[player->num_col]))
-		{
-//			printf("SKIP\n");
 			skip_tab_space(player, line, SKIP_QUOTE);
-		}
 		else
 		{
 			len_token = search_length_token(player, line);
 			if (is_label(line, player, len_token))
-			{
-//				printf("is_lable\n");
 				handling_label(player, line, len_token - 1);
-//				printf("TOKEN [%s]\n", ft_strsub(line, player->num_col, len_token));
-			}
 			else if ((is_instruction(player, line)))
 				;
-				//check_instruction(player, ft_strsub(line, player->num_col, tmp_len_instr), &(line[player->num_col + tmp_len_instr]));
-//				printf("is_instr\n");
-//				printf("TOKEN [%s]\n", ft_strsub(line, player->num_col, len_token));
-
-
-//			    //
-			//handling_token(player, len_token - 1, line);                       //      TOKEN
 			player->num_col += len_token;                                           //
 		}                                                                           //
-//		printf("###########################\n");
 	}
+	player->last_instr->start_bit = player->current_bit;
+	player->current_bit += player->last_instr->size_exec_code;
 //	if (player->last_instr && player->last_instr->count_args)
-//		error_file("Invalid count args", player->num_col + 1, player->num_row);
+//		error_file("Invalid count args", player->num_col + 1, player->num_row); //TODO: СПИСАТЬ ОТСЮДА ФОРМУЛИРОВКУ ОШИБКИ
 }
 
 void	printf_struct(t_player *player)

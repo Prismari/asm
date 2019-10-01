@@ -12,11 +12,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4fb1f1c-bae4-4444-b809-a5927f11f9c9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/valid_arguments.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asm.c" beforeDir="false" afterPath="$PROJECT_DIR$/asm.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/2.s" beforeDir="false" afterPath="$PROJECT_DIR$/champ_test/2.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/corewar.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/corewar.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/init.c" beforeDir="false" afterPath="$PROJECT_DIR$/init.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/instructions.c" beforeDir="false" afterPath="$PROJECT_DIR$/instructions.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tokenize.c" beforeDir="false" afterPath="$PROJECT_DIR$/tokenize.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/valid_arguments.c" beforeDir="false" afterPath="$PROJECT_DIR$/valid_arguments.c" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +80,7 @@
       <workItem from="1569837513345" duration="3438000" />
       <workItem from="1569848249695" duration="2749000" />
       <workItem from="1569856409276" duration="2501000" />
-      <workItem from="1569920687779" duration="2026000" />
+      <workItem from="1569920687779" duration="12308000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <created>1569590889675</created>
@@ -94,7 +96,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569849912161</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Сделан массив указателей на функции, проверяющие каждый тип аргумента. + вызов нужной функции">
+      <created>1569923089800</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1569923089800</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,57 +125,38 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init project" />
     <MESSAGE value="Разбиение аргументов иснструкции сплитом" />
-    <option name="LAST_COMMIT_MESSAGE" value="Разбиение аргументов иснструкции сплитом" />
+    <MESSAGE value="Сделан массив указателей на функции, проверяющие каждый тип аргумента. + вызов нужной функции" />
+    <option name="LAST_COMMIT_MESSAGE" value="Сделан массив указателей на функции, проверяющие каждый тип аргумента. + вызов нужной функции" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/instructions.c</url>
-          <line>122</line>
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/instructions.c</url>
-          <line>66</line>
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/instructions.c</url>
           <line>37</line>
           <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/instructions.c</url>
-          <line>71</line>
-          <option name="timeStamp" value="42" />
+          <url>file://$PROJECT_DIR$/valid_arguments.c</url>
+          <line>42</line>
+          <option name="timeStamp" value="54" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/instructions.c</url>
-          <line>133</line>
-          <option name="timeStamp" value="44" />
+          <line>152</line>
+          <option name="timeStamp" value="55" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/instructions.c</url>
-          <line>114</line>
-          <option name="timeStamp" value="48" />
+          <url>file://$PROJECT_DIR$/asm.c</url>
+          <line>51</line>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/asm.c</url>
+          <line>69</line>
+          <option name="timeStamp" value="57" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="CMakeRunConfiguration">
-        <watch expression="line[player-&gt;num_col]" language="ObjectiveC" />
-        <watch expression="line[player-&gt;num_col + len]" language="ObjectiveC" />
-        <watch expression="ft_strsub(line, player-&gt;num_col, len_token)" language="ObjectiveC" />
-        <watch expression="player-&gt;labels" language="ObjectiveC" />
-        <watch expression="player-&gt;instr" language="ObjectiveC" />
-        <watch expression="player-&gt;num_col" language="ObjectiveC" />
-        <watch expression="args[i]" language="ObjectiveC" />
-        <watch expression="count_word(s)" language="ObjectiveC" />
-        <watch expression="word_size(s)" language="ObjectiveC" />
-        <watch expression="res[2]" language="ObjectiveC" />
-        <watch expression="s[i]" language="ObjectiveC" />
-      </configuration>
-    </watches-manager>
   </component>
 </project>

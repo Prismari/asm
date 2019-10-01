@@ -66,11 +66,13 @@ void	check_instruction(t_player *player, char *instr, char *line, int i)
 //	printf("instr [%s]\n", instr);
 	t_instruction *new_instr;
 
-	if (!(new_instr = init_instr(instr)))
+	if (!(new_instr = init_instr(instr))
+		|| !(new_instr->args = (t_tokens**)malloc(sizeof(t_tokens*) * (g_ins[i - 1].args_num + 1) )))
 		error("Memory allocation error");
 	ft_link_new_instr(new_instr, player);
 	player->last_instr->code_op = g_ins[i - 1].code;
 	player->last_instr->count_args = g_ins[i - 1].args_num;
+	player->last_instr->args[g_ins[i - 1].args_num] = NULL;
 	check_arguments(player, line);
 }
 
@@ -84,12 +86,13 @@ void	del_comment(char *line)
 	line[i] = '\0';
 }
 
-void	check_separator_char(int *sep, int *i, char c)
+void	check_separator_char(int *sep, int *i, char *c)
 {
-	if (c != SEPARATOR_CHAR)
+	if (*c != SEPARATOR_CHAR)
 		exit(1); // TODO: ВЫВЕСТИ ОШИБКУ - НЕТ ЗАПЯТОЙ МЕЖДУ АРГУМЕНТАМИ
 	else
 	{
+		free(c);
 		(*sep)++;
 		(*i)++;
 	}
@@ -98,6 +101,7 @@ void	check_separator_char(int *sep, int *i, char c)
 void 	check_arg_num(char **args, t_instruction *instr)
 {
 	int i;
+	int num;
 	int separ;
 	t_type	type;
 
@@ -106,20 +110,39 @@ void 	check_arg_num(char **args, t_instruction *instr)
 	while (args[i])
 	{
 		if (i % 2 == 1)
-			check_separator_char(&separ, &i, args[i][0]);
+			check_separator_char(&separ, &i, args[i]);
 		if (!(type = know_type(args[i])))
 			exit(1); // TODO: ВЫВЕСТИ ОШИБКУ - НЕВЕРНЫЙ ТИП АРГУМЕНТА
-		f_funk_array[type - 1]();
+		check_type_arg(type, g_ins[instr->code_op - 1].args_types[separ], instr, separ);
+		f_funk_array[type - 1](instr->args[separ], args[i], instr->code_op);
 		i++;
 	}
 	if (i - separ !=  g_ins[instr->code_op - 1].args_num)
 		exit(1); // TODO: ВЫВЕСТИ ОШИБКУ - НЕ ВЕРНОЕ КОЛИЧЕСТВО АРГУМЕНТОВ
 }
 
+int 	calculate_size(t_instruction *instr)
+{
+	int i;
+	int size;
+
+	i = 0;
+	size = 0;
+	while (i < g_ins[instr->code_op - 1].args_num)
+	{
+		size += (int)instr->args[i]->size;
+		i++;
+	}
+	size += (1 + g_ins[instr->code_op - 1].arg_type_code);
+	return (size);
+}
+
 int 	check_arguments(t_player *player, char *arg_line)
 {
 	char **args;
+	int i;
 
+	i = 0;
 	del_comment(arg_line);
 	args = ft_split_argument(arg_line);
 	if (args == NULL)
@@ -127,15 +150,13 @@ int 	check_arguments(t_player *player, char *arg_line)
 	else
 	{
 		check_arg_num(args, player->last_instr);
-		//TODO: проверить есть ли между аргументами запятая
-		// совпадает ли количество аргументов
-		// верны ли типы аргументов
-
+		args = NULL;
+		player->last_instr->size_exec_code = calculate_size(player->last_instr);
 	}
-	while (*args != NULL)
+	while (player->last_instr->args[i]!= NULL)
 	{
-		printf("arg - %s\n", *args);
-		args++;
+		printf("arg - %s\n", player->last_instr->args[i]->data);
+		i++;
 	}
 	return (0);
 }

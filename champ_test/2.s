@@ -1,6 +1,7 @@
 #deassembler par msa 1.8, made by joe
 .name "12"
 .comment    "12343524"
+    live%42
 	 sti	r8  , %:end, r2
 	 ld	%15   , r3 	#offset
      	ld	%195, r4	#limit

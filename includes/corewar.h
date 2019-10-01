@@ -35,7 +35,7 @@ typedef struct	s_op
 	short			t_dir_size;
 }				t_op;
 
-typedef void (*t_func_pointer)();
+
 
 
 
@@ -172,7 +172,7 @@ static t_op		g_ins[16] = {
 
 
 
-typedef enum
+typedef enum // TODO: переделать в Define
 {
 	REGISTER = 1,
 	DIRECT,
@@ -193,8 +193,10 @@ typedef struct		s_instruction
 	char					*instr;
 	unsigned short			code_op;
 	unsigned short			count_args;
+	t_tokens				**args;
 	struct s_tokens			*tokens;
 	struct s_label			*label;
+	int 					start_bit;
 	int						size_exec_code;
 	struct s_instruction	*next; 
 }					t_instruction;
@@ -209,6 +211,7 @@ typedef struct		s_player
 	struct s_label			*labels;
 	struct s_label			*last_label;
 	struct s_label			*flag_lable_exist;
+	int 					current_bit;
 	int						sum_size_exec_code;
 	int						num_row;
 	int						num_col;
@@ -224,7 +227,7 @@ typedef struct		s_label
 	struct s_label			*prev;
 }					t_label;
 
-
+typedef void (*t_func_pointer)(t_tokens *token, char *name, unsigned short instr);
 
 /*
 ** Assembler
@@ -251,9 +254,10 @@ void			check_lable_links(t_label *labels);
 char			**ft_split_argument(char const *s);
 int 			check_arguments(t_player *player, char *instr);
 t_type			know_type(char *token);
-void 			check_reg();
-void 			check_dir();
-void			check_dir_label();
-void			check_indir();
-void			check_indir_label();
+void 			check_reg(t_tokens *token, char *name, unsigned short instr);
+void 			check_dir(t_tokens *token, char *name, unsigned short instr);
+void			check_dir_label(t_tokens *token, char *name, unsigned short instr);
+void			check_indir(t_tokens *token, char *name, unsigned short instr);
+void			check_indir_label(t_tokens *token, char *name, unsigned short instr);
+void		check_type_arg(t_type	type, int needed_type, t_instruction *instr, int num);
 #endif

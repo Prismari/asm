@@ -26,6 +26,7 @@ t_player	*init_player(int fd)
 	player->instr = NULL;
 	player->last_instr = NULL;
 	player->sum_size_exec_code = 0;
+	player->current_bit = 0;
 	player->last_label = NULL;
 	player->labels = NULL;
 	player->flag_lable_exist = NULL;
