@@ -35,6 +35,10 @@ typedef struct	s_op
 	short			t_dir_size;
 }				t_op;
 
+typedef void (*t_func_pointer)();
+
+
+
 static t_op		g_ins[16] = {
 	{
 		.name = "live",
@@ -166,6 +170,8 @@ static t_op		g_ins[16] = {
 	}
 };
 
+
+
 typedef enum
 {
 	REGISTER = 1,
@@ -219,6 +225,7 @@ typedef struct		s_label
 }					t_label;
 
 
+
 /*
 ** Assembler
 */
@@ -244,4 +251,9 @@ void			check_lable_links(t_label *labels);
 char			**ft_split_argument(char const *s);
 int 			check_arguments(t_player *player, char *instr);
 t_type			know_type(char *token);
+void 			check_reg();
+void 			check_dir();
+void			check_dir_label();
+void			check_indir();
+void			check_indir_label();
 #endif

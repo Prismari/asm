@@ -69,8 +69,10 @@ t_type	know_type(char *token)
         return (DIRECT);
     else if (token[0] == LABEL_CHAR)
         return (INDIRECT_LABEL);
-    else
+    else if (ft_isdigit(token[0]))
         return (INDIRECT);
+	else
+		return (0);
 }
 
 
