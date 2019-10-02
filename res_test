@@ -1,135 +1,206 @@
-Our asm
+Our asm 1
 [2:11] Invalid comment
 
 Original
 Champion comment too long (Max length 2048)
+Our asm 2
+
+
 Original
 Lexical error at [13:11]
-Our asm
+Our asm 3
+Invalid parameter count for instruction live
+
+
 Original
 Invalid parameter 1 type indirect for instruction live
-Our asm
+Our asm 4
 [6:1] Syntax error
 
 
 Original
 Syntax error at token [TOKEN][002:001] COMMAND_COMMENT ".comment"
-Our asm
+Our asm 5
 [6:1] Syntax error
 
 
 Original
 Syntax error at token [TOKEN][002:001] COMMAND_NAME ".name"
-Our asm
+Our asm 6
 Champion comment too long (Max length 2048)
 Original
 Champion comment too long (Max length 2048)
-Our asm
+Our asm 7
 Champion name too long (Max length 128)
 Original
 Champion name too long (Max length 128)
-Our asm
+Our asm 8
 [1:8] Invalid name
 Original
 Syntax error at token [TOKEN][006:008] INSTRUCTION "sdfs"
-Our asm
+Our asm 9
 [1:8] Invalid name
 Original
 Lexical error at [5:11]
-Our asm
+Our asm 10
 [3:1] Syntax error
 
 Original
 Syntax error at token [TOKEN][003:001] INSTRUCTION "live"
-Our asm
+Our asm 11
+[9:1] Invalid label name
+
+
 Original
 Usage: ./champ_test/asm [-a] <sourcefile.s>
     -a : Instead of creating a .cor file, outputs a stripped and annotated version of the code to the standard output
-Our asm
+Our asm 12
+[7:0] Syntax error
+
+
 Original
 Lexical error at [7:6]
-Our asm
+Our asm 13
+[7:0] Syntax error
+
+
 Original
 Lexical error at [7:6]
-Our asm
+Our asm 14
+[7:6] Syntax error
+
+
 Original
 Syntax error at token [TOKEN][008:001] ENDLINE
-Our asm
+Our asm 15
+[4:1] Invalid label name
+
+
 Original
 Lexical error at [4:1]
-Our asm
+Our asm 16
+[4:0] Syntax error
+
+
 Original
 Syntax error at token [TOKEN][004:006] ENDLINE
-Our asm
+Our asm 17
+[4:0] Syntax error
+
+
 Original
 Syntax error at token [TOKEN][004:007] LABEL "second:"
-Our asm
+Our asm 18
+[8:0] Syntax error
+
+
 Original
 Syntax error at token [TOKEN][011:001] ENDLINE
-Our asm
+Our asm 19
 Champion name too long (Max length 128)
 Original
 Champion name too long (Max length 128)
-Our asm
+Our asm 20
+[4:4] Syntax error
+
+
 Original
 Syntax error at token [TOKEN][004:009] INSTRUCTION "live"
-Our asm
+Our asm 21
+[5:5] Syntax error
+
+
 Original
 Syntax error at token [TOKEN][005:021] INSTRUCTION "adfa"
-Our asm
+Our asm 22
+[4:4] Syntax error
+
+
 Original
 Lexical error at [4:5]
-Our asm
+Our asm 23
 
 
 Original
 Syntax error at token [TOKEN][003:001] END "(null)"
-Our asm
+Our asm 24
+[4:5] Syntax error
+
+
 Original
 Invalid parameter 0 type indirect for instruction live
-Our asm
+Our asm 25
+Invalid parameter count for instruction xor
+
+
 Original
 Syntax error at token [TOKEN][006:020] ENDLINE
-Our asm
+Our asm 26
+Invalid parameter 1 for instruction live 
+
+
 Original
 Syntax error at token [TOKEN][004:008] SEPARATOR ","
-Our asm
+Our asm 27
+
+
 Original
 Lexical error at [13:11]
-Our asm
+Our asm 28
+Invalid parameter count for instruction sti
+
+
 Original
 Syntax error at token [TOKEN][005:021] ENDLINE
-Our asm
+Our asm 29
+[5:8] Syntax error
+
+
 Original
 Syntax error at token [TOKEN][006:013] INSTRUCTION "aaa"
-Our asm
+Our asm 30
+[9:8] Syntax error
+
+
 Original
 Invalid parameter 1 type indirect for instruction live
-Our asm
+Our asm 31
+[5:8] Syntax error
+
+
 Original
 Syntax error at token [TOKEN][006:007] INSTRUCTION "r101"
-Our asm
+Our asm 32
+[4:5] Syntax error
+
+
 Original
 No such label truc while attempting to dereference token [TOKEN][004:009] INDIRECT_LABEL ":truc"
-Our asm
+Our asm 33
+[5:8] Syntax error
+
+
 Original
 Lexical error at [7:14]
-Our asm
+Our asm 34
+Invalid parameter count for instruction sti
+
+
 Original
 Lexical error at [4:13]
-Our asm
+Our asm 35
 [3:1] Syntax error
 Original
 Syntax error at token [TOKEN][003:001] INDIRECT "42"
-Our asm
+Our asm 36
 Error reading of name or comment
 Original
 Syntax error at token [TOKEN][002:001] END "(null)"
-Our asm
+Our asm 37
 Error reading of name or comment
 Original
 Syntax error at token [TOKEN][004:001] END "(null)"
-Our asm
+Our asm 38
 [4:3] Syntax error
 Original
 Syntax error at token [TOKEN][004:003] INSTRUCTION "t"
