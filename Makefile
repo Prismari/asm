@@ -27,11 +27,13 @@ LIBS = -lft -L$(LIBFT_FOLDER) -lftprintf -L$(LIBFT_FOLDER)
 INCLUDES = -I$(HEADERS_DIRECTORY) -I$(LIBFT_FOLDER)
 
 COMMON_FILES =	asm.c \
-				error.c \
-				utils.c \
-				init.c \
-				parse_name_comment.c \
-				disassemble.c
+                error.c \
+                init.c \
+                parse_name_comment.c \
+                tokenize.c \
+                utils.c \
+                lable_handle.c \
+                instructions.c ft_split_spaces.c valid_arguments.c
 
 SRC_DIRECTORY = ./
 SRC_COMMON_FILES = $(addprefix $(SRC_DIRECTORY), $(COMMON_FILES))

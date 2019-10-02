@@ -12,11 +12,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4fb1f1c-bae4-4444-b809-a5927f11f9c9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/2.cor" beforeDir="false" afterPath="$PROJECT_DIR$/champ_test/2.cor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asm" beforeDir="false" afterPath="$PROJECT_DIR$/asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asm.c" beforeDir="false" afterPath="$PROJECT_DIR$/asm.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/champ_test/2.s" beforeDir="false" afterPath="$PROJECT_DIR$/champ_test/2.s" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/error.c" beforeDir="false" afterPath="$PROJECT_DIR$/error.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ft_split_spaces.c" beforeDir="false" afterPath="$PROJECT_DIR$/ft_split_spaces.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker/libft" beforeDir="false" afterPath="$PROJECT_DIR$/checker/libft" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instructions.c" beforeDir="false" afterPath="$PROJECT_DIR$/instructions.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parse_name_comment.c" beforeDir="false" afterPath="$PROJECT_DIR$/parse_name_comment.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/valid_arguments.c" beforeDir="false" afterPath="$PROJECT_DIR$/valid_arguments.c" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,6 +37,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1RQDkH0mwCDBZzmx5xqmMw9bbrw" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -56,7 +62,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="asm" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="./champ_test/2.s" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="asm" TARGET_NAME="asm" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="asm" RUN_TARGET_NAME="asm">
+    <configuration name="asm" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="./champ_test/checker_test_files/error/direct_param_no_value.s" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="asm" TARGET_NAME="asm" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="asm" RUN_TARGET_NAME="asm">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -79,7 +85,8 @@
       <workItem from="1569848249695" duration="2749000" />
       <workItem from="1569856409276" duration="2501000" />
       <workItem from="1569920687779" duration="14923000" />
-      <workItem from="1570003686138" duration="1580000" />
+      <workItem from="1570003686138" duration="3700000" />
+      <workItem from="1570012784078" duration="2358000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <created>1569590889675</created>
@@ -132,27 +139,27 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/instructions.c</url>
-          <line>118</line>
+          <line>117</line>
           <option name="timeStamp" value="62" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/instructions.c</url>
-          <line>152</line>
+          <line>151</line>
           <option name="timeStamp" value="63" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/instructions.c</url>
-          <line>91</line>
+          <line>90</line>
           <option name="timeStamp" value="64" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/instructions.c</url>
-          <line>70</line>
+          <line>69</line>
           <option name="timeStamp" value="65" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/instructions.c</url>
-          <line>124</line>
+          <line>123</line>
           <option name="timeStamp" value="66" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
@@ -162,7 +169,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/instructions.c</url>
-          <line>114</line>
+          <line>113</line>
           <option name="timeStamp" value="68" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
@@ -171,26 +178,30 @@
           <option name="timeStamp" value="69" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/ft_split_spaces.c</url>
-          <line>81</line>
-          <option name="timeStamp" value="71" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/ft_split_spaces.c</url>
+          <url>file://$PROJECT_DIR$/instructions.c</url>
           <line>116</line>
-          <option name="timeStamp" value="73" />
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/instructions.c</url>
+          <line>149</line>
+          <option name="timeStamp" value="77" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/ft_split_spaces.c</url>
-          <line>114</line>
-          <option name="timeStamp" value="74" />
+          <line>94</line>
+          <option name="timeStamp" value="78" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/asm.c</url>
+          <line>52</line>
+          <option name="timeStamp" value="79" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
-        <watch expression="*(char*(*)[5])res" language="ObjectiveC" />
-        <watch expression="word_size(s)" language="ObjectiveC" />
+        <watch expression="*(char*(*)[5])args" language="ObjectiveC" />
       </configuration>
     </watches-manager>
   </component>

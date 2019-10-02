@@ -1,0 +1,135 @@
+Our asm
+[2:11] Invalid comment
+
+Original
+Champion comment too long (Max length 2048)
+Original
+Lexical error at [13:11]
+Our asm
+Original
+Invalid parameter 1 type indirect for instruction live
+Our asm
+[6:1] Syntax error
+
+
+Original
+Syntax error at token [TOKEN][002:001] COMMAND_COMMENT ".comment"
+Our asm
+[6:1] Syntax error
+
+
+Original
+Syntax error at token [TOKEN][002:001] COMMAND_NAME ".name"
+Our asm
+Champion comment too long (Max length 2048)
+Original
+Champion comment too long (Max length 2048)
+Our asm
+Champion name too long (Max length 128)
+Original
+Champion name too long (Max length 128)
+Our asm
+[1:8] Invalid name
+Original
+Syntax error at token [TOKEN][006:008] INSTRUCTION "sdfs"
+Our asm
+[1:8] Invalid name
+Original
+Lexical error at [5:11]
+Our asm
+[3:1] Syntax error
+
+Original
+Syntax error at token [TOKEN][003:001] INSTRUCTION "live"
+Our asm
+Original
+Usage: ./champ_test/asm [-a] <sourcefile.s>
+    -a : Instead of creating a .cor file, outputs a stripped and annotated version of the code to the standard output
+Our asm
+Original
+Lexical error at [7:6]
+Our asm
+Original
+Lexical error at [7:6]
+Our asm
+Original
+Syntax error at token [TOKEN][008:001] ENDLINE
+Our asm
+Original
+Lexical error at [4:1]
+Our asm
+Original
+Syntax error at token [TOKEN][004:006] ENDLINE
+Our asm
+Original
+Syntax error at token [TOKEN][004:007] LABEL "second:"
+Our asm
+Original
+Syntax error at token [TOKEN][011:001] ENDLINE
+Our asm
+Champion name too long (Max length 128)
+Original
+Champion name too long (Max length 128)
+Our asm
+Original
+Syntax error at token [TOKEN][004:009] INSTRUCTION "live"
+Our asm
+Original
+Syntax error at token [TOKEN][005:021] INSTRUCTION "adfa"
+Our asm
+Original
+Lexical error at [4:5]
+Our asm
+
+
+Original
+Syntax error at token [TOKEN][003:001] END "(null)"
+Our asm
+Original
+Invalid parameter 0 type indirect for instruction live
+Our asm
+Original
+Syntax error at token [TOKEN][006:020] ENDLINE
+Our asm
+Original
+Syntax error at token [TOKEN][004:008] SEPARATOR ","
+Our asm
+Original
+Lexical error at [13:11]
+Our asm
+Original
+Syntax error at token [TOKEN][005:021] ENDLINE
+Our asm
+Original
+Syntax error at token [TOKEN][006:013] INSTRUCTION "aaa"
+Our asm
+Original
+Invalid parameter 1 type indirect for instruction live
+Our asm
+Original
+Syntax error at token [TOKEN][006:007] INSTRUCTION "r101"
+Our asm
+Original
+No such label truc while attempting to dereference token [TOKEN][004:009] INDIRECT_LABEL ":truc"
+Our asm
+Original
+Lexical error at [7:14]
+Our asm
+Original
+Lexical error at [4:13]
+Our asm
+[3:1] Syntax error
+Original
+Syntax error at token [TOKEN][003:001] INDIRECT "42"
+Our asm
+Error reading of name or comment
+Original
+Syntax error at token [TOKEN][002:001] END "(null)"
+Our asm
+Error reading of name or comment
+Original
+Syntax error at token [TOKEN][004:001] END "(null)"
+Our asm
+[4:3] Syntax error
+Original
+Syntax error at token [TOKEN][004:003] INSTRUCTION "t"

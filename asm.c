@@ -49,6 +49,7 @@ void	search_instruction(t_player *player, char *line)
 {
 	int		len_token;
 
+	len_token = 0;
 	while (line[player->num_col])
 	{
 		if (is_comment(line[player->num_col]))
@@ -67,8 +68,11 @@ void	search_instruction(t_player *player, char *line)
 			player->num_col += len_token;
 		}
 	}
-	player->last_instr->start_bit = player->current_bit;
-	player->current_bit += player->last_instr->size_exec_code;
+	if (len_token > 0 && player->last_instr)
+	{
+		player->last_instr->start_bit = player->current_bit;
+		player->current_bit += player->last_instr->size_exec_code;
+	}
 }
 
 void	printf_struct(t_player *player)
@@ -117,7 +121,7 @@ void	assemble(int fd)
 	if (!check_name_comment(fd, header))
 		error("Error reading of name or comment");
 	reading_body_champion(fd, header);
-	printf_struct(header);
+	//printf_struct(header);
 }
 
 int	main(int argc, char **argv)

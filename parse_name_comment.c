@@ -33,7 +33,7 @@ void	write_name(t_player *player, char *line)
  	player->name = ft_strndup(tmp, length);
 	line += player->num_col;
 	printf("%s\n", line);
- 	printf("[%s]\n", player->name);
+ 	//printf("[%s]\n", player->name);
 }
 
 void	write_comment(t_player *player, char *line)
@@ -57,7 +57,7 @@ void	write_comment(t_player *player, char *line)
  	player->comment = ft_strndup(tmp, length);
 	line += player->num_col;
 	printf("%s\n", line);
- 	printf("[%s]\n", player->comment);
+ 	//printf("[%s]\n", player->comment);
 }
 
 int		check_command(char *line, t_player *player)

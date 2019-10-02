@@ -29,7 +29,7 @@ void	check_type_arg(t_type type, int needed_type, t_instruction *instr, int num)
 
 void 		check_reg(t_tokens *token, char *name, unsigned short ignored)
 {
-	(unsigned int)ignored;
+	ignored += 0;
 	token->data = name;
 	token->size = 1;
 }
@@ -48,14 +48,14 @@ void		check_dir_label(t_tokens *token, char *name, unsigned short instr)
 
 void		check_indir(t_tokens *token, char *name, unsigned short ignored)
 {
-	(unsigned int)ignored;
+	ignored += 0;
 	token->data = name;
 	token->size = 2;
 }
 
 void		check_indir_label(t_tokens *token, char *name, unsigned short ignored)
 {
-	(unsigned int)ignored;
+	ignored += 0;
 	token->data = name;
 	token->size = 2;
 }

@@ -100,7 +100,7 @@ void	check_separator_char(int *sep, int *i, char *c, t_player *player)
 void 	check_arg_num(char **args, t_instruction *instr, t_player *player)
 {
 	int i;
-	int num;
+//	int num;
 	int separ;
 	t_type	type;
 
@@ -156,10 +156,11 @@ int 	check_arguments(t_player *player, char *arg_line)
 		//args = NULL;
 		player->last_instr->size_exec_code = calculate_size(player->last_instr);
 	}
-	while (player->last_instr->args[i]!= NULL)
-	{
-		printf("arg - %s\n", player->last_instr->args[i]->data);
-		i++;
-	}
+	// ПЕЧАТАЕТ ВСЕ АРГУМЕНТЫ
+//	while (player->last_instr->args[i]!= NULL)
+//	{
+//		printf("arg - %s\n", player->last_instr->args[i]->data);
+//		i++;
+//	}
 	return (0);
 }
