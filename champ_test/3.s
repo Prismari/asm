@@ -10,7 +10,7 @@ begin:
 #	st	r1, :gen+1
 
 ld1:
-	ld	%15                r3 	#offset
+	ld	%+015       ,         r3 	#offset
 	ld	%195, r4	#limit
 	ld	%0, r7		#pattern faites nous confiance
 	ld	%0, r8	#pattern poison

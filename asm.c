@@ -65,8 +65,8 @@ void	search_instruction(t_player *player, char *line)
 				handling_label(player, line, len_token - 1);
 			else if ((is_instruction(player, line)))
 				;
-			else
-				error_file("Syntax error", player->num_col, player->num_row);
+//			else
+//				error_file("Syntax error", player->num_col, player->num_row);
 			player->num_col += len_token;
 		}
 	}
@@ -123,6 +123,7 @@ void	assemble(int fd)
 	if (!check_name_comment(fd, header))
 		error("Error reading of name or comment");
 	reading_body_champion(fd, header);
+	check_arg_is_digit(header);
 	//printf_struct(header);
 }
 

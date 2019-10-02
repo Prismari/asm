@@ -21,10 +21,8 @@ void	check_type_arg(t_type type, int needed_type, t_instruction *instr, int num)
 	}
 	else if ((type & needed_type) != type)
 		error_type(instr->instr, type, num);
-
-	if (!(instr->args[num] = (t_tokens*)malloc(sizeof(t_tokens))))
+	if (!(instr->args[num] = init_tokens(type)))
 		exit(1);
-	instr->args[num]->type = type;
 }
 
 void 		check_reg(t_tokens *token, char *name, unsigned short ignored)
@@ -58,4 +56,67 @@ void		check_indir_label(t_tokens *token, char *name, unsigned short ignored)
 	ignored += 0;
 	token->data = name;
 	token->size = 2;
+}
+
+int		arg_to_int(t_tokens *arg)
+{
+	char	*str;
+	int		i;
+
+	i = 0;
+	str = arg->data;
+	if (arg->type != INDIRECT)
+		i++;
+	if (str[i] == '-')
+		i++;
+	while (str[i])
+		if (!(isdigit(str[i++])))
+			error("Syntax error"); // TODO: ПРОВЕРИТЬ ФОРМУЛИРОВКУ
+	if (arg->type != INDIRECT)
+			return (ft_atoi(&(str[1])));
+	return (ft_atoi(str));
+}
+
+void		lable_to_int(t_label *lables, t_instruction *instr, int arg_num)
+{
+	t_label *tmp;
+	char 	*str_label;
+	int 	i;
+
+	tmp = lables;
+	while (tmp)
+	{
+		i = 1;
+		str_label = instr->args[arg_num]->data;
+		if (instr->args[arg_num]->type == DIRECT_LABEL)
+			i++;
+		if (!(ft_strcmp(&(str_label[i]), tmp->l_name)))
+			instr->args[arg_num]->data_int = tmp->instr->start_bit;
+		tmp = tmp->next;
+	}
+	if (instr->args[arg_num]->data_int == -1)
+		error("Lable not exist"); // TODO: ПРОВЕРИТЬ ФОРМУЛИРОВКУ
+}
+
+void		check_arg_is_digit(t_player *player)
+{
+	t_instruction *instr;
+	int i;
+
+	instr = player->instr;
+	while (instr)
+	{
+		i = 0;
+		ft_printf("instr : %s\n", instr->instr);
+		while (i < instr->count_args)
+		{
+			if (instr->args[i]->type == DIRECT_LABEL || instr->args[i]->type == INDIRECT_LABEL)
+				lable_to_int(player->labels, instr, i);
+			else
+				instr->args[i]->data_int = arg_to_int(instr->args[i]);
+			ft_printf("\t -%8s -> %4d\n", instr->args[i]->data, instr->args[i]->data_int);
+			i++;
+		}
+		 instr = instr->next;
+	}
 }

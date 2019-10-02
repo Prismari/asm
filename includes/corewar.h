@@ -36,9 +36,6 @@ typedef struct	s_op
 }				t_op;
 
 
-
-
-
 static t_op		g_ins[16] = {
 	{
 		.name = "live",
@@ -186,6 +183,7 @@ typedef struct		s_tokens
 	unsigned short	size;
 	t_type			type;
 	char			*data;
+	int 			data_int;
 }					t_tokens;
 
 typedef struct		s_instruction
@@ -242,7 +240,9 @@ t_player		*init_player(int fd);
 int				is_whitespace(int c);
 t_instruction	*init_instr(char *label); //??????
 t_label			*init_lable(char *label);
+t_tokens		*init_tokens(t_type type);
 int				check_name_comment(int fd, t_player *player);
+void			check_arg_is_digit(t_player *player);
 int				skip_tab_space(t_player *player, char *line, int flag);
 void			handling_token(t_player *player, int len, char *line);
 int 			search_length_token(t_player *player, char	*line);

@@ -38,7 +38,6 @@ int 	is_instruction(t_player *player, char *line)
 		check_instruction(player, instr, &(line[player->num_col]), i);
 		return (len_token);
 	}
-
 	return (0);
 }
 

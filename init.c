@@ -60,13 +60,14 @@ t_label	*init_lable(char *label)
 	return (new);
 }
 
-t_tokens		*init_tokens(char *data, t_type type, unsigned short size)
+t_tokens		*init_tokens(t_type type)
 {
 	t_tokens *token;
 	if (!(token = malloc(sizeof(t_tokens))))
 		return (NULL);
 	token->type = type;
-	token->data = data;
-	token->size = size;
+	token->data = NULL;
+	token->size = -1;
+	token->data_int = -1;
 	return (token);
 }
