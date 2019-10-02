@@ -235,6 +235,7 @@ typedef void (*t_func_pointer)(t_tokens *token, char *name, unsigned short instr
 
 void			error(char *str);
 void			error_file(char *str, int col, int row);
+void			error_type(char *instr, t_type type, int arg);
 char			*ft_strndup(const char *src, int i);
 int				is_comment(int chr);
 t_player		*init_player(int fd);

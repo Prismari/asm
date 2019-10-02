@@ -64,13 +64,11 @@ void	search_instruction(t_player *player, char *line)
 				handling_label(player, line, len_token - 1);
 			else if ((is_instruction(player, line)))
 				;
-			player->num_col += len_token;                                           //
-		}                                                                           //
+			player->num_col += len_token;
+		}
 	}
 	player->last_instr->start_bit = player->current_bit;
 	player->current_bit += player->last_instr->size_exec_code;
-//	if (player->last_instr && player->last_instr->count_args)
-//		error_file("Invalid count args", player->num_col + 1, player->num_row); //TODO: СПИСАТЬ ОТСЮДА ФОРМУЛИРОВКУ ОШИБКИ
 }
 
 void	printf_struct(t_player *player)

@@ -17,13 +17,13 @@ void	check_type_arg(t_type type, int needed_type, t_instruction *instr, int num)
 	if (type == DIRECT_LABEL || type == INDIRECT_LABEL)
 	{
 		if (((type - 1) & needed_type) != (type - 1))
-			exit(1); //TODO: ВЫВЕСТИ ОШИБКУ - НЕВЕРНЫЙ ТИП АРГУМЕНТА
+			error_type(instr->instr, type, num);
 	}
 	else if ((type & needed_type) != type)
-		exit(1);
+		error_type(instr->instr, type, num);
 
 	if (!(instr->args[num] = (t_tokens*)malloc(sizeof(t_tokens))))
-		exit(1); //TODO: ВЫВЕСТИ ОШИБКУ - НЕ ВЫДЕЛИЛАСЬ ПАМЯТЬ
+		exit(1);
 	instr->args[num]->type = type;
 }
 

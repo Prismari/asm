@@ -63,7 +63,6 @@ void	ft_link_new_instr(t_instruction *new_instr, t_player *player)
 
 void	check_instruction(t_player *player, char *instr, char *line, int i)
 {
-//	printf("instr [%s]\n", instr);
 	t_instruction *new_instr;
 
 	if (!(new_instr = init_instr(instr))
@@ -86,10 +85,10 @@ void	del_comment(char *line)
 	line[i] = '\0';
 }
 
-void	check_separator_char(int *sep, int *i, char *c)
+void	check_separator_char(int *sep, int *i, char *c, t_player *player)
 {
 	if (*c != SEPARATOR_CHAR)
-		exit(1); // TODO: ВЫВЕСТИ ОШИБКУ - НЕТ ЗАПЯТОЙ МЕЖДУ АРГУМЕНТАМИ
+		error_file("Syntax error", player->num_col, player->num_row);
 	else
 	{
 		free(c);
@@ -110,19 +109,19 @@ void 	check_arg_num(char **args, t_instruction *instr, t_player *player)
 	while (args[i])
 	{
 		if (i % 2 == 1)
-			check_separator_char(&separ, &i, args[i]);
+			check_separator_char(&separ, &i, args[i], player);
 		if (i - separ >=  g_ins[instr->code_op - 1].args_num)
 			error_name("Invalid parameter count for instruction", instr->instr);
 		if (args[i] == NULL)
 			error_file("Syntax error", player->num_col, player->num_row);//TODO: НЕТ ПОДСЧЕТА НОМЕРА ЭЛЕМЕНТА СТРОКИ ДЛЯ ВЫВОДА ОШИБОК
 		if (!(type = know_type(args[i])))
-			exit(1); // TODO: ВЫВЕСТИ ОШИБКУ - НЕВЕРНЫЙ ТИП АРГУМЕНТА
+			error_type(instr->instr, type, separ + 1);
 		check_type_arg(type, g_ins[instr->code_op - 1].args_types[separ], instr, separ);
 		f_funk_array[type - 1](instr->args[separ], args[i], instr->code_op);
 		i++;
 	}
 	if (i - separ !=  g_ins[instr->code_op - 1].args_num)
-		error_name("Invalid parameter count for instruction", instr->instr); // TODO: ВЫВЕСТИ ОШИБКУ - НЕ ВЕРНОЕ КОЛИЧЕСТВО АРГУМЕНТОВ
+		error_name("Invalid parameter count for instruction", instr->instr);
 }
 
 int 	calculate_size(t_instruction *instr)
@@ -150,7 +149,7 @@ int 	check_arguments(t_player *player, char *arg_line)
 	del_comment(arg_line);
 	args = ft_split_argument(arg_line);
 	if (args == NULL)
-		error("No arguments"); // TODO: обработать ошибку - нет аргументов
+		error_name("No arguments for instruction", player->last_instr->instr);
 	else
 	{
 		check_arg_num(args, player->last_instr, player);

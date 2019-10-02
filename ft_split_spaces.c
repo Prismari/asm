@@ -86,7 +86,8 @@ char			**ft_split_argument(char const *s)
 	j = 0;
 	if (!s)
 		return (NULL);
-	w_count = word_count(s);
+	if (!(w_count = word_count(s)))
+		return (NULL);
 //	if ((w_count = word_count(s)) > 5) //!= num
 //		exit(1);                            // TODO: ВЫВЕСТИ ОШИБКУ - СЛИШКОМ МНОГО АРГУМЕНТОВ
 	if (!(res = (char **)malloc(sizeof(char *) * (w_count + 1))))
@@ -99,8 +100,13 @@ char			**ft_split_argument(char const *s)
 		while (is_whitespace(*s) && s != '\0')
 			s++;
 		if (*s == SEPARATOR_CHAR)
+		{
 			res[j][i++] = *s++;
-		while (!(is_whitespace(*s)) && *s)
+			res[j][i] = '\0';
+			j++;
+			continue ;
+		}
+		while (!(is_whitespace(*s)) && *s && *(s - 1))
 		{
 			res[j][i++] = *s++;
 			if (*s == SEPARATOR_CHAR)

@@ -2,12 +2,12 @@
 .name "12"
 .comment    "12343524"
     live %42
-	 sti	r8  , %:end,
+	 sti	r8  , %:label02  bds
 	 ld	%15   , r3 	#offset
      	ld	%195, r4	#limit
      	ld	%0, r7		#pattern faites nous confiance
      	ld	%0, r8         		# 7,3,278
-     	sti	r8  , %:end, r2
+     	sti	r8  , %:label02, r2
 
 
 label02: #.ln xdbxdfb
