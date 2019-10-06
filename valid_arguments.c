@@ -91,7 +91,11 @@ void		lable_to_int(t_label *lables, t_instruction *instr, int arg_num)
 		if (instr->args[arg_num]->type == DIRECT_LABEL)
 			i++;
 		if (!(ft_strcmp(&(str_label[i]), tmp->l_name)))
-			instr->args[arg_num]->data_int = tmp->instr->start_bit;
+		{
+			printf("LAble_start [%d], instr_start [%d]\n", tmp->instr->start_bit, instr->start_bit);
+			instr->args[arg_num]->data_int = tmp->instr->start_bit - instr->start_bit;
+			//instr->args[arg_num]->data_int = tmp->instr->start_bit;
+		}
 		tmp = tmp->next;
 	}
 	if (instr->args[arg_num]->data_int == -1)

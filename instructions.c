@@ -27,6 +27,7 @@ int 	is_instruction(t_player *player, char *line)
 	char *instr;
 
 	i = 0;
+
 	len_token = search_length_token(player, line);
 	instr = ft_strsub(line, player->num_col, len_token);
 	while (i++ < 16)
@@ -38,6 +39,7 @@ int 	is_instruction(t_player *player, char *line)
 		check_instruction(player, instr, &(line[player->num_col]), i);
 		return (len_token);
 	}
+
 	return (0);
 }
 

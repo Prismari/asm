@@ -6,13 +6,13 @@
 /*   By: vurrigon <vurrigon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/22 12:03:05 by vurrigon          #+#    #+#             */
-/*   Updated: 2019/09/25 13:20:10 by vurrigon         ###   ########.fr       */
+/*   Updated: 2019/10/06 11:38:02 by vurrigon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/corewar.h"
 
-t_player	*init_player(int fd)
+t_player	*init_player(int fd, char *file_name)
 {
 	t_player *player;
 
@@ -20,6 +20,7 @@ t_player	*init_player(int fd)
 		return (NULL);
 	player->name = NULL;
 	player->comment = NULL;
+	player->file_name = file_name;
 	player->fd = fd;
 	player->num_row = 0;
 	player->num_col = 0;

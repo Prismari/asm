@@ -6,7 +6,7 @@
 /*   By: vurrigon <vurrigon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/22 17:14:23 by vurrigon          #+#    #+#             */
-/*   Updated: 2019/09/25 16:24:08 by vurrigon         ###   ########.fr       */
+/*   Updated: 2019/10/06 11:33:38 by vurrigon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void	write_name(t_player *player, char *line)
  		error_file("Syntax error", player->num_col + 1, player->num_row);
  	player->name = ft_strndup(tmp, length);
 	line += player->num_col;
-	printf("%s\n", line);
  	//printf("[%s]\n", player->name);
 }
 
@@ -56,7 +55,6 @@ void	write_comment(t_player *player, char *line)
  		error_file("Syntax error", player->num_col + 1, player->num_row);
  	player->comment = ft_strndup(tmp, length);
 	line += player->num_col;
-	printf("%s\n", line);
  	//printf("[%s]\n", player->comment);
 }
 

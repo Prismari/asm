@@ -6,7 +6,7 @@
 /*   By: vurrigon <vurrigon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 12:29:08 by vurrigon          #+#    #+#             */
-/*   Updated: 2019/09/25 15:30:50 by vurrigon         ###   ########.fr       */
+/*   Updated: 2019/10/06 16:15:41 by vurrigon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -203,6 +203,7 @@ typedef struct		s_player
 {
 	char					*name;
 	char					*comment;
+	char					*file_name;
 	int 					fd;
 	struct s_instruction	*instr;
 	struct s_instruction	*last_instr;
@@ -236,7 +237,7 @@ void			error_file(char *str, int col, int row);
 void			error_type(char *instr, t_type type, int arg);
 char			*ft_strndup(const char *src, int i);
 int				is_comment(int chr);
-t_player		*init_player(int fd);
+t_player		*init_player(int fd, char *file_name);
 int				is_whitespace(int c);
 t_instruction	*init_instr(char *label); //??????
 t_label			*init_lable(char *label);
