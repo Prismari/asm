@@ -46,7 +46,7 @@ int 	handling_label(t_player *player, char *line, int len)
 	{
 		if (is_comment(line[player->num_col]))
 		{
-//			printf("nothing after label\n");
+			printf("nothing after label\n");
 			break;
 		}
 		else if (is_whitespace(line[player->num_col]))

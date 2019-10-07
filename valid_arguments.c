@@ -92,8 +92,12 @@ void		lable_to_int(t_label *lables, t_instruction *instr, int arg_num)
 			i++;
 		if (!(ft_strcmp(&(str_label[i]), tmp->l_name)))
 		{
-//			printf("LAble_start [%d], instr_start [%d]\n", tmp->instr->start_bit, instr->start_bit);
-			instr->args[arg_num]->data_int = tmp->instr->start_bit - instr->start_bit;
+			if (!tmp->instr)
+				instr->args[arg_num]->data_int = 0; // TODO: тут надо класть размер всего кода игрока (((
+			else
+				instr->args[arg_num]->data_int = tmp->instr->start_bit - instr->start_bit;
+
+			//			printf("LAble_start [%d], instr_start [%d]\n, ", tmp->instr->start_bit, instr->start_bit);
 			//instr->args[arg_num]->data_int = tmp->instr->start_bit;
 		}
 		tmp = tmp->next;

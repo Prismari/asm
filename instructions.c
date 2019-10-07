@@ -35,7 +35,7 @@ int		check_instr_name(char *line, int *i_names, t_player *player)
 			j++;
 		if (instr_name[j] == '\0')
 		{
-			instr_name = ft_strsub(line, 0, j);
+			instr_name = ft_strsub(line, player->num_col, j);
 			player->num_col += j;
 			check_instruction(player, instr_name, &(line[player->num_col]), i_names[i]);
 			return (j);
@@ -99,7 +99,7 @@ void	del_comment(char *line)
 	int i;
 
 	i = 0;
-	while (line[i] && line[i] != '#')
+	while (line[i] && line[i] != COMMENT_CHAR && line[i] && line[i] != ALT_COMMENT_CHAR)
 		i++;
 	line[i] = '\0';
 }

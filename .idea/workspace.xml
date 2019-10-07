@@ -12,26 +12,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4fb1f1c-bae4-4444-b809-a5927f11f9c9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asm.c" beforeDir="false" afterPath="$PROJECT_DIR$/asm.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid/42.s" beforeDir="false" afterPath="$PROJECT_DIR$/champ_test/checker_test_files/valid/zzz42.s" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid/Varimathras.s" beforeDir="false" afterPath="$PROJECT_DIR$/champ_test/checker_test_files/valid/zzzVarimathras.s" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid/_honeybadger.s" beforeDir="false" afterPath="$PROJECT_DIR$/champ_test/checker_test_files/valid/zzz_honeybadger.s" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid/big_feet.s" beforeDir="false" afterPath="$PROJECT_DIR$/champ_test/checker_test_files/valid/zzzbig_feet.s" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid/neg_indirect_error.s" beforeDir="false" afterPath="$PROJECT_DIR$/champ_test/checker_test_files/valid/neg_indirect_error.s" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/big_feet.s" beforeDir="false" afterPath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/big_feet.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asm" beforeDir="false" afterPath="$PROJECT_DIR$/asm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checker/tests/asm/valid/big_feet.s" beforeDir="false" afterPath="$PROJECT_DIR$/checker/tests/asm/valid/big_feet.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checker/tests/asm/valid2/big_feet.s" beforeDir="false" afterPath="$PROJECT_DIR$/checker/tests/asm/valid2/big_feet.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checker/tests/vm/champ/big_feet.s" beforeDir="false" afterPath="$PROJECT_DIR$/checker/tests/vm/champ/big_feet.s" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/error.c" beforeDir="false" afterPath="$PROJECT_DIR$/error.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/corewar.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/corewar.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ft_split_spaces.c" beforeDir="false" afterPath="$PROJECT_DIR$/ft_split_spaces.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/instructions.c" beforeDir="false" afterPath="$PROJECT_DIR$/instructions.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lable_handle.c" beforeDir="false" afterPath="$PROJECT_DIR$/lable_handle.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res_test" beforeDir="false" afterPath="$PROJECT_DIR$/res_test" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_translate/test.cor" beforeDir="false" afterPath="$PROJECT_DIR$/test_translate/test.cor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_validation.sh" beforeDir="false" afterPath="$PROJECT_DIR$/test_validation.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tokenize.c" beforeDir="false" afterPath="$PROJECT_DIR$/tokenize.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/valid_arguments.c" beforeDir="false" afterPath="$PROJECT_DIR$/valid_arguments.c" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -82,7 +71,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="asm" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="./champ_test/checker_test_files/valid/Rainbow_dash.s " WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="asm" TARGET_NAME="asm" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="asm" RUN_TARGET_NAME="asm">
+    <configuration name="asm" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="./champ_test/checker_test_files/valid/bee_gees.s" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="asm" TARGET_NAME="asm" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="asm" RUN_TARGET_NAME="asm">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -109,7 +98,7 @@
       <workItem from="1570012784078" duration="3794000" />
       <workItem from="1570042195343" duration="4304000" />
       <workItem from="1570440002167" duration="6412000" />
-      <workItem from="1570450609599" duration="11166000" />
+      <workItem from="1570450609599" duration="14813000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <created>1569590889675</created>
@@ -196,11 +185,6 @@
           <option name="timeStamp" value="97" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/asm.c</url>
-          <line>270</line>
-          <option name="timeStamp" value="98" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/instructions.c</url>
           <line>136</line>
           <option name="timeStamp" value="101" />
@@ -236,15 +220,30 @@
           <option name="timeStamp" value="121" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/asm.c</url>
+          <line>270</line>
+          <option name="timeStamp" value="135" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/instructions.c</url>
-          <line>39</line>
-          <option name="timeStamp" value="124" />
+          <line>130</line>
+          <option name="timeStamp" value="137" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/ft_split_spaces.c</url>
+          <line>118</line>
+          <option name="timeStamp" value="138" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/ft_split_spaces.c</url>
+          <line>80</line>
+          <option name="timeStamp" value="139" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
-        <watch expression="*(char*(*)[5])args" language="ObjectiveC" />
+        <watch expression="*(char*(*)[6])args" language="ObjectiveC" />
         <watch expression="ft_atoi(str++)" language="ObjectiveC" />
         <watch expression="player-&gt;num_col" language="ObjectiveC" />
         <watch expression="player-&gt;num_row" language="ObjectiveC" />
@@ -253,6 +252,7 @@
         <watch expression="g_ins[i_name[i][0]].name[0]" language="ObjectiveC" />
         <watch expression="instr_name[j]" language="ObjectiveC" />
         <watch expression="*(int(*)[5])i_name" language="ObjectiveC" />
+        <watch expression="*(char*(*)[6])res" language="ObjectiveC" />
       </configuration>
     </watches-manager>
   </component>

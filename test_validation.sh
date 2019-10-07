@@ -17,8 +17,8 @@ NC='\033[0m'
 #done
 #rm /Users/aestella/42/corewar/asm/champ_test/checker_test_files/error/*.cor
 #
-#
-#echo "\n${YEL} VALID_ARGS ${NC} \n"
+
+echo "\n${YEL} VALID_ARGS ${NC} \n"
 
 
 for i in $FILES_VAL

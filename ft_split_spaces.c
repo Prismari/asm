@@ -115,6 +115,6 @@ char			**ft_split_argument(char const *s)
 		res[j][i] = '\0';
 		j++;
 	}
-	res[j] = 0;
+	res[j] = NULL;
 	return (res);
 }
