@@ -92,7 +92,7 @@ void		lable_to_int(t_label *lables, t_instruction *instr, int arg_num)
 			i++;
 		if (!(ft_strcmp(&(str_label[i]), tmp->l_name)))
 		{
-			printf("LAble_start [%d], instr_start [%d]\n", tmp->instr->start_bit, instr->start_bit);
+//			printf("LAble_start [%d], instr_start [%d]\n", tmp->instr->start_bit, instr->start_bit);
 			instr->args[arg_num]->data_int = tmp->instr->start_bit - instr->start_bit;
 			//instr->args[arg_num]->data_int = tmp->instr->start_bit;
 		}
@@ -111,14 +111,14 @@ void		check_arg_is_digit(t_player *player)
 	while (instr)
 	{
 		i = 0;
-		ft_printf("instr : %s\n", instr->instr);
+//		ft_printf("instr : %s\n", instr->instr);
 		while (i < instr->count_args)
 		{
 			if (instr->args[i]->type == DIRECT_LABEL || instr->args[i]->type == INDIRECT_LABEL)
 				lable_to_int(player->labels, instr, i);
 			else
 				instr->args[i]->data_int = arg_to_int(instr->args[i]);
-			ft_printf("\t -%8s -> %4d\n", instr->args[i]->data, instr->args[i]->data_int);
+//			ft_printf("\t -%8s -> %4d\n", instr->args[i]->data, instr->args[i]->data_int);
 			i++;
 		}
 		 instr = instr->next;

@@ -35,6 +35,16 @@ typedef struct	s_op
 	short			t_dir_size;
 }				t_op;
 
+static int 		i_name[8][7] = {
+		{15, 1, 14, 10, 13, 2, -1},	//l
+		{4, 6, 16, -1},				//a
+		{11, 5, 3, -1},				//s
+		{7, -1},	                //o
+		{12, -1},					//f
+		{8, -1},					//x
+		{9, -1},					//z
+		{-1}
+};
 
 static t_op		g_ins[16] = {
 	{
@@ -186,6 +196,8 @@ typedef struct		s_tokens
 	int 			data_int;
 }					t_tokens;
 
+
+
 typedef struct		s_instruction
 {
 	char					*instr;
@@ -262,5 +274,6 @@ void			check_dir_label(t_tokens *token, char *name, unsigned short instr);
 void			check_indir(t_tokens *token, char *name, unsigned short instr);
 void			check_indir_label(t_tokens *token, char *name, unsigned short instr);
 void			check_type_arg(t_type	type, int needed_type, t_instruction *instr, int num);
-void 			error_name(char *str, char *name);
+void 			error_name(char *str, char *name, int row);
+void			del_comment(char *line);
 #endif

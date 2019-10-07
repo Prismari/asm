@@ -20,27 +20,45 @@ void	link_lable_to_instr(t_instruction *instr, t_label *lable)
 	}
 }
 
-int 	is_instruction(t_player *player, char *line)
+int		check_instr_name(char *line, int *i_names, t_player *player)
 {
-	int len_token;
 	int i;
-	char *instr;
+	int j;
+	char *instr_name;
 
 	i = 0;
-
-	len_token = search_length_token(player, line);
-	instr = ft_strsub(line, player->num_col, len_token);
-	while (i++ < 16)
-		if (!ft_strcmp(instr, g_ins[i - 1].name))
-			break ;
-	if (i <= 16)
+	while (i_names[i] != -1)
 	{
-		player->num_col += len_token;
-		check_instruction(player, instr, &(line[player->num_col]), i);
-		return (len_token);
-	}
+		j = 0;
+		instr_name = g_ins[i_names[i] - 1].name;
+		while (instr_name[j] && !(is_whitespace(line[player->num_col + j])) && instr_name[j] == line[player->num_col + j])
+			j++;
+		if (instr_name[j] == '\0')
+		{
+			instr_name = ft_strsub(line, 0, j);
+			player->num_col += j;
+			check_instruction(player, instr_name, &(line[player->num_col]), i_names[i]);
+			return (j);
+		}
 
+		i++;
+	}
 	return (0);
+}
+
+int 	is_instruction(t_player *player, char *line)
+{
+	int	i;
+	int j;
+
+	i = 0;
+	j = 0;
+	while (i_name[i][0] != -1 && line[player->num_col] != g_ins[i_name[i][0] - 1].name[0])
+		i++;
+	if (i >= 8)
+		return (0);
+	else
+		return (check_instr_name(line, i_name[i], player));
 }
 
 void	ft_link_new_instr(t_instruction *new_instr, t_player *player)
@@ -112,7 +130,7 @@ void 	check_arg_num(char **args, t_instruction *instr, t_player *player)
 		if (i % 2 == 1)
 			check_separator_char(&separ, &i, args[i], player);
 		if (i - separ >=  g_ins[instr->code_op - 1].args_num)
-			error_name("Invalid parameter count for instruction", instr->instr);
+			error_name("Invalid parameter count for instruction", instr->instr, player->num_row);
 		if (args[i] == NULL)
 			error_file("Syntax error", player->num_col, player->num_row);//TODO: НЕТ ПОДСЧЕТА НОМЕРА ЭЛЕМЕНТА СТРОКИ ДЛЯ ВЫВОДА ОШИБОК
 		if (!(type = know_type(args[i])))
@@ -122,7 +140,7 @@ void 	check_arg_num(char **args, t_instruction *instr, t_player *player)
 		i++;
 	}
 	if (i - separ !=  g_ins[instr->code_op - 1].args_num)
-		error_name("Invalid parameter count for instruction", instr->instr);
+		error_name("Invalid parameter count for instruction", instr->instr, player->num_row);
 }
 
 int 	calculate_size(t_instruction *instr)
@@ -150,9 +168,10 @@ int 	check_arguments(t_player *player, char *arg_line)
 	del_comment(arg_line);
 	args = ft_split_argument(arg_line);
 	if (args == NULL)
-		error_name("No arguments for instruction", player->last_instr->instr);
+		error_name("No arguments for instruction", player->last_instr->instr, player->num_col);
 	else
 	{
+		player->num_col += ft_strlen(arg_line);
 		check_arg_num(args, player->last_instr, player);
 		//args = NULL;
 		player->last_instr->size_exec_code = calculate_size(player->last_instr);

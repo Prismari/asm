@@ -2,7 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/checker" vcs="" />
-    <mapping directory="$PROJECT_DIR$/checker/libft" vcs="" />
+    <mapping directory="$PROJECT_DIR$/checker" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/checker/libft" vcs="Git" />
   </component>
 </project>

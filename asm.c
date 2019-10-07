@@ -44,12 +44,12 @@ void	add_instruction(t_player *player, t_instruction *instr)
 	}
 }
 
-// ВОТ ОТСЮДА НАЧИНАЮ МЕНЯТЬ НЕ ТРОГАЯ ТОКЕНИЗАЦИЮ
 void	search_instruction(t_player *player, char *line)
 {
 	int		len_token;
 
 	len_token = 0;
+	del_comment(line);
 	while (line[player->num_col])
 	{
 		if (is_comment(line[player->num_col]))
@@ -63,19 +63,20 @@ void	search_instruction(t_player *player, char *line)
 			len_token = search_length_token(player, line);
 			if (is_label(line, player, len_token))
 				handling_label(player, line, len_token - 1);
-			else if ((is_instruction(player, line)))
-				;
+			else if (!(is_instruction(player, line)))
+				error_file("Syntax error", player->num_col, player->num_row);
 //			else
 //				error_file("Syntax error", player->num_col, player->num_row);
-			player->num_col += len_token;
+
 		}
 	}
-	if (len_token > 0 && player->last_instr)
+	if (len_token > 0 && player->last_instr && !player->flag_lable_exist)
 	{
 		player->last_instr->start_bit = player->current_bit;
-		printf("[%s] - %d\n", player->last_instr->instr, player->last_instr->start_bit);
+//		printf("[%s] - %d\n", player->last_instr->instr, player->last_instr->start_bit);
 		player->current_bit += player->last_instr->size_exec_code;
 	}
+//	printf("line ~%s~ \n\t row - %3d, col - %3d\n", line, player->num_row, player->num_col);
 }
 
 void	printf_struct(t_player *player)
@@ -272,14 +273,14 @@ void	assemble(int fd, char *file_name)
 	translate_to_bytecode(header);
 	ft_putstr("Writing output program to ");
 	ft_putendl(header->file_name);
-	while (header->instr)
-	{
-		printf("instr = %s\n", header->instr->instr);
-		//printf("size %d\n", header->instr->size_exec_code);
-		printf("start %d\n", header->instr->start_bit);
-		printf("###############################\n");
-		header->instr = header->instr->next;
-	}
+//	while (header->instr)
+//	{
+//		printf("instr = %s\n", header->instr->instr);
+//		//printf("size %d\n", header->instr->size_exec_code);
+//		printf("start %d\n", header->instr->start_bit);
+//		printf("###############################\n");
+//		header->instr = header->instr->next;
+//	}
 }
 
 int	main(int argc, char **argv)

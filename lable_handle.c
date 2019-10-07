@@ -54,8 +54,9 @@ int 	handling_label(t_player *player, char *line, int len)
 //			printf("SKIP\n");
 			skip_tab_space(player, line, SKIP_QUOTE);
 		}
-		else if (is_instruction(player, line))
+		else if (!(is_instruction(player, line)))
 		{
+			error_file("Syntax error", player->num_col, player->num_row);
 //			printf("TOKEN [%s]\n", ft_strsub(line, player->num_col, len));
 			//player->num_col += len;
 //			printf("instr after label\n");
@@ -63,8 +64,8 @@ int 	handling_label(t_player *player, char *line, int len)
 			//ФУНКЦИЯ КОТОРАЯ ЗАПИСЫВАЕТ АРГУМЕНТЫ
 			break ;
 		}
-		else
-			error_file("Syntax error", player->num_col, player->num_row);
+//		else
+//			error_file("Syntax error", player->num_col, player->num_row);
 	}
 	return (0);
 }

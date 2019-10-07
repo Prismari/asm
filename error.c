@@ -24,9 +24,9 @@ void	error_file(char *str, int col, int row)
 	exit(1);
 }
 
-void 	error_name(char *str, char *name)
+void 	error_name(char *str, char *name, int row)
 {
-	ft_printf("%s %s\n", str, name);
+	ft_printf("%s %s [%d]\n", str, name, row);
 	exit(1);
 }
 
