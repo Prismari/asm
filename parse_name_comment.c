@@ -105,7 +105,7 @@ void search_continue(t_player *player, char *line)
 	else if (!player->is_finished_name && !quote)
 	{
 		player->name = ft_strjoin(player->name, line);
-		player->name = ft_strjoin(player->comment, "\n");
+		player->name = ft_strjoin(player->name, "\n");
 	}
 	else if (!player->is_finished_com)
 	{

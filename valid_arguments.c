@@ -95,7 +95,7 @@ void		lable_to_int(t_label *lables, t_instruction *instr, int arg_num, t_player 
 		if (!(ft_strcmp(&(str_label[i]), tmp->l_name)))
 		{
 			if (!tmp->instr)
-				instr->args[arg_num]->data_int = pl->sum_size_exec_code; // TODO: тут надо класть размер всего кода игрока (((
+				instr->args[arg_num]->data_int = pl->sum_size_exec_code - instr->start_bit; // TODO: тут надо класть размер всего кода игрока (((
 			else
 				instr->args[arg_num]->data_int = tmp->instr->start_bit - instr->start_bit;
 
