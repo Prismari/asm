@@ -24,21 +24,21 @@ void	error_file(char *str, int col, int row)
 	exit(1);
 }
 
-void 	error_name(char *str, char *name, int row)
+void 	error_name(char *str, char *name, int row, int col)
 {
-	ft_printf("%s %s [%d]\n", str, name, row);
+	ft_printf("[%d:%d] %s %s\n", row, col, str, name);
 	exit(1);
 }
 
 void	error_type(char *instr, t_type type, int arg)
 {
 	if (type == INDIRECT || type == INDIRECT_LABEL)
-		ft_printf("Invalid parameter %d type indirect for instruction %s \n", arg, instr);
+		ft_printf("Invalid parameter number %d type indirect for instruction %s \n", arg, instr);
 	else if (type == DIRECT || type == DIRECT_LABEL)
-		ft_printf("Invalid parameter %d type direct for instruction %s \n", arg, instr);
+		ft_printf("Invalid parameter number %d type direct for instruction %s \n", arg, instr);
 	else if (type == REGISTER)
-		ft_printf("Invalid parameter %d type register for instruction %s \n", arg, instr);
+		ft_printf("Invalid parameter number %d type register for instruction %s \n", arg, instr);
 	else
-		ft_printf("Invalid parameter %d for instruction %s \n", arg, instr);
+		ft_printf("Invalid parameter number %d for instruction %s \n", arg, instr);
 	exit(1);
 }

@@ -58,7 +58,7 @@ void		check_indir_label(t_tokens *token, char *name, unsigned short ignored)
 	token->size = 2;
 }
 
-int		arg_to_int(t_tokens *arg, t_instruction *instr, int arg_num)
+int		arg_to_int(t_tokens *arg, t_instruction *instr, int arg_num, t_player *player)
 {
 	char	*str;
 	int		i;
@@ -73,7 +73,7 @@ int		arg_to_int(t_tokens *arg, t_instruction *instr, int arg_num)
 		error_type(instr->instr, instr->args[arg_num]->type, arg_num + 1);
 	while (str[i])
 		if (!(isdigit(str[i++])))
-			error("Syntax error"); // TODO: ПРОВЕРИТЬ ФОРМУЛИРОВКУ
+			error_file("Syntax error", player->num_col, player->num_row); // TODO: ПРОВЕРИТЬ ФОРМУЛИРОВКУ
 	if (arg->type != INDIRECT)
 			return (ft_atoi(&(str[1])));
 	return (ft_atoi(str));
@@ -95,7 +95,7 @@ void		lable_to_int(t_label *lables, t_instruction *instr, int arg_num, t_player 
 		if (!(ft_strcmp(&(str_label[i]), tmp->l_name)))
 		{
 			if (!tmp->instr)
-				instr->args[arg_num]->data_int = pl->sum_size_exec_code - instr->start_bit; // TODO: тут надо класть размер всего кода игрока (((
+				instr->args[arg_num]->data_int = pl->sum_size_exec_code - instr->start_bit;
 			else
 				instr->args[arg_num]->data_int = tmp->instr->start_bit - instr->start_bit;
 
@@ -126,7 +126,7 @@ void		check_arg_is_digit(t_player *player)
 
 			else
 			{
-				instr->args[i]->data_int = arg_to_int(instr->args[i], instr, i);
+				instr->args[i]->data_int = arg_to_int(instr->args[i], instr, i, player);
 				if (instr->args[i]->type == REGISTER && (instr->args[i]->data_int < 1 || instr->args[i]->data_int > 99))
 					error_type(instr->instr, instr->args[i]->type, i + 1);
 			}

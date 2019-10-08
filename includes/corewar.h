@@ -274,6 +274,6 @@ void			check_dir_label(t_tokens *token, char *name, unsigned short instr);
 void			check_indir(t_tokens *token, char *name, unsigned short instr);
 void			check_indir_label(t_tokens *token, char *name, unsigned short instr);
 void			check_type_arg(t_type	type, int needed_type, t_instruction *instr, int num);
-void 			error_name(char *str, char *name, int row);
+void 			error_name(char *str, char *name, int row, int col);
 void			del_comment(char *line);
 #endif

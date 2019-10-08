@@ -130,7 +130,7 @@ void 	check_arg_num(char **args, t_instruction *instr, t_player *player)
 		if (i % 2 == 1)
 			check_separator_char(&separ, &i, args[i], player);
 		if (i - separ >=  g_ins[instr->code_op - 1].args_num)
-			error_name("Invalid parameter count for instruction", instr->instr, player->num_row);
+			error_name("Invalid parameter count for instruction", instr->instr, player->num_row, player->num_col);
 		if (args[i] == NULL)
 			error_file("Syntax error", player->num_col, player->num_row);//TODO: НЕТ ПОДСЧЕТА НОМЕРА ЭЛЕМЕНТА СТРОКИ ДЛЯ ВЫВОДА ОШИБОК
 		if (!(type = know_type(args[i])))
@@ -140,7 +140,7 @@ void 	check_arg_num(char **args, t_instruction *instr, t_player *player)
 		i++;
 	}
 	if (i - separ !=  g_ins[instr->code_op - 1].args_num)
-		error_name("Invalid parameter count for instruction", instr->instr, player->num_row);
+		error_name("Invalid parameter count for instruction", instr->instr, player->num_row, player->num_col);
 }
 
 int 	calculate_size(t_instruction *instr)
@@ -168,7 +168,7 @@ int 	check_arguments(t_player *player, char *arg_line)
 	del_comment(arg_line);
 	args = ft_split_argument(arg_line);
 	if (args == NULL)
-		error_name("No arguments for instruction", player->last_instr->instr, player->num_col);
+		error_name("No arguments for instruction", player->last_instr->instr, player->num_col, player->num_row);
 	else
 	{
 		player->num_col += ft_strlen(arg_line);
