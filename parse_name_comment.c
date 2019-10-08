@@ -25,6 +25,7 @@ void	write_name(t_player *player, char *line)
 	{
 		player->is_finished_name = 0;
 		player->name = ft_strdup(&line[player->num_col]);
+		player->name = ft_strjoin(player->name, "\n");
 		return ;
 	}
 	length = tmp - &line[player->num_col];
@@ -52,6 +53,7 @@ void	write_comment(t_player *player, char *line)
 	{
 		player->is_finished_com = 0;
 		player->comment = ft_strdup(&line[player->num_col]);
+		player->comment = ft_strjoin(player->comment, "\n");
 		return ;
 	}
 	length = tmp - &line[player->num_col];

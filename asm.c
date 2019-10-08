@@ -281,19 +281,20 @@ void	assemble(int fd, char *file_name)
 	translate_to_bytecode(header);
 	ft_putstr("Writing output program to ");
 	ft_putendl(header->file_name);
-	while (header->instr)
-	{
-		printf("instr = %s\n", header->instr->instr);
-		//printf("size %d\n", header->instr->size_exec_code);
-		printf("start %d\n", header->instr->start_bit);
-		printf("###############################\n");
-		header->instr = header->instr->next;
-	}
-	while (header->labels)
-	{
-		printf("%s\n", header->labels->l_name);
-		header->labels = header->labels->next;
-	}
+	//printf("%s\n", header->comment);
+	// while (header->instr)
+	// {
+	// 	printf("instr = %s\n", header->instr->instr);
+	// 	//printf("size %d\n", header->instr->size_exec_code);
+	// 	printf("start %d\n", header->instr->start_bit);
+	// 	printf("###############################\n");
+	// 	header->instr = header->instr->next;
+	// }
+	// while (header->labels)
+	// {
+	// 	printf("%s\n", header->labels->l_name);
+	// 	header->labels = header->labels->next;
+	// }
 }
 
 int	main(int argc, char **argv)
