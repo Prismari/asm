@@ -6,7 +6,7 @@
 /*   By: vurrigon <vurrigon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/22 12:03:05 by vurrigon          #+#    #+#             */
-/*   Updated: 2019/10/06 11:38:02 by vurrigon         ###   ########.fr       */
+/*   Updated: 2019/10/08 11:48:26 by vurrigon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ t_player	*init_player(int fd, char *file_name)
 	player->fd = fd;
 	player->num_row = 0;
 	player->num_col = 0;
+	player->is_finished_com = 1;
+	player->is_finished_name = 1;
 	player->instr = NULL;
 	player->last_instr = NULL;
 	player->sum_size_exec_code = 0;

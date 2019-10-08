@@ -6,7 +6,7 @@
 /*   By: vurrigon <vurrigon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 12:29:08 by vurrigon          #+#    #+#             */
-/*   Updated: 2019/10/06 16:15:41 by vurrigon         ###   ########.fr       */
+/*   Updated: 2019/10/08 11:48:09 by vurrigon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@
 # include <sys/stat.h>
 # include <fcntl.h>
 #include <stdio.h>
-# define OFFSET_CMD_NAME 5
-# define OFFSET_CMD_COMMENT 8
 # define QUOTE 1
 # define STOP_BEFORE_QUOTE 1
 # define SKIP_QUOTE 0
@@ -217,6 +215,8 @@ typedef struct		s_player
 	char					*comment;
 	char					*file_name;
 	int 					fd;
+	int						is_finished_name;
+	int						is_finished_com;
 	struct s_instruction	*instr;
 	struct s_instruction	*last_instr;
 	struct s_label			*labels;

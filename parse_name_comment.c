@@ -6,7 +6,7 @@
 /*   By: vurrigon <vurrigon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/22 17:14:23 by vurrigon          #+#    #+#             */
-/*   Updated: 2019/10/06 11:33:38 by vurrigon         ###   ########.fr       */
+/*   Updated: 2019/10/08 12:51:15 by vurrigon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,11 @@ void	write_name(t_player *player, char *line)
 	player->num_col++;
 	tmp = ft_strchr(&line[player->num_col], '"');
 	if (!tmp)
-		error_file("Invalid name", player->num_col + 1, player->num_row);
+	{
+		player->is_finished_name = 0;
+		player->name = ft_strdup(&line[player->num_col]);
+		return ;
+	}
 	length = tmp - &line[player->num_col];
 	if (length > PROG_NAME_LENGTH)
  		error("Champion name too long (Max length 128)");
@@ -45,7 +49,11 @@ void	write_comment(t_player *player, char *line)
 	player->num_col++;
 	tmp = ft_strchr(&line[player->num_col], '"');
 	if (!tmp)
-		error_file("Invalid comment", player->num_col + 1, player->num_row);
+	{
+		player->is_finished_com = 0;
+		player->comment = ft_strdup(&line[player->num_col]);
+		return ;
+	}
 	length = tmp - &line[player->num_col];
 	if (length > COMMENT_LENGTH)
 		error("Champion comment too long (Max length 2048)");
@@ -60,22 +68,53 @@ void	write_comment(t_player *player, char *line)
 
 int		check_command(char *line, t_player *player)
 {	
-	if (!ft_strncmp(line, NAME_CMD_STRING, OFFSET_CMD_NAME) &&
-	(line[OFFSET_CMD_NAME] == '\t' || line[OFFSET_CMD_NAME] == ' ' || line[OFFSET_CMD_NAME] == '"'))
+	int	len_name;
+	int len_comment;
+
+	len_name = ft_strlen(NAME_CMD_STRING);
+	len_comment = ft_strlen(COMMENT_CMD_STRING);
+	if (!ft_strncmp(line, NAME_CMD_STRING, len_name) &&
+	(line[len_name] == '\t' || line[len_name] == ' ' || line[len_name] == '"'))
 	{
-		player->num_col += OFFSET_CMD_NAME;
+		player->num_col += len_name;
 		write_name(player, line);
 		return (1);
 	}
-	else if (!ft_strncmp(line, COMMENT_CMD_STRING, OFFSET_CMD_COMMENT) &&
-	(line[OFFSET_CMD_COMMENT] == '\t' || line[OFFSET_CMD_COMMENT] == ' ' || line[OFFSET_CMD_COMMENT] == '"'))
+	else if (!ft_strncmp(line, COMMENT_CMD_STRING, len_comment) &&
+	(line[len_comment] == '\t' || line[len_comment] == ' ' || line[len_comment] == '"'))
 	{
-		player->num_col += OFFSET_CMD_COMMENT;
+		player->num_col += len_comment;
 		write_comment(player, line);
 		return (1);
 	}
 	return (0);
+}
 
+void search_continue(t_player *player, char *line)
+{
+	char *quote;
+
+	quote = ft_strchr(line, '"');
+	if (!player->is_finished_com && !quote)
+	{
+		player->comment = ft_strjoin(player->comment, line);
+		player->comment = ft_strjoin(player->comment, "\n");
+	}
+	else if (!player->is_finished_name && !quote)
+	{
+		player->name = ft_strjoin(player->name, line);
+		player->name = ft_strjoin(player->comment, "\n");
+	}
+	else if (!player->is_finished_com)
+	{
+		player->comment = ft_strjoin(player->comment, ft_strsub(line, 0, quote - line));
+		player->is_finished_com = 1;
+	}
+	else if (!player->is_finished_name)
+	{
+		player->name = ft_strjoin(player->name, ft_strsub(line, 0, quote - line));
+		player->is_finished_name = 1;
+	}
 }
 
 void	search_comment_name(t_player *player, char *line)
@@ -96,6 +135,14 @@ void	search_comment_name(t_player *player, char *line)
 	}
 }
 
+void	check_len_name_com(t_player *player)
+{
+	if (ft_strlen(player->name) > PROG_NAME_LENGTH)
+		error("Champion name too long (Max length 128)");
+	else if (ft_strlen(player->comment) > COMMENT_LENGTH)
+		error("Champion comment too long (Max length 2048)");
+}
+
 int		check_name_comment(int fd, t_player *player)
 {
 	char	*line;
@@ -103,12 +150,18 @@ int		check_name_comment(int fd, t_player *player)
 	while (get_next_line(fd, &line) == 1)
 	{
 		player->num_row++;
-		search_comment_name(player, line);
-		if (player->comment && player->name)
+		if (!player->is_finished_name || !player->is_finished_com)
+			search_continue(player, line);
+		else
 		{
-			player->num_col = 0;
-			free(line);
-			return (1);
+			search_comment_name(player, line);
+			if (player->comment && player->name && player->is_finished_com && player->is_finished_name)
+			{
+				player->num_col = 0;
+				check_len_name_com(player);
+				free(line);
+				return (1);
+			}
 		}
 		player->num_col = 0;
 		free(line);

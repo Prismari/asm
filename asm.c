@@ -6,7 +6,7 @@
 /*   By: vurrigon <vurrigon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 11:50:59 by vurrigon          #+#    #+#             */
-/*   Updated: 2019/10/06 17:17:44 by vurrigon         ###   ########.fr       */
+/*   Updated: 2019/10/08 13:37:50 by vurrigon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -164,7 +164,10 @@ int		get_code_types(t_tokens **args)
 			args[i]->type = T_DIR;
 		else if (args[i]->type == INDIRECT_LABEL)
 			args[i]->type = T_IND;
-		result += offset * args[i]->type;
+		if (args[i]->type == INDIRECT)
+			result += offset * (args[i]->type - 1);
+		else
+			result += offset * args[i]->type;
 		offset /= 4;
 		i++;
 	}
@@ -180,10 +183,15 @@ void	translate_to_bytecode_arg(t_tokens **args, unsigned char **bytes, int code_
 	while (args[i])
 	{
 		//printf("ARG %s\n", args[i]->data);
-		if (args[i]->type == T_REG || args[i]->type == T_IND || args[i]->type == INDIRECT_LABEL)
+		if (args[i]->type == T_REG)
 		{
 			int32_to_bytecode((*bytes), args[i]->data_int, 1);
 			(*bytes)++;
+		}
+		else if (args[i]->type == T_IND || args[i]->type == INDIRECT_LABEL)
+		{
+			int32_to_bytecode((*bytes), args[i]->data_int, 2);
+			*bytes += 2;
 		}
 		else if (args[i]->type == T_DIR || args[i]->type == DIRECT_LABEL)
 		{
@@ -273,14 +281,19 @@ void	assemble(int fd, char *file_name)
 	translate_to_bytecode(header);
 	ft_putstr("Writing output program to ");
 	ft_putendl(header->file_name);
-//	while (header->instr)
-//	{
-//		printf("instr = %s\n", header->instr->instr);
-//		//printf("size %d\n", header->instr->size_exec_code);
-//		printf("start %d\n", header->instr->start_bit);
-//		printf("###############################\n");
-//		header->instr = header->instr->next;
-//	}
+	while (header->instr)
+	{
+		printf("instr = %s\n", header->instr->instr);
+		//printf("size %d\n", header->instr->size_exec_code);
+		printf("start %d\n", header->instr->start_bit);
+		printf("###############################\n");
+		header->instr = header->instr->next;
+	}
+	while (header->labels)
+	{
+		printf("%s\n", header->labels->l_name);
+		header->labels = header->labels->next;
+	}
 }
 
 int	main(int argc, char **argv)
