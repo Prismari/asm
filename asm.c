@@ -276,25 +276,25 @@ void	assemble(int fd, char *file_name)
 	if (!check_name_comment(fd, header))
 		error("Error reading of name or comment");
 	reading_body_champion(fd, header);
-	check_arg_is_digit(header);
 	calculate_size_exec_code(header);
+	check_arg_is_digit(header);
 	translate_to_bytecode(header);
 	ft_putstr("Writing output program to ");
 	ft_putendl(header->file_name);
-	//printf("%s\n", header->comment);
-	// while (header->instr)
-	// {
-	// 	printf("instr = %s\n", header->instr->instr);
-	// 	//printf("size %d\n", header->instr->size_exec_code);
-	// 	printf("start %d\n", header->instr->start_bit);
-	// 	printf("###############################\n");
-	// 	header->instr = header->instr->next;
-	// }
-	// while (header->labels)
-	// {
-	// 	printf("%s\n", header->labels->l_name);
-	// 	header->labels = header->labels->next;
-	// }
+	printf("%s\n", header->comment);
+	 while (header->instr)
+	 {
+	 	printf("instr = %s\n", header->instr->instr);
+	 	//printf("size %d\n", header->instr->size_exec_code);
+	 	printf("start %d\n", header->instr->start_bit);
+	 	printf("###############################\n");
+	 	header->instr = header->instr->next;
+	 }
+	 while (header->labels)
+	 {
+	 	printf("%s\n", header->labels->l_name);
+	 	header->labels = header->labels->next;
+	 }
 }
 
 int	main(int argc, char **argv)

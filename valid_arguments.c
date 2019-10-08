@@ -79,7 +79,7 @@ int		arg_to_int(t_tokens *arg, t_instruction *instr, int arg_num)
 	return (ft_atoi(str));
 }
 
-void		lable_to_int(t_label *lables, t_instruction *instr, int arg_num)
+void		lable_to_int(t_label *lables, t_instruction *instr, int arg_num, t_player *pl)
 {
 	t_label *tmp;
 	char 	*str_label;
@@ -95,7 +95,7 @@ void		lable_to_int(t_label *lables, t_instruction *instr, int arg_num)
 		if (!(ft_strcmp(&(str_label[i]), tmp->l_name)))
 		{
 			if (!tmp->instr)
-				instr->args[arg_num]->data_int = 0; // TODO: тут надо класть размер всего кода игрока (((
+				instr->args[arg_num]->data_int = pl->sum_size_exec_code; // TODO: тут надо класть размер всего кода игрока (((
 			else
 				instr->args[arg_num]->data_int = tmp->instr->start_bit - instr->start_bit;
 
@@ -122,7 +122,7 @@ void		check_arg_is_digit(t_player *player)
 		while (i < instr->count_args)
 		{
 			if (instr->args[i]->type == DIRECT_LABEL || instr->args[i]->type == INDIRECT_LABEL)
-				lable_to_int(player->labels, instr, i);
+				lable_to_int(player->labels, instr, i, player);
 
 			else
 			{
