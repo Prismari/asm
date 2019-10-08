@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 FILES_ERR=/Users/aestella/42/corewar/asm/champ_test/checker_test_files/error/*.s
 FILES_VAL=/Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/*.s
 FILES_VALID=/Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid2/*.s
@@ -16,31 +18,31 @@ NC='\033[0m'
 #
 #done
 #rm /Users/aestella/42/corewar/asm/champ_test/checker_test_files/error/*.cor
-#
+
 
 echo "\n${YEL} VALID_ARGS ${NC} \n"
 
-
-for i in $FILES_VAL
-do
-  echo "${CYAN}exec test - $i${NC}"
-  echo "${GREEN}Our asm ${NC}"
-./asm $i
-echo "${GREEN}Original${NC}"
-./champ_test/asm $i
-
-done
-rm /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/*.cor
-
 #
-#for c in $FILES_VALID
+#for i in $FILES_VAL
 #do
-#  echo "${CYAN}exec test - $c${NC}"
+#  echo "${CYAN}exec test - $i${NC}"
 #  echo "${GREEN}Our asm ${NC}"
-#./asm $c
+#./asm $i
 #echo "${GREEN}Original${NC}"
-#./champ_test/asm $c
+#./champ_test/asm $i
 #
 #done
+#rm /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/*.cor
+
+
+for c in $FILES_VALID
+do
+  echo "${CYAN}exec test - $c${NC}"
+  echo "${GREEN}Our asm ${NC}"
+./asm $c
+echo "${GREEN}Original${NC}"
+./champ_test/asm $c
+
+done
 
 rm /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid2/*.cor
