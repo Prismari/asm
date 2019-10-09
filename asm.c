@@ -267,6 +267,20 @@ void	calculate_size_exec_code(t_player *player)
 	player->sum_size_exec_code = size;
 }
 
+void 	check_end_file(t_player *player)
+{
+	char buf[2];
+	int lpos;
+
+	lpos = lseek(player->fd, 0, SEEK_END);
+	lseek(player->fd, lpos - 1, SEEK_SET);
+	//printf("%d\n", lpos);
+	read(player->fd, buf, 1);
+	//printf("%s\n", buf);
+	if (*buf != '\n')
+		error("Syntax error - no newline at the end");
+}
+
 void	assemble(int fd, char *file_name)
 {
 	t_player *header;
@@ -278,6 +292,7 @@ void	assemble(int fd, char *file_name)
 	reading_body_champion(fd, header);
 	calculate_size_exec_code(header);
 	check_arg_is_digit(header);
+	check_end_file(header);
 	translate_to_bytecode(header);
 	ft_putstr("Writing output program to ");
 	ft_putendl(header->file_name);
