@@ -6,7 +6,7 @@
 /*   By: vurrigon <vurrigon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 12:29:08 by vurrigon          #+#    #+#             */
-/*   Updated: 2019/10/08 11:48:09 by vurrigon         ###   ########.fr       */
+/*   Updated: 2019/10/09 17:55:43 by vurrigon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -276,4 +276,9 @@ void			check_indir_label(t_tokens *token, char *name, unsigned short instr);
 void			check_type_arg(t_type	type, int needed_type, t_instruction *instr, int num);
 void 			error_name(char *str, char *name, int row, int col);
 void			del_comment(char *line);
+
+/*
+**	Free asm
+*/
+void	free_asm(t_player *player);
 #endif

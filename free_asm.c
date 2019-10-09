@@ -1,0 +1,46 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   free_asm.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vurrigon <vurrigon@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/09 17:48:59 by vurrigon          #+#    #+#             */
+/*   Updated: 2019/10/09 18:06:16 by vurrigon         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "includes/corewar.h"
+
+static void free_arg_asm(t_tokens **args)
+{
+	int	i;
+
+	i = 0;
+	while (args[i])
+	{
+		free(args[i]->data);
+		free(args[i++]);
+	}
+	free(args);
+}
+
+static void	free_instr_asm(t_instruction *instr)
+{
+	t_instruction	*tmp;
+
+	while (instr)
+	{
+		tmp = instr;
+		free_arg_asm(instr->args);
+		instr = instr->next;
+		free(tmp);
+	}
+}
+
+void	free_asm(t_player *player)
+{
+	free(player->name);
+	free(player->comment);
+	free_instr_asm(player->instr);
+}

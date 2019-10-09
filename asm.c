@@ -6,7 +6,7 @@
 /*   By: vurrigon <vurrigon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 11:50:59 by vurrigon          #+#    #+#             */
-/*   Updated: 2019/10/08 13:37:50 by vurrigon         ###   ########.fr       */
+/*   Updated: 2019/10/09 17:50:59 by vurrigon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -333,6 +333,7 @@ void	assemble(int fd, char *file_name)
 	translate_to_bytecode(header);
 	ft_putstr("Writing output program to ");
 	ft_putendl(header->file_name);
+	free_asm(header);
 	//printf("[%s]\n", header->name);
 	 // while (header->instr)
 	 // {

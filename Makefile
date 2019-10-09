@@ -6,7 +6,7 @@
 #    By: vurrigon <vurrigon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/15 17:18:06 by djast             #+#    #+#              #
-#    Updated: 2019/09/25 15:31:05 by vurrigon         ###   ########.fr        #
+#    Updated: 2019/10/09 17:56:11 by vurrigon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,10 @@ COMMON_FILES =	asm.c \
                 tokenize.c \
                 utils.c \
                 lable_handle.c \
-                instructions.c ft_split_spaces.c valid_arguments.c
+                instructions.c \
+                ft_split_spaces.c \
+                valid_arguments.c \
+                free_asm.c
 
 SRC_DIRECTORY = ./
 SRC_COMMON_FILES = $(addprefix $(SRC_DIRECTORY), $(COMMON_FILES))

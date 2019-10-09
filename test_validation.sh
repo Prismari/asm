@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-FILES_ERR=/Users/aestella/42/corewar/asm/champ_test/checker_test_files/error/*.s
-FILES_VAL=/Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/*.s
-FILES_VALID=/Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid2/*.s
+FILES_ERR=champ_test/checker_test_files/error/*.s
+FILES_VAL=champ_test/checker_test_files/valid/*.s
+FILES_VALID=champ_test/checker_test_files/valid2/*.s
 CYAN='\033[0;36m'
 GREEN='\033[0;32m'
 YEL='\033[1;32m'
@@ -17,7 +17,7 @@ echo "${GREEN}Original${NC}"
 ./champ_test/asm $f
 
 done
-rm /Users/aestella/42/corewar/asm/champ_test/checker_test_files/error/*.cor
+rm champ_test/checker_test_files/error/*.cor
 
 
 echo "\n${YEL} VALID_ARGS ${NC} \n"

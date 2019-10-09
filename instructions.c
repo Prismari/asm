@@ -182,5 +182,6 @@ int 	check_arguments(t_player *player, char *arg_line)
 //		printf("arg - %s\n", player->last_instr->args[i]->data);
 //		i++;
 //	}
+	free(args);
 	return (0);
 }
