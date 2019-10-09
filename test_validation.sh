@@ -34,7 +34,7 @@ echo "\n${YEL} VALID_ARGS ${NC} \n"
 #done
 #rm /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/*.cor
 
-
+#
 #for c in $FILES_VALID
 #do
 #  echo "${CYAN}exec test - $c${NC}"

@@ -267,18 +267,55 @@ void	calculate_size_exec_code(t_player *player)
 	player->sum_size_exec_code = size;
 }
 
+void	check_comment(int fd, int lpos, char *buf)
+{
+	while (lpos-- > 0)
+	{
+		lseek(fd, lpos, SEEK_SET);
+		read(fd, buf, 1);
+//		printf("%s\n", buf);
+		if (*buf == COMMENT_CHAR || *buf == ALT_COMMENT_CHAR)
+		{
+			lseek(fd, --lpos, SEEK_SET);
+			read(fd, buf, 1);
+			if (*buf == '\n')
+				return;
+			else
+				error("Syntax error - no newline at the end");
+		}
+		if (*buf == '\n')
+			error("Syntax error - no newline at the end");
+	}
+
+}
+
 void 	check_end_file(t_player *player)
 {
 	char buf[2];
 	int lpos;
+	int end;
 
-	lpos = lseek(player->fd, 0, SEEK_END);
-	lseek(player->fd, lpos - 1, SEEK_SET);
+	end = lseek(player->fd, 0, SEEK_END);
+	lpos = end;
 	//printf("%d\n", lpos);
-	read(player->fd, buf, 1);
-	//printf("%s\n", buf);
-	if (*buf != '\n')
-		error("Syntax error - no newline at the end");
+	if (*buf == '\n')
+		return;
+	while (lpos-- > 0 )
+	{
+		lseek(player->fd, lpos, SEEK_SET);
+		read(player->fd, buf, 1);
+//		printf("%s\n", buf);
+		if (is_whitespace(*buf))
+			continue;
+		else if(*buf == '\n')
+			return;
+		else
+		{
+			check_comment(player->fd, lpos, buf);
+			return;
+		}
+	}
+//	error("Syntax error - no newline at the end");
 }
 
 void	assemble(int fd, char *file_name)
@@ -287,7 +324,7 @@ void	assemble(int fd, char *file_name)
 
 	if (!(header = init_player(fd, file_name)))
 		error("Error allocating header memory");
-	if (!check_name_comment(fd, header))
+	if (!check_name_comment(fd, header)) //TODO : сделать проверку - внутри кавычек могут быть переносы строки + после коммента должен быть перенос строки - не может быть лейблов и команд
 		error("Error reading of name or comment");
 	reading_body_champion(fd, header);
 	calculate_size_exec_code(header);
