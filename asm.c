@@ -6,7 +6,7 @@
 /*   By: vurrigon <vurrigon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 11:50:59 by vurrigon          #+#    #+#             */
-/*   Updated: 2019/10/16 16:56:12 by vurrigon         ###   ########.fr       */
+/*   Updated: 2019/10/16 17:02:49 by vurrigon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -254,7 +254,6 @@ void	translate_to_bytecode(t_player *player)
 	int32_to_bytecode(bytes, player->sum_size_exec_code, 4);
 	bytes += 4;
 	ft_memcpy(bytes, player->comment, ft_strlen(player->comment));
-	ft_bzero(bytes + ft_strlen(player->comment), PROG_NAME_LENGTH - ft_strlen(player->comment));
 	bytes += COMMENT_LENGTH;
 	int32_to_bytecode(bytes, 0, 4);
 	bytes += 4;
