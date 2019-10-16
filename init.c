@@ -6,7 +6,7 @@
 /*   By: vurrigon <vurrigon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/22 12:03:05 by vurrigon          #+#    #+#             */
-/*   Updated: 2019/10/08 11:48:26 by vurrigon         ###   ########.fr       */
+/*   Updated: 2019/10/16 16:42:05 by vurrigon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ t_instruction	*init_instr(char *instr)
 	return (op);
 }
 
-t_label	*init_lable(char *label)
+t_label	*init_label(char *label)
 {
 	t_label *new;
 	if (!(new = malloc(sizeof(t_label))))

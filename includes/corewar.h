@@ -6,7 +6,7 @@
 /*   By: vurrigon <vurrigon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 12:29:08 by vurrigon          #+#    #+#             */
-/*   Updated: 2019/10/09 17:55:43 by vurrigon         ###   ########.fr       */
+/*   Updated: 2019/10/16 15:31:29 by vurrigon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -252,7 +252,7 @@ int				is_comment(int chr);
 t_player		*init_player(int fd, char *file_name);
 int				is_whitespace(int c);
 t_instruction	*init_instr(char *label); //??????
-t_label			*init_lable(char *label);
+t_label			*init_label(char *label);
 t_tokens		*init_tokens(t_type type);
 int				check_name_comment(int fd, t_player *player);
 void			check_arg_is_digit(t_player *player);
@@ -281,4 +281,5 @@ void			del_comment(char *line);
 **	Free asm
 */
 void	free_asm(t_player *player);
+void	free_split(char **str); //Есть в DASM
 #endif

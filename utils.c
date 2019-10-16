@@ -6,7 +6,7 @@
 /*   By: vurrigon <vurrigon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 16:40:19 by vurrigon          #+#    #+#             */
-/*   Updated: 2019/09/24 11:59:38 by vurrigon         ###   ########.fr       */
+/*   Updated: 2019/10/16 15:31:05 by vurrigon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,18 @@ int	skip_tab_space(t_player *player, char *line, int flag)
 			return (-1);
 	}
 	return (0);
+}
+
+/*
+** Есть в DASM
+*/
+
+void	free_split(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		free(str[i++]);
+	free(str);
 }

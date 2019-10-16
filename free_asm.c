@@ -6,7 +6,7 @@
 /*   By: vurrigon <vurrigon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 17:48:59 by vurrigon          #+#    #+#             */
-/*   Updated: 2019/10/09 18:06:16 by vurrigon         ###   ########.fr       */
+/*   Updated: 2019/10/16 15:36:38 by vurrigon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,23 @@ static void	free_instr_asm(t_instruction *instr)
 		tmp = instr;
 		free_arg_asm(instr->args);
 		instr = instr->next;
+		free(tmp->instr);
 		free(tmp);
 	}
+}
+
+static	void free_labels(t_label *labels)
+{
+	t_label *tmp;
+
+	while (labels)
+	{
+		tmp = labels;
+		labels = labels->next;
+		free(tmp->l_name);
+		free(tmp);
+	}
+
 }
 
 void	free_asm(t_player *player)
@@ -43,4 +58,7 @@ void	free_asm(t_player *player)
 	free(player->name);
 	free(player->comment);
 	free_instr_asm(player->instr);
+	free_labels(player->labels);
+	free(player->file_name);
+	free(player);
 }
