@@ -18,7 +18,7 @@ void	write_name(t_player *player, char *line)
 	int		length;
 
 	if (skip_tab_space(player, line, STOP_BEFORE_QUOTE) != QUOTE)
-		error_file("Syntax error", player->num_col + 1, player->num_row);
+		error_file("Syntax error", player->num_row, player->num_col + 1);
 	player->num_col++;
 	tmp = ft_strchr(&line[player->num_col], '"');
 	if (!tmp)
@@ -28,13 +28,15 @@ void	write_name(t_player *player, char *line)
 		player->name = ft_strjoin(player->name, "\n");
 		return ;
 	}
+	else if (player->name != NULL)
+		error_file("Syntax error", player->num_row, player->num_col + 1);
 	length = tmp - &line[player->num_col];
 	if (length > PROG_NAME_LENGTH)
  		error("Champion name too long (Max length 128)");
  	tmp = &line[player->num_col];
  	player->num_col += length + 1;
  	if (skip_tab_space(player, line, STOP_BEFORE_QUOTE) && !is_comment(line[player->num_col]))
- 		error_file("Syntax error", player->num_col + 1, player->num_row);
+ 		error_file("Syntax error", player->num_row, player->num_col + 1);
  	player->name = ft_strndup(tmp, length);
 	line += player->num_col;
 // 	printf("[%s]\n", player->name);
@@ -46,7 +48,7 @@ void	write_comment(t_player *player, char *line)
 	int		length;
 
 	if (skip_tab_space(player, line, STOP_BEFORE_QUOTE) != QUOTE)
-		error_file("Syntax error", player->num_col + 1, player->num_row);
+		error_file("Syntax error", player->num_row, player->num_col + 1);
 	player->num_col++;
 	tmp = ft_strchr(&line[player->num_col], '"');
 	if (!tmp)
@@ -56,13 +58,15 @@ void	write_comment(t_player *player, char *line)
 		player->comment = ft_strjoin(player->comment, "\n");
 		return ;
 	}
+	else if (player->comment != NULL)
+		error_file("Syntax error", player->num_row, player->num_col + 1);
 	length = tmp - &line[player->num_col];
 	if (length > COMMENT_LENGTH)
 		error("Champion comment too long (Max length 2048)");
  	tmp = &line[player->num_col];
  	player->num_col += length + 1;
  	if (skip_tab_space(player, line, STOP_BEFORE_QUOTE) && !is_comment(line[player->num_col]))
- 		error_file("Syntax error", player->num_col + 1, player->num_row);
+ 		error_file("Syntax error", player->num_row, player->num_col + 1);
  	player->comment = ft_strndup(tmp, length);
 	line += player->num_col;
  	//printf("[%s]\n", player->comment);
@@ -107,7 +111,7 @@ void check_after_quote(t_player *player, char *line)
 		if (is_comment(line[i]))
 			break;
 		if (line[i] != '\0')
-			error_file("Syntax error", player->num_col + i, player->num_row);
+			error_file("Syntax error", player->num_row, player->num_col + i + 1);
 		i++;
 	}
 }
@@ -155,11 +159,11 @@ void	search_comment_name(t_player *player, char *line)
 		else if (line[player->num_col] == '.')
 		{
 			if (!check_command(line, player))
-				error_file("Unknown command", player->num_col + 1, player->num_row);
+				error_file("Unknown command", player->num_row, player->num_col + 1);
 			return ;
 		}
 		else if (line[player->num_col] != ' ' && line[player->num_col] != '\t')
-			error_file("Syntax error", player->num_col + 1, player->num_row);		
+			error_file("Syntax error", player->num_row, player->num_col + 1);
 		player->num_col++;
 	}
 }

@@ -107,7 +107,7 @@ void	del_comment(char *line)
 void	check_separator_char(int *sep, int *i, char *c, t_player *player)
 {
 	if (*c != SEPARATOR_CHAR)
-		error_file("Syntax error", player->num_col, player->num_row);
+		error_file("Syntax error", player->num_row,  player->num_col);
 	else
 	{
 		free(c);
@@ -130,7 +130,7 @@ void 	check_arg_num(char **args, t_instruction *instr, t_player *player)
 		if (i % 2 == 1)
 			check_separator_char(&separ, &i, args[i], player);
 		if (i - separ >=  g_ins[instr->code_op - 1].args_num)
-			error_name("Invalid parameter count for instruction", instr->instr, player->num_row, player->num_col);
+			error_name("Invalid parameter count for instruction", instr->instr, player->num_row, player->num_col - 1);
 		if (args[i] == NULL)
 			error_file("Syntax error", player->num_col, player->num_row);//TODO: НЕТ ПОДСЧЕТА НОМЕРА ЭЛЕМЕНТА СТРОКИ ДЛЯ ВЫВОДА ОШИБОК
 		if (!(type = know_type(args[i])))

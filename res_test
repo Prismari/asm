@@ -1,364 +1,200 @@
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/Asombra.s[0m
+[0;36mexec test - champ_test/checker_test_files/error/comment_len_2049.s[0m
 [0;32mOur asm [0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/Asombra.cor
+Champion comment too long (Max length 2048)
 [0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/Asombra.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/Car.s[0m
+Champion comment too long (Max length 2048)
+[0;36mexec test - champ_test/checker_test_files/error/direct_param_no_value.s[0m
 [0;32mOur asm [0m
-[5:2] Syntax error
+Invalid parameter number 1 type direct for instruction live 
 [0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/Car.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/Douceur_power.s[0m
+Lexical error at [13:11]
+[0;36mexec test - champ_test/checker_test_files/error/four_arg_malloc_free_pointer_error.s[0m
 [0;32mOur asm [0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/Douceur_power.cor
+[11:19] Invalid parameter count for instruction live
 [0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/Douceur_power.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/Explosive_Kitty.s[0m
+Invalid parameter 1 type indirect for instruction live
+[0;36mexec test - champ_test/checker_test_files/error/header_double_comments.s[0m
 [0;32mOur asm [0m
-[2:11] Invalid comment
+[6:1] Syntax error
 [0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/Explosive_Kitty.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/Gagnant.s[0m
+Syntax error at token [TOKEN][002:001] COMMAND_COMMENT ".comment"
+[0;36mexec test - champ_test/checker_test_files/error/header_double_names.s[0m
 [0;32mOur asm [0m
-[4:2] Syntax error
+[6:1] Syntax error
 [0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/Gagnant.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/Kappa.s[0m
+Syntax error at token [TOKEN][002:001] COMMAND_NAME ".name"
+[0;36mexec test - champ_test/checker_test_files/error/header_max_comment.s[0m
 [0;32mOur asm [0m
-[60:2] Syntax error
+Champion comment too long (Max length 2048)
 [0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/Kappa.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/Kittystrophic.s[0m
+Champion comment too long (Max length 2048)
+[0;36mexec test - champ_test/checker_test_files/error/header_max_name.s[0m
 [0;32mOur asm [0m
-[2:11] Invalid comment
+Champion name too long (Max length 128)
 [0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/Kittystrophic.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/Machine-gun.s[0m
+Champion name too long (Max length 128)
+[0;36mexec test - champ_test/checker_test_files/error/header_nl.s[0m
 [0;32mOur asm [0m
-[4:7] Syntax error
+[6:7] Syntax error
 [0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/Machine-gun.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/MarineKing.s[0m
+Syntax error at token [TOKEN][006:008] INSTRUCTION "sdfs"
+[0;36mexec test - champ_test/checker_test_files/error/header_nl_unclosed.s[0m
 [0;32mOur asm [0m
-[16:1] Syntax error
+[5:10] Syntax error
 [0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/MarineKing.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/Misaka_Mikoto.s[0m
+Lexical error at [5:11]
+[0;36mexec test - champ_test/checker_test_files/error/header_null_name.s[0m
 [0;32mOur asm [0m
-[2:11] Invalid comment
+[3:1] Syntax error
 [0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/Misaka_Mikoto.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/Octobre_Rouge_V4.2.s[0m
+Syntax error at token [TOKEN][003:001] INSTRUCTION "live"
+[0;36mexec test - champ_test/checker_test_files/error/label_contain_badchar.s[0m
 [0;32mOur asm [0m
-[4:2] Syntax error
+[9:1] Invalid label name
 [0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/Octobre_Rouge_V4.2.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/Rainbow_dash.s[0m
+Lexical error at [9:6]
+[0;36mexec test - champ_test/checker_test_files/error/label_error_1.s[0m
 [0;32mOur asm [0m
-[7:1] Syntax error
+[7:0] Syntax error
 [0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/Rainbow_dash.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/Survivor.s[0m
+Lexical error at [7:6]
+[0;36mexec test - champ_test/checker_test_files/error/label_error_2.s[0m
 [0;32mOur asm [0m
-[4:1] Syntax error
+[7:0] Syntax error
 [0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/Survivor.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/THUNDER.s[0m
+Lexical error at [7:6]
+[0;36mexec test - champ_test/checker_test_files/error/label_error_3.s[0m
 [0;32mOur asm [0m
-[5:1] Syntax error
+[7:6] Syntax error
 [0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/THUNDER.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/Wall.s[0m
+Syntax error at token [TOKEN][008:001] ENDLINE
+[0;36mexec test - champ_test/checker_test_files/error/label_invalidname.s[0m
 [0;32mOur asm [0m
-[5:1] Syntax error
+[4:1] Invalid label name
 [0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/Wall.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/aff_no_OCP.s[0m
+Lexical error at [4:1]
+[0;36mexec test - champ_test/checker_test_files/error/label_noending.s[0m
 [0;32mOur asm [0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/aff_no_OCP.cor
+[4:0] Syntax error
 [0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/aff_no_OCP.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/barriere.s[0m
+Syntax error at token [TOKEN][004:006] ENDLINE
+[0;36mexec test - champ_test/checker_test_files/error/label_space.s[0m
 [0;32mOur asm [0m
-[4:2] Syntax error
+[4:0] Syntax error
 [0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/barriere.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/bee_gees.s[0m
+Syntax error at token [TOKEN][004:007] LABEL "second:"
+[0;36mexec test - champ_test/checker_test_files/error/label_without_double_dot_at_the_end.s[0m
 [0;32mOur asm [0m
-[4:52] Syntax error
+[8:0] Syntax error
 [0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/bee_gees.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/bigzork.s[0m
+Syntax error at token [TOKEN][011:001] ENDLINE
+[0;36mexec test - champ_test/checker_test_files/error/name_len_129.s[0m
 [0;32mOur asm [0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/bigzork.cor
+Champion name too long (Max length 128)
 [0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/bigzork.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/casimir.s[0m
+Champion name too long (Max length 128)
+[0;36mexec test - champ_test/checker_test_files/error/no_endline.s[0m
 [0;32mOur asm [0m
-[4:1] Syntax error
+Syntax error - no newline at the end
 [0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/casimir.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/champ.s[0m
+Syntax error - unexpected end of input (Perhaps you forgot to end with a newline ?)
+[0;36mexec test - champ_test/checker_test_files/error/op_double_operation_on_single_line.s[0m
 [0;32mOur asm [0m
-[17:1] Syntax error
+[4:15] Syntax error
 [0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/champ.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/comment_len_2048.s[0m
+Syntax error at token [TOKEN][004:009] INSTRUCTION "live"
+[0;36mexec test - champ_test/checker_test_files/error/op_extra.s[0m
 [0;32mOur asm [0m
-[2:11] Invalid comment
+[5:24] Syntax error
 [0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/comment_len_2048.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/corelol.s[0m
-[0;32mOur asm [0m
-[5:1] Syntax error
-[0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/corelol.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/darksasuke.s[0m
-[0;32mOur asm [0m
-[4:1] Syntax error
-[0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/darksasuke.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/doge.s[0m
-[0;32mOur asm [0m
-[4:1] Syntax error
-[0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/doge.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/dubo.s[0m
-[0;32mOur asm [0m
-[15:1] Syntax error
-[0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/dubo.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/empty_namecomment.s[0m
-[0;32mOur asm [0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/empty_namecomment.cor
-[0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/empty_namecomment.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/end_comment.s[0m
-[0;32mOur asm [0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/end_comment.cor
-[0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/end_comment.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/ex.s[0m
+Syntax error at token [TOKEN][005:021] INSTRUCTION "adfa"
+[0;36mexec test - champ_test/checker_test_files/error/op_extreme.s[0m
 [0;32mOur asm [0m
 [4:4] Syntax error
 [0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/ex.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/ex1.s[0m
+Lexical error at [4:5]
+[0;36mexec test - champ_test/checker_test_files/error/op_no_code.s[0m
 [0;32mOur asm [0m
-[4:4] Syntax error
+[2:0] Syntax error
 [0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/ex1.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/flipped_name_comment.s[0m
+Syntax error at token [TOKEN][003:001] END "(null)"
+[0;36mexec test - champ_test/checker_test_files/error/param_badtypes.s[0m
 [0;32mOur asm [0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/flipped_name_comment.cor
+Invalid parameter number 0 type indirect for instruction live 
 [0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/flipped_name_comment.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/fluttershy.s[0m
+Invalid parameter 0 type indirect for instruction live
+[0;36mexec test - champ_test/checker_test_files/error/param_commas.s[0m
 [0;32mOur asm [0m
-[8:1] Syntax error
+[4:16] Invalid parameter count for instruction xor
 [0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/fluttershy.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/gateau.s[0m
+Syntax error at token [TOKEN][006:020] ENDLINE
+[0;36mexec test - champ_test/checker_test_files/error/param_direct_no_sp.s[0m
 [0;32mOur asm [0m
-[5:1] Syntax error
+Invalid parameter number 1 for instruction live 
 [0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/gateau.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/gedeon.s[0m
+Syntax error at token [TOKEN][004:008] SEPARATOR ","
+[0;36mexec test - champ_test/checker_test_files/error/param_direct_no_value.s[0m
 [0;32mOur asm [0m
-[5:1] Syntax error
+Invalid parameter number 1 type direct for instruction live 
 [0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/gedeon.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/hash_and_tab_at_EOF.s[0m
+Lexical error at [13:11]
+[0;36mexec test - champ_test/checker_test_files/error/param_double_commas.s[0m
 [0;32mOur asm [0m
-[11:5] Syntax error
+[5:20] Invalid parameter count for instruction sti
 [0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/hash_and_tab_at_EOF.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/hash_at_header.s[0m
+Syntax error at token [TOKEN][005:021] ENDLINE
+[0;36mexec test - champ_test/checker_test_files/error/param_extra2.s[0m
 [0;32mOur asm [0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/hash_at_header.cor
+[6:18] Syntax error
 [0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/hash_at_header.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/helltrain.s[0m
+Syntax error at token [TOKEN][006:013] INSTRUCTION "aaa"
+[0;36mexec test - champ_test/checker_test_files/error/param_mt_3.s[0m
 [0;32mOur asm [0m
-[8:1] Syntax error
+[11:19] Invalid parameter count for instruction live
 [0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/helltrain.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/jinx.s[0m
+Invalid parameter 1 type indirect for instruction live
+[0;36mexec test - champ_test/checker_test_files/error/param_mt_r99.s[0m
 [0;32mOur asm [0m
-[5:1] Syntax error
+Invalid parameter number 1 type register for instruction and 
 [0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/jinx.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/jumper.s[0m
+Syntax error at token [TOKEN][006:007] INSTRUCTION "r101"
+[0;36mexec test - champ_test/checker_test_files/error/param_nonexistent_label.s[0m
 [0;32mOur asm [0m
-[6:8] Syntax error
+Lable not exist
 [0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/jumper.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/justin_bee.s[0m
+No such label truc while attempting to dereference token [TOKEN][004:009] INDIRECT_LABEL ":truc"
+[0;36mexec test - champ_test/checker_test_files/error/param_plus_minus.s[0m
 [0;32mOur asm [0m
-[5:1] Syntax error
+[8:0] Syntax error
 [0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/justin_bee.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/littlepuppy.s[0m
+Lexical error at [7:14]
+[0;36mexec test - champ_test/checker_test_files/error/param_specialchars.s[0m
 [0;32mOur asm [0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/littlepuppy.cor
+[4:14] Invalid parameter count for instruction sti
 [0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/littlepuppy.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/live.s[0m
+Lexical error at [4:13]
+[0;36mexec test - champ_test/checker_test_files/error/space_before_name.s[0m
 [0;32mOur asm [0m
-[4:5] Syntax error
+Writing output program to champ_test/checker_test_files/error/space_before_name.cor
 [0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/live.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/loose.s[0m
+Writing output program to champ_test/checker_test_files/error/space_before_name.cor
+[0;36mexec test - champ_test/checker_test_files/error/zother_1.s[0m
 [0;32mOur asm [0m
-[5:1] Syntax error
+[3:1] Syntax error
 [0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/loose.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/mandragore.s[0m
+Syntax error at token [TOKEN][003:001] INDIRECT "42"
+[0;36mexec test - champ_test/checker_test_files/error/zother_2.s[0m
 [0;32mOur asm [0m
-[5:1] Syntax error
+[1:2] Syntax error
 [0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/mandragore.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/maxidef.s[0m
+Syntax error at token [TOKEN][002:001] END "(null)"
+[0;36mexec test - champ_test/checker_test_files/error/zother_3.s[0m
 [0;32mOur asm [0m
-[4:6] Syntax error
+[1:4] Syntax error
 [0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/maxidef.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/meowluigi.s[0m
+Syntax error at token [TOKEN][004:001] END "(null)"
+[0;36mexec test - champ_test/checker_test_files/error/zother_4.s[0m
 [0;32mOur asm [0m
-[5:1] Syntax error
+[4:3] Syntax error
 [0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/meowluigi.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/mise_a_jour_windows95.s[0m
-[0;32mOur asm [0m
-Syntax error
-[0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/mise_a_jour_windows95.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/mortel.s[0m
-[0;32mOur asm [0m
-[4:7] Syntax error
-[0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/mortel.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/name_len_128.s[0m
-[0;32mOur asm [0m
-[4:5] Syntax error
-[0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/name_len_128.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/neg_indirect_error.s[0m
-[0;32mOur asm [0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/neg_indirect_error.cor
-[0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/neg_indirect_error.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/nl_at_header.s[0m
-[0;32mOur asm [0m
-[1:8] Invalid name
-[0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/nl_at_header.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/nl_at_header_flipped.s[0m
-[0;32mOur asm [0m
-[1:11] Invalid comment
-[0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/nl_at_header_flipped.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/no_space_between_op_and_param.s[0m
-[0;32mOur asm [0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/no_space_between_op_and_param.cor
-[0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/no_space_between_op_and_param.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/overwatch.s[0m
-[0;32mOur asm [0m
-[12:1] Syntax error
-[0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/overwatch.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/run_Kitty_RUN.s[0m
-[0;32mOur asm [0m
-[2:11] Invalid comment
-[0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/run_Kitty_RUN.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/salamahenagalabadoun.s[0m
-[0;32mOur asm [0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/salamahenagalabadoun.cor
-[0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/salamahenagalabadoun.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/sam_2.0.s[0m
-[0;32mOur asm [0m
-[17:1] Syntax error
-[0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/sam_2.0.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/skynet.s[0m
-[0;32mOur asm [0m
-[5:1] Syntax error
-[0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/skynet.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/slider2.s[0m
-[0;32mOur asm [0m
-[4:2] Syntax error
-[0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/slider2.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/sq_at_header.s[0m
-[0;32mOur asm [0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/sq_at_header.cor
-[0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/sq_at_header.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/tab_at_end_of_file.s[0m
-[0;32mOur asm [0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/tab_at_end_of_file.cor
-[0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/tab_at_end_of_file.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/terminator.s[0m
-[0;32mOur asm [0m
-[5:2] Syntax error
-[0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/terminator.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/toto.s[0m
-[0;32mOur asm [0m
-[9:2] Syntax error
-[0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/toto.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/turtle.s[0m
-[0;32mOur asm [0m
-[5:1] Syntax error
-[0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/turtle.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/ultima.s[0m
-[0;32mOur asm [0m
-[3:11] Invalid comment
-[0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/ultima.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/ultimate-surrender.s[0m
-[0;32mOur asm [0m
-[426:39] Syntax error
-[0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/ultimate-surrender.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/weirdest_error_ever.s[0m
-[0;32mOur asm [0m
-[11:4] Syntax error
-[0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/weirdest_error_ever.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/youforkmytralala.s[0m
-[0;32mOur asm [0m
-[40:1] Syntax error
-[0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/youforkmytralala.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/zork.s[0m
-[0;32mOur asm [0m
-[4:5] Syntax error
-[0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/zork.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/zzz42.s[0m
-[0;32mOur asm [0m
-[4:10] Syntax error
-[0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/zzz42.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/zzzVarimathras.s[0m
-[0;32mOur asm [0m
-[5:1] Syntax error
-[0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/zzzVarimathras.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/zzz_honeybadger.s[0m
-[0;32mOur asm [0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/zzz_honeybadger.cor
-[0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/zzz_honeybadger.cor
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/zzzbig_feet.s[0m
-[0;32mOur asm [0m
-[0;32mOriginal[0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/valid/zzzbig_feet.cor
+Syntax error at token [TOKEN][004:003] INSTRUCTION "t"

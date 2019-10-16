@@ -64,7 +64,7 @@ void	search_instruction(t_player *player, char *line)
 			if (is_label(line, player, len_token))
 				handling_label(player, line, len_token - 1);
 			else if (!(is_instruction(player, line)))
-				error_file("Syntax error", player->num_col, player->num_row);
+				error_file("Syntax error", player->num_row, player->num_col);
 //			else
 //				error_file("Syntax error", player->num_col, player->num_row);
 

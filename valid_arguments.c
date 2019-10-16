@@ -58,7 +58,7 @@ void		check_indir_label(t_tokens *token, char *name, unsigned short ignored)
 	token->size = 2;
 }
 
-int		arg_to_int(t_tokens *arg, t_instruction *instr, int arg_num, t_player *player)
+int		arg_to_int(t_tokens *arg, t_instruction *instr, int arg_num)
 {
 	char	*str;
 	int		i;
@@ -73,7 +73,7 @@ int		arg_to_int(t_tokens *arg, t_instruction *instr, int arg_num, t_player *play
 		error_type(instr->instr, instr->args[arg_num]->type, arg_num + 1);
 	while (str[i])
 		if (!(isdigit(str[i++])))
-			error_file("Syntax error", player->num_col, player->num_row); // TODO: ПРОВЕРИТЬ ФОРМУЛИРОВКУ
+			error_type(instr->instr, instr->args[arg_num]->type, arg_num + 1);
 	if (arg->type != INDIRECT)
 			return (ft_atoi(&(str[1])));
 	return (ft_atoi(str));
@@ -114,7 +114,7 @@ void		check_arg_is_digit(t_player *player)
 	int i;
 
 	if (!(instr = player->instr))
-		error_file("Syntax error", player->num_col, player->num_row);
+		error_file("Syntax error", player->num_row, player->num_col);
 	while (instr)
 	{
 		i = 0;
@@ -126,7 +126,7 @@ void		check_arg_is_digit(t_player *player)
 
 			else
 			{
-				instr->args[i]->data_int = arg_to_int(instr->args[i], instr, i, player);
+				instr->args[i]->data_int = arg_to_int(instr->args[i], instr, i);
 				if (instr->args[i]->type == REGISTER && (instr->args[i]->data_int < 1 || instr->args[i]->data_int > 99))
 					error_type(instr->instr, instr->args[i]->type, i + 1);
 			}

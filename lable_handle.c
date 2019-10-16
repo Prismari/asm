@@ -21,7 +21,7 @@ void	check_label(t_player *player, char *label)
 	i = 0;
 	while(label[i])
 		if (!ft_strchr(LABEL_CHARS, label[i++]))
-			error_file("Invalid label name", player->num_col + 1, player->num_row);
+			error_file("Invalid label name", player->num_row, player->num_col + 1);
 	if (!(new_label = init_lable(label)))
 		error("Memory allocation error");
 	if (player->labels == NULL)
@@ -56,7 +56,7 @@ int 	handling_label(t_player *player, char *line, int len)
 		}
 		else if (!(is_instruction(player, line)))
 		{
-			error_file("Syntax error", player->num_col, player->num_row);
+			error_file("Syntax error", player->num_row, player->num_col + 1);
 //			printf("TOKEN [%s]\n", ft_strsub(line, player->num_col, len));
 			//player->num_col += len;
 //			printf("instr after label\n");

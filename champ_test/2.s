@@ -2,4 +2,5 @@
 
   zbf"
      .comment"1"
-live%42
+liv:
+st	r1, r90
