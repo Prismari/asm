@@ -37,7 +37,7 @@ void	write_name(t_player *player, char *line)
  		error_file("Syntax error", player->num_col + 1, player->num_row);
  	player->name = ft_strndup(tmp, length);
 	line += player->num_col;
- 	//printf("[%s]\n", player->name);
+// 	printf("[%s]\n", player->name);
 }
 
 void	write_comment(t_player *player, char *line)
@@ -75,21 +75,41 @@ int		check_command(char *line, t_player *player)
 
 	len_name = ft_strlen(NAME_CMD_STRING);
 	len_comment = ft_strlen(COMMENT_CMD_STRING);
-	if (!ft_strncmp(line, NAME_CMD_STRING, len_name) &&
-	(line[len_name] == '\t' || line[len_name] == ' ' || line[len_name] == '"'))
+	if (!ft_strncmp(&(line[player->num_col]), NAME_CMD_STRING, len_name) &&
+	(line[len_name + player->num_col] == '\t' || line[len_name + player->num_col] == ' ' || line[len_name + player->num_col] == '"'))
 	{
 		player->num_col += len_name;
 		write_name(player, line);
 		return (1);
 	}
-	else if (!ft_strncmp(line, COMMENT_CMD_STRING, len_comment) &&
-	(line[len_comment] == '\t' || line[len_comment] == ' ' || line[len_comment] == '"'))
+	else if (!ft_strncmp(&(line[player->num_col]), COMMENT_CMD_STRING, len_comment) &&
+	(line[len_comment + player->num_col] == '\t' || line[len_comment + player->num_col] == ' ' || line[len_comment + player->num_col] == '"'))
 	{
 		player->num_col += len_comment;
 		write_comment(player, line);
 		return (1);
 	}
 	return (0);
+}
+
+void check_after_quote(t_player *player, char *line)
+{
+	int i;
+
+	i = 1;
+	while (line[i])
+	{
+		if (is_whitespace(line[i]))
+		{
+			i++;
+			continue;
+		}
+		if (is_comment(line[i]))
+			break;
+		if (line[i] != '\0')
+			error_file("Syntax error", player->num_col + i, player->num_row);
+		i++;
+	}
 }
 
 void search_continue(t_player *player, char *line)
@@ -117,17 +137,24 @@ void search_continue(t_player *player, char *line)
 		player->name = ft_strjoin(player->name, ft_strsub(line, 0, quote - line));
 		player->is_finished_name = 1;
 	}
+	if (quote)
+	{
+		player->num_col += quote - line;
+		check_after_quote(player, quote);
+	}
 }
 
 void	search_comment_name(t_player *player, char *line)
 {
 	while (line[player->num_col])
 	{
+		if (is_whitespace(*line))
+			skip_tab_space(player, line, SKIP_QUOTE);
 		if (is_comment(line[player->num_col]))
 			return ;
 		else if (line[player->num_col] == '.')
 		{
-			if (!check_command(&line[player->num_col], player))
+			if (!check_command(line, player))
 				error_file("Unknown command", player->num_col + 1, player->num_row);
 			return ;
 		}
