@@ -6,7 +6,7 @@
 /*   By: vurrigon <vurrigon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 11:50:59 by vurrigon          #+#    #+#             */
-/*   Updated: 2019/10/09 17:50:59 by vurrigon         ###   ########.fr       */
+/*   Updated: 2019/10/16 16:56:12 by vurrigon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,16 @@ int		check_extension(char *filename)
 	while (tmp[i + 1])
 		i++;
 	if (!ft_strcmp(tmp[i], "s"))
+	{
+		free_split(tmp);
 		return (1);
+	}
 	else if (!ft_strcmp(tmp[i], "cor"))
+	{
+		free_split(tmp);
 		return (-1);
+	}
+	free_split(tmp);
 	return (0);
 }
 
@@ -119,11 +126,12 @@ void	reading_body_champion(int fd, t_player *player)
 int		create_file_bytecode(t_player *player)
 {
 	char	*new_name;
+	char	*tmp;
 	int		fd;
 
 	new_name = ft_strstr(player->file_name, ".s");
-	new_name = ft_strsub(player->file_name, 0, new_name - player->file_name);
-	new_name = ft_strjoin(new_name, ".cor");
+	tmp = ft_strsub(player->file_name, 0, new_name - player->file_name);
+	new_name = ft_strjoin(tmp, ".cor");
 	fd = open(new_name, O_WRONLY);
     if (fd == -1)
     {
@@ -131,6 +139,7 @@ int		create_file_bytecode(t_player *player)
         fd = open(new_name, O_WRONLY);
     }
     player->file_name = new_name;
+    free(tmp);
 	return (fd);
 }
 
@@ -234,6 +243,7 @@ void	translate_to_bytecode(t_player *player)
 												player->sum_size_exec_code;
 	if (!(bytes = (unsigned char *)malloc((length + 1) * sizeof(unsigned char))))
 		error("Failed to initialize byte array");
+	ft_bzero(bytes, length);
 	begin = bytes;
 	int32_to_bytecode(bytes, COREWAR_EXEC_MAGIC, 4);
 	bytes += 4;
@@ -244,6 +254,7 @@ void	translate_to_bytecode(t_player *player)
 	int32_to_bytecode(bytes, player->sum_size_exec_code, 4);
 	bytes += 4;
 	ft_memcpy(bytes, player->comment, ft_strlen(player->comment));
+	ft_bzero(bytes + ft_strlen(player->comment), PROG_NAME_LENGTH - ft_strlen(player->comment));
 	bytes += COMMENT_LENGTH;
 	int32_to_bytecode(bytes, 0, 4);
 	bytes += 4;
@@ -298,8 +309,6 @@ void 	check_end_file(t_player *player)
 	end = lseek(player->fd, 0, SEEK_END);
 	lpos = end;
 	//printf("%d\n", lpos);
-	if (*buf == '\n')
-		return;
 	while (lpos-- > 0 )
 	{
 		lseek(player->fd, lpos, SEEK_SET);
@@ -333,8 +342,9 @@ void	assemble(int fd, char *file_name)
 	translate_to_bytecode(header);
 	ft_putstr("Writing output program to ");
 	ft_putendl(header->file_name);
+	//printf("name = [%s]\n", header->name);
+	//printf("comment = [%s]\n", header->comment);
 	free_asm(header);
-	//printf("[%s]\n", header->name);
 	 // while (header->instr)
 	 // {
 	 // 	printf("instr = %s\n", header->instr->instr);

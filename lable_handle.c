@@ -22,7 +22,7 @@ void	check_label(t_player *player, char *label)
 	while(label[i])
 		if (!ft_strchr(LABEL_CHARS, label[i++]))
 			error_file("Invalid label name", player->num_col + 1, player->num_row);
-	if (!(new_label = init_lable(label)))
+	if (!(new_label = init_label(label)))
 		error("Memory allocation error");
 	if (player->labels == NULL)
 	{

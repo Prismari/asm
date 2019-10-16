@@ -6,7 +6,7 @@
 /*   By: vurrigon <vurrigon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/22 17:14:23 by vurrigon          #+#    #+#             */
-/*   Updated: 2019/10/08 12:51:15 by vurrigon         ###   ########.fr       */
+/*   Updated: 2019/10/16 16:42:09 by vurrigon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void	write_comment(t_player *player, char *line)
 {
 	char	*tmp;
 	int		length;
+	char	*tmp_free;
 
 	if (skip_tab_space(player, line, STOP_BEFORE_QUOTE) != QUOTE)
 		error_file("Syntax error", player->num_col + 1, player->num_row);
@@ -52,8 +53,9 @@ void	write_comment(t_player *player, char *line)
 	if (!tmp)
 	{
 		player->is_finished_com = 0;
-		player->comment = ft_strdup(&line[player->num_col]);
-		player->comment = ft_strjoin(player->comment, "\n");
+		tmp_free = ft_strdup(&line[player->num_col]);
+		player->comment = ft_strjoin(tmp_free, "\n");
+		free(tmp_free);
 		return ;
 	}
 	length = tmp - &line[player->num_col];
@@ -114,27 +116,40 @@ void check_after_quote(t_player *player, char *line)
 
 void search_continue(t_player *player, char *line)
 {
-	char *quote;
+	char	*quote;
+	char	*tmp;
+	char	*tmp_end;
 
+	tmp = NULL;
 	quote = ft_strchr(line, '"');
 	if (!player->is_finished_com && !quote)
 	{
-		player->comment = ft_strjoin(player->comment, line);
-		player->comment = ft_strjoin(player->comment, "\n");
+		tmp = ft_strjoin(player->comment, line);
+		if (player->comment)
+			free(player->comment);
+		player->comment = ft_strjoin(tmp, "\n");
 	}
 	else if (!player->is_finished_name && !quote)
 	{
-		player->name = ft_strjoin(player->name, line);
-		player->name = ft_strjoin(player->name, "\n");
+		tmp = ft_strjoin(player->name, line);
+		if (player->name)
+			free(player->name);
+		player->name = ft_strjoin(tmp, "\n");
 	}
 	else if (!player->is_finished_com)
 	{
-		player->comment = ft_strjoin(player->comment, ft_strsub(line, 0, quote - line));
+		tmp = ft_strsub(line, 0, quote - line);
+		tmp_end = ft_strjoin(player->comment, tmp);
+		free(player->comment);
+		player->comment = tmp_end;
 		player->is_finished_com = 1;
 	}
 	else if (!player->is_finished_name)
 	{
-		player->name = ft_strjoin(player->name, ft_strsub(line, 0, quote - line));
+		tmp = ft_strsub(line, 0, quote - line);
+		tmp_end = ft_strjoin(player->name, tmp);
+		free(player->name);
+		player->name = tmp_end;
 		player->is_finished_name = 1;
 	}
 	if (quote)
@@ -142,6 +157,8 @@ void search_continue(t_player *player, char *line)
 		player->num_col += quote - line;
 		check_after_quote(player, quote);
 	}
+	if (tmp)
+		free(tmp);
 }
 
 void	search_comment_name(t_player *player, char *line)
