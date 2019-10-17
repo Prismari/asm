@@ -32,7 +32,7 @@ void 		check_reg(t_tokens *token, char *name, unsigned short ignored, t_player *
 	token->size = 1;
 	token->col = pl->num_col;
 	token->row = pl->num_row;
-	ft_printf("arg [%s] - [%d:%d]\n", name, token->row, token->col);
+//	ft_printf("arg [%s] - [%d:%d]\n", name, token->row, token->col);
 }
 
 void 		check_dir(t_tokens *token, char *name, unsigned short instr, t_player *pl)
@@ -41,7 +41,7 @@ void 		check_dir(t_tokens *token, char *name, unsigned short instr, t_player *pl
 	token->size = g_ins[instr - 1].t_dir_size;
 	token->col = pl->num_col;
 	token->row = pl->num_row;
-	ft_printf("arg [%s] - [%d:%d]\n", name, token->row, token->col);
+//	ft_printf("arg [%s] - [%d:%d]\n", name, token->row, token->col);
 }
 
 void		check_dir_label(t_tokens *token, char *name, unsigned short instr, t_player *pl)
@@ -50,7 +50,7 @@ void		check_dir_label(t_tokens *token, char *name, unsigned short instr, t_playe
 	token->size = g_ins[instr - 1].t_dir_size;
 	token->col = pl->num_col;
 	token->row = pl->num_row;
-	ft_printf("arg [%s] - [%d:%d]\n", name, token->row, token->col);
+//	ft_printf("arg [%s] - [%d:%d]\n", name, token->row, token->col);
 }
 
 void		check_indir(t_tokens *token, char *name, unsigned short ignored, t_player *pl)
@@ -60,7 +60,7 @@ void		check_indir(t_tokens *token, char *name, unsigned short ignored, t_player 
 	token->size = 2;
 	token->col = pl->num_col;
 	token->row = pl->num_row;
-	ft_printf("arg [%s] - [%d:%d]\n", name, token->row, token->col);
+//	ft_printf("arg [%s] - [%d:%d]\n", name, token->row, token->col);
 }
 
 void		check_indir_label(t_tokens *token, char *name, unsigned short ignored, t_player *pl)
@@ -70,7 +70,7 @@ void		check_indir_label(t_tokens *token, char *name, unsigned short ignored, t_p
 	token->size = 2;
 	token->col = pl->num_col;
 	token->row = pl->num_row;
-	ft_printf("arg [%s] - [%d:%d]\n", name, token->row, token->col);
+//	ft_printf("arg [%s] - [%d:%d]\n", name, token->row, token->col);
 }
 
 int		arg_to_int(t_tokens *arg, t_instruction *instr, int arg_num)
