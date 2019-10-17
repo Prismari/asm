@@ -192,6 +192,8 @@ typedef struct		s_tokens
 	t_type			type;
 	char			*data;
 	int 			data_int;
+	int 			col;
+	int 			row;
 }					t_tokens;
 
 
@@ -238,7 +240,7 @@ typedef struct		s_label
 	struct s_label			*prev;
 }					t_label;
 
-typedef void (*t_func_pointer)(t_tokens *token, char *name, unsigned short instr);
+typedef void (*t_func_pointer)(t_tokens *token, char *name, unsigned short instr, t_player *pl);
 
 /*
 ** Assembler
@@ -246,6 +248,7 @@ typedef void (*t_func_pointer)(t_tokens *token, char *name, unsigned short instr
 
 void			error(char *str);
 void			error_file(char *str, int col, int row);
+void			error_arg(t_instruction *instr, t_type type, int arg);
 void			error_type(char *instr, t_type type, int arg);
 char			*ft_strndup(const char *src, int i);
 int				is_comment(int chr);
@@ -268,11 +271,11 @@ void			check_lable_links(t_label *labels);
 char			**ft_split_argument(char const *s);
 int 			check_arguments(t_player *player, char *instr);
 t_type			know_type(char *token);
-void 			check_reg(t_tokens *token, char *name, unsigned short instr);
-void 			check_dir(t_tokens *token, char *name, unsigned short instr);
-void			check_dir_label(t_tokens *token, char *name, unsigned short instr);
-void			check_indir(t_tokens *token, char *name, unsigned short instr);
-void			check_indir_label(t_tokens *token, char *name, unsigned short instr);
+void 			check_reg(t_tokens *token, char *name, unsigned short instr, t_player *pl);
+void 			check_dir(t_tokens *token, char *name, unsigned short instr, t_player *pl);
+void			check_dir_label(t_tokens *token, char *name, unsigned short instr, t_player *pl);
+void			check_indir(t_tokens *token, char *name, unsigned short instr, t_player *pl);
+void			check_indir_label(t_tokens *token, char *name, unsigned short instr, t_player *pl);
 void			check_type_arg(t_type	type, int needed_type, t_instruction *instr, int num);
 void 			error_name(char *str, char *name, int row, int col);
 void			del_comment(char *line);

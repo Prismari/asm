@@ -42,3 +42,27 @@ void	error_type(char *instr, t_type type, int arg)
 		ft_printf("Invalid parameter number %d for instruction %s \n", arg, instr);
 	exit(1);
 }
+
+void	error_arg(t_instruction *instr, t_type type, int arg)
+{
+	if (arg)
+		arg--;
+	if (instr->args != NULL)
+	{
+
+		if (type == INDIRECT || type == INDIRECT_LABEL)
+			ft_printf("[%d:%d] Invalid parameter number %d type indirect for instruction %s \n",
+					  instr->args[arg]->row, instr->args[arg]->col, arg, instr->instr);
+		else if (type == DIRECT || type == DIRECT_LABEL)
+			ft_printf("[%d:%d] Invalid parameter number %d type direct for instruction %s \n",
+					  instr->args[arg]->row, instr->args[arg]->col, arg, instr->instr);
+		else if (type == REGISTER)
+			ft_printf("[%d:%d] Invalid parameter number %d type register for instruction %s \n",
+					  instr->args[arg]->row, instr->args[arg]->col, arg, instr->instr);
+		else
+			ft_printf("[%d:%d] Invalid parameter number %d for instruction %s \n",
+					  instr->args[arg]->row, instr->args[arg]->col, arg, instr->instr);
+		exit(1);
+	}
+	error_type(instr->instr, type, arg);
+}

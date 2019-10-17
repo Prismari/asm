@@ -25,37 +25,52 @@ void	check_type_arg(t_type type, int needed_type, t_instruction *instr, int num)
 		exit(1);
 }
 
-void 		check_reg(t_tokens *token, char *name, unsigned short ignored)
+void 		check_reg(t_tokens *token, char *name, unsigned short ignored, t_player *pl)
 {
 	ignored += 0;
 	token->data = name;
 	token->size = 1;
+	token->col = pl->num_col;
+	token->row = pl->num_row;
+	ft_printf("arg [%s] - [%d:%d]\n", name, token->row, token->col);
 }
 
-void 		check_dir(t_tokens *token, char *name, unsigned short instr)
+void 		check_dir(t_tokens *token, char *name, unsigned short instr, t_player *pl)
 {
 	token->data = name;
 	token->size = g_ins[instr - 1].t_dir_size;
+	token->col = pl->num_col;
+	token->row = pl->num_row;
+	ft_printf("arg [%s] - [%d:%d]\n", name, token->row, token->col);
 }
 
-void		check_dir_label(t_tokens *token, char *name, unsigned short instr)
+void		check_dir_label(t_tokens *token, char *name, unsigned short instr, t_player *pl)
 {
 	token->data = name;
 	token->size = g_ins[instr - 1].t_dir_size;
+	token->col = pl->num_col;
+	token->row = pl->num_row;
+	ft_printf("arg [%s] - [%d:%d]\n", name, token->row, token->col);
 }
 
-void		check_indir(t_tokens *token, char *name, unsigned short ignored)
+void		check_indir(t_tokens *token, char *name, unsigned short ignored, t_player *pl)
 {
 	ignored += 0;
 	token->data = name;
 	token->size = 2;
+	token->col = pl->num_col;
+	token->row = pl->num_row;
+	ft_printf("arg [%s] - [%d:%d]\n", name, token->row, token->col);
 }
 
-void		check_indir_label(t_tokens *token, char *name, unsigned short ignored)
+void		check_indir_label(t_tokens *token, char *name, unsigned short ignored, t_player *pl)
 {
 	ignored += 0;
 	token->data = name;
 	token->size = 2;
+	token->col = pl->num_col;
+	token->row = pl->num_row;
+	ft_printf("arg [%s] - [%d:%d]\n", name, token->row, token->col);
 }
 
 int		arg_to_int(t_tokens *arg, t_instruction *instr, int arg_num)
@@ -70,10 +85,10 @@ int		arg_to_int(t_tokens *arg, t_instruction *instr, int arg_num)
 	if (str[i] == '-')
 		i++;
 	else if (str[i] == '\0')
-		error_type(instr->instr, instr->args[arg_num]->type, arg_num + 1);
+		error_arg(instr, instr->args[arg_num]->type, arg_num + 1);
 	while (str[i])
 		if (!(isdigit(str[i++])))
-			error_type(instr->instr, instr->args[arg_num]->type, arg_num + 1);
+			error_arg(instr, instr->args[arg_num]->type, arg_num + 1);
 	if (arg->type != INDIRECT)
 			return (ft_atoi(&(str[1])));
 	return (ft_atoi(str));
@@ -128,7 +143,7 @@ void		check_arg_is_digit(t_player *player)
 			{
 				instr->args[i]->data_int = arg_to_int(instr->args[i], instr, i);
 				if (instr->args[i]->type == REGISTER && (instr->args[i]->data_int < 1 || instr->args[i]->data_int > 99))
-					error_type(instr->instr, instr->args[i]->type, i + 1);
+					error_arg(instr, instr->args[i]->type, i + 1);
 			}
 //			ft_printf("\t -%8s -> %4d\n", instr->args[i]->data, instr->args[i]->data_int);
 			i++;

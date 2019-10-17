@@ -121,9 +121,12 @@ void	change_col_num(t_player *player, char **arg_line, char *arg)
 {
 	int num;
 
-	num = ft_strstr(*arg_line, arg) - *arg_line;
+	if (arg)
+	{
+		num = ft_strstr(*arg_line, arg) - *arg_line;
 		player->num_col += num;
 		*arg_line = *arg_line + num;
+	}
 }
 
 //void 	check_arg_num(char **args, t_instruction *instr, t_player *player, char *arg_line)
@@ -147,7 +150,7 @@ void	change_col_num(t_player *player, char **arg_line, char *arg)
 //		if ( args[i + 1] == NULL)
 //			error_file("Syntax error",  player->num_row, player->num_col + 1);
 //		if (!(type = know_type(args[i])))
-//			error_type(instr->instr, type, separ + 1);
+//			error_arg(instr->instr, type, separ + 1);
 //		check_type_arg(type, g_ins[instr->code_op - 1].args_types[separ], instr, separ);
 //		f_funk_array[type - 1](instr->args[separ], args[i], instr->code_op);
 //		i++;
@@ -172,23 +175,22 @@ void 	check_arg_num(char **args, t_instruction *instr, t_player *player, char *a
 		if (i % 2 == 1)
 		{
 			check_separator_char(&separ, &i, args[i]);
-			if (args[i])
-				change_col_num(player, &arg_line, args[i]);
+			change_col_num(player, &arg_line, args[i]);
 		}
 		if (i - separ >=  g_ins[instr->code_op - 1].args_num)
-			error_name("Invalid parameter count for instruction", instr->instr, player->num_row, player->num_col - 1);
+			error_name("Invalid parameter count for instruction", instr->instr, player->num_row, player->num_col);
 		if (args[i] == NULL)
-			error_file("Syntax error", player->num_col, player->num_row);//TODO: НЕТ ПОДСЧЕТА НОМЕРА ЭЛЕМЕНТА СТРОКИ ДЛЯ ВЫВОДА ОШИБОК
+			error_file("Syntax error", player->num_col, player->num_row);
 		if (!(type = know_type(args[i])))
 			error_type(instr->instr, type, separ + 1);
 		check_type_arg(type, g_ins[instr->code_op - 1].args_types[separ], instr, separ);
-		f_funk_array[type - 1](instr->args[separ], args[i], instr->code_op);
+		f_funk_array[type - 1](instr->args[separ], args[i], instr->code_op, player);
 		i++;
 	}
 	if (i > 0 && args[i - 1])
 		player->num_col += ft_strlen(args[i - 1]);
 	if (i - separ !=  g_ins[instr->code_op - 1].args_num)
-		error_name("Invalid parameter count for instruction", instr->instr, player->num_row, player->num_col + 1); // TODO : считает не правильно ндо проверить
+		error_name("Invalid parameter count for instruction", instr->instr, player->num_row, player->num_col); // TODO : считает не правильно ндо проверить
 }
 
 

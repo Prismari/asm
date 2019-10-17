@@ -2,7 +2,7 @@
 .comment "sebc"
 
 	st	r1, :l1
-	ld	%4, r3 
+	ld	%4, r3
 l1:	live	1 #live only takes a direct param
 	ld	%:l1, r2
 l3:	ldi	%:l1, r2, r4

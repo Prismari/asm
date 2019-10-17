@@ -13,12 +13,16 @@
   <component name="ChangeListManager">
     <list default="true" id="f4fb1f1c-bae4-4444-b809-a5927f11f9c9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/error/op_extra.s" beforeDir="false" afterPath="$PROJECT_DIR$/champ_test/checker_test_files/error/op_extra.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asm" beforeDir="false" afterPath="$PROJECT_DIR$/asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/error/param_badtypes.s" beforeDir="false" afterPath="$PROJECT_DIR$/champ_test/checker_test_files/error/param_badtypes.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checker/tests/asm/valid/big_feet.s" beforeDir="false" afterPath="$PROJECT_DIR$/checker/tests/asm/valid/big_feet.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checker/tests/asm/valid2/big_feet.s" beforeDir="false" afterPath="$PROJECT_DIR$/checker/tests/asm/valid2/big_feet.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checker/tests/vm/champ/big_feet.s" beforeDir="false" afterPath="$PROJECT_DIR$/checker/tests/vm/champ/big_feet.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/error.c" beforeDir="false" afterPath="$PROJECT_DIR$/error.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/corewar.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/corewar.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/instructions.c" beforeDir="false" afterPath="$PROJECT_DIR$/instructions.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lable_handle.c" beforeDir="false" afterPath="$PROJECT_DIR$/lable_handle.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res_test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res_test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/valid_arguments.c" beforeDir="false" afterPath="$PROJECT_DIR$/valid_arguments.c" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +75,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="asm" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="./champ_test/checker_test_files/error/param_commas.s" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="asm" TARGET_NAME="asm" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="asm" RUN_TARGET_NAME="asm">
+    <configuration name="asm" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="$PROJECT_DIR$/champ_test/checker_test_files/error/param_direct_no_sp.s" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="asm" TARGET_NAME="asm" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="asm" RUN_TARGET_NAME="asm">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -120,7 +124,8 @@
       <workItem from="1571229432491" duration="4094000" />
       <workItem from="1571235245877" duration="333000" />
       <workItem from="1571300916731" duration="4572000" />
-      <workItem from="1571308765277" duration="1447000" />
+      <workItem from="1571308765277" duration="1686000" />
+      <workItem from="1571311873732" duration="2574000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <created>1569590889675</created>
@@ -197,7 +202,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/instructions.c</url>
-          <line>145</line>
+          <line>148</line>
           <option name="timeStamp" value="80" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
@@ -212,12 +217,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/instructions.c</url>
-          <line>149</line>
+          <line>152</line>
           <option name="timeStamp" value="101" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/instructions.c</url>
-          <line>219</line>
+          <line>221</line>
           <option name="timeStamp" value="103" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
@@ -242,7 +247,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/valid_arguments.c</url>
-          <line>119</line>
+          <line>134</line>
           <option name="timeStamp" value="144" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
@@ -282,17 +287,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/valid_arguments.c</url>
-          <line>116</line>
+          <line>131</line>
           <option name="timeStamp" value="176" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/valid_arguments.c</url>
-          <line>107</line>
+          <line>122</line>
           <option name="timeStamp" value="177" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/valid_arguments.c</url>
-          <line>75</line>
+          <line>90</line>
           <option name="timeStamp" value="178" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
@@ -302,7 +307,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/valid_arguments.c</url>
-          <line>65</line>
+          <line>80</line>
           <option name="timeStamp" value="180" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
@@ -337,8 +342,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/instructions.c</url>
-          <line>170</line>
+          <line>173</line>
           <option name="timeStamp" value="193" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/instructions.c</url>
+          <line>184</line>
+          <option name="timeStamp" value="194" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/valid_arguments.c</url>
+          <line>87</line>
+          <option name="timeStamp" value="195" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

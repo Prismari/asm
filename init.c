@@ -47,6 +47,7 @@ t_instruction	*init_instr(char *instr)
 	op->tokens = NULL;
 	op->size_exec_code = 0;
 	op->next = NULL;
+	op->args = NULL;
 	return (op);
 }
 

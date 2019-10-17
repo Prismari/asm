@@ -1,193 +1,265 @@
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/error/comment_len_2049.s[0m
+[0;36mexec test - champ_test/checker_test_files/error/comment_len_2049.s[0m
 [0;32mOur asm [0m
-[2:11] Invalid comment
+Champion comment too long (Max length 2048)
 [0;32mOriginal[0m
 Champion comment too long (Max length 2048)
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/error/direct_param_no_value.s[0m
+[0;36mexec test - champ_test/checker_test_files/error/direct_param_no_value.s[0m
 [0;32mOur asm [0m
-[13:5] Syntax error
+arg [%1] - [11:5]
+arg [%] - [13:10]
+[13:10] Invalid parameter number 0 type direct for instruction live 
 [0;32mOriginal[0m
 Lexical error at [13:11]
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/error/four_arg_malloc_free_pointer_error.s[0m
+[0;36mexec test - champ_test/checker_test_files/error/four_arg_malloc_free_pointer_error.s[0m
 [0;32mOur asm [0m
-[11:5] Syntax error
+arg [%1] - [9:5]
+arg [%1] - [11:10]
+[11:13] Invalid parameter count for instruction live
 [0;32mOriginal[0m
 Invalid parameter 1 type indirect for instruction live
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/error/header_double_comments.s[0m
+[0;36mexec test - champ_test/checker_test_files/error/header_double_comments.s[0m
 [0;32mOur asm [0m
-[6:1] Syntax error
+[2:11] Syntax error
 [0;32mOriginal[0m
 Syntax error at token [TOKEN][002:001] COMMAND_COMMENT ".comment"
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/error/header_double_names.s[0m
+[0;36mexec test - champ_test/checker_test_files/error/header_double_names.s[0m
 [0;32mOur asm [0m
-[6:1] Syntax error
+[2:8] Syntax error
 [0;32mOriginal[0m
 Syntax error at token [TOKEN][002:001] COMMAND_NAME ".name"
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/error/header_max_comment.s[0m
+[0;36mexec test - champ_test/checker_test_files/error/header_max_comment.s[0m
 [0;32mOur asm [0m
 Champion comment too long (Max length 2048)
 [0;32mOriginal[0m
 Champion comment too long (Max length 2048)
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/error/header_max_name.s[0m
+[0;36mexec test - champ_test/checker_test_files/error/header_max_name.s[0m
 [0;32mOur asm [0m
 Champion name too long (Max length 128)
 [0;32mOriginal[0m
 Champion name too long (Max length 128)
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/error/header_nl.s[0m
+[0;36mexec test - champ_test/checker_test_files/error/header_nl.s[0m
 [0;32mOur asm [0m
-[1:8] Invalid name
+[6:8] Syntax error
 [0;32mOriginal[0m
 Syntax error at token [TOKEN][006:008] INSTRUCTION "sdfs"
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/error/header_nl_unclosed.s[0m
+[0;36mexec test - champ_test/checker_test_files/error/header_nl_unclosed.s[0m
 [0;32mOur asm [0m
-[1:8] Invalid name
+[5:11] Syntax error
 [0;32mOriginal[0m
 Lexical error at [5:11]
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/error/header_null_name.s[0m
+[0;36mexec test - champ_test/checker_test_files/error/header_null_name.s[0m
 [0;32mOur asm [0m
 [3:1] Syntax error
 [0;32mOriginal[0m
 Syntax error at token [TOKEN][003:001] INSTRUCTION "live"
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/error/label_contain_badchar.s[0m
+[0;36mexec test - champ_test/checker_test_files/error/label_contain_badchar.s[0m
 [0;32mOur asm [0m
 [9:1] Invalid label name
 [0;32mOriginal[0m
 Lexical error at [9:6]
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/error/label_error_1.s[0m
+[0;36mexec test - champ_test/checker_test_files/error/label_error_1.s[0m
 [0;32mOur asm [0m
 [7:0] Syntax error
 [0;32mOriginal[0m
 Lexical error at [7:6]
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/error/label_error_2.s[0m
+[0;36mexec test - champ_test/checker_test_files/error/label_error_2.s[0m
 [0;32mOur asm [0m
 [7:0] Syntax error
 [0;32mOriginal[0m
 Lexical error at [7:6]
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/error/label_error_3.s[0m
+[0;36mexec test - champ_test/checker_test_files/error/label_error_3.s[0m
 [0;32mOur asm [0m
-[7:6] Syntax error
+[7:7] Syntax error
 [0;32mOriginal[0m
 Syntax error at token [TOKEN][008:001] ENDLINE
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/error/label_invalidname.s[0m
+[0;36mexec test - champ_test/checker_test_files/error/label_invalidname.s[0m
 [0;32mOur asm [0m
 [4:1] Invalid label name
 [0;32mOriginal[0m
 Lexical error at [4:1]
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/error/label_noending.s[0m
+[0;36mexec test - champ_test/checker_test_files/error/label_noending.s[0m
 [0;32mOur asm [0m
 [4:0] Syntax error
 [0;32mOriginal[0m
 Syntax error at token [TOKEN][004:006] ENDLINE
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/error/label_space.s[0m
+[0;36mexec test - champ_test/checker_test_files/error/label_space.s[0m
 [0;32mOur asm [0m
 [4:0] Syntax error
 [0;32mOriginal[0m
 Syntax error at token [TOKEN][004:007] LABEL "second:"
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/error/label_without_double_dot_at_the_end.s[0m
+[0;36mexec test - champ_test/checker_test_files/error/label_without_double_dot_at_the_end.s[0m
 [0;32mOur asm [0m
 [8:0] Syntax error
 [0;32mOriginal[0m
 Syntax error at token [TOKEN][011:001] ENDLINE
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/error/name_len_129.s[0m
+[0;36mexec test - champ_test/checker_test_files/error/name_len_129.s[0m
 [0;32mOur asm [0m
 Champion name too long (Max length 128)
 [0;32mOriginal[0m
 Champion name too long (Max length 128)
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/error/op_double_operation_on_single_line.s[0m
+[0;36mexec test - champ_test/checker_test_files/error/no_endline.s[0m
 [0;32mOur asm [0m
-[4:15] Syntax error
+arg [%42] - [3:4]
+Syntax error - no newline at the end
+[0;32mOriginal[0m
+Syntax error - unexpected end of input (Perhaps you forgot to end with a newline ?)
+[0;36mexec test - champ_test/checker_test_files/error/op_double_operation_on_single_line.s[0m
+[0;32mOur asm [0m
+arg [%1] - [4:5]
+[4:8] Invalid parameter count for instruction live
 [0;32mOriginal[0m
 Syntax error at token [TOKEN][004:009] INSTRUCTION "live"
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/error/op_extra.s[0m
+[0;36mexec test - champ_test/checker_test_files/error/op_extra.s[0m
 [0;32mOur asm [0m
-[5:2] Syntax error
+arg [r99] - [5:6]
+arg [%:live] - [5:11]
+arg [%1] - [5:18]
+[5:21] Invalid parameter count for instruction sti
 [0;32mOriginal[0m
-Syntax error at token [TOKEN][005:021] INSTRUCTION "adfa"
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/error/op_extreme.s[0m
+Syntax error at token [TOKEN][005:022] INSTRUCTION "adfa"
+[0;36mexec test - champ_test/checker_test_files/error/op_extreme.s[0m
 [0;32mOur asm [0m
-[4:4] Syntax error
+[4:5] Syntax error
 [0;32mOriginal[0m
 Lexical error at [4:5]
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/error/op_no_code.s[0m
+[0;36mexec test - champ_test/checker_test_files/error/op_no_code.s[0m
 [0;32mOur asm [0m
-Writing output program to /Users/aestella/42/corewar/asm/champ_test/checker_test_files/error/op_no_code.cor
+[2:0] Syntax error
 [0;32mOriginal[0m
 Syntax error at token [TOKEN][003:001] END "(null)"
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/error/param_badtypes.s[0m
+[0;36mexec test - champ_test/checker_test_files/error/param_badtypes.s[0m
 [0;32mOur asm [0m
-[4:1] Syntax error
+arg [r1] - [4:4]
+arg [:l1] - [4:8]
+arg [%4] - [5:4]
+arg [r3] - [5:8]
+Invalid parameter number 0 type indirect for instruction live 
 [0;32mOriginal[0m
 Invalid parameter 0 type indirect for instruction live
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/error/param_commas.s[0m
+[0;36mexec test - champ_test/checker_test_files/error/param_commas.s[0m
 [0;32mOur asm [0m
-Invalid parameter count for instruction xor
+arg [r1] - [4:5]
+arg [r1] - [4:9]
+arg [r1] - [4:13]
+[4:15] Invalid parameter count for instruction xor
 [0;32mOriginal[0m
 Syntax error at token [TOKEN][006:020] ENDLINE
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/error/param_direct_no_sp.s[0m
+[0;36mexec test - champ_test/checker_test_files/error/param_direct_no_sp.s[0m
 [0;32mOur asm [0m
-Invalid parameter 1 for instruction li 
+Invalid parameter number 1 for instruction live 
 [0;32mOriginal[0m
 Syntax error at token [TOKEN][004:008] SEPARATOR ","
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/error/param_direct_no_value.s[0m
+[0;36mexec test - champ_test/checker_test_files/error/param_direct_no_value.s[0m
 [0;32mOur asm [0m
-[13:5] Syntax error
+arg [%1] - [11:5]
+arg [%] - [13:10]
+[13:10] Invalid parameter number 0 type direct for instruction live 
 [0;32mOriginal[0m
 Lexical error at [13:11]
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/error/param_double_commas.s[0m
+[0;36mexec test - champ_test/checker_test_files/error/param_double_commas.s[0m
 [0;32mOur asm [0m
-[5:2] Syntax error
+arg [r99] - [5:6]
+arg [%:live] - [5:10]
+arg [%1] - [5:17]
+[5:19] Invalid parameter count for instruction sti
 [0;32mOriginal[0m
 Syntax error at token [TOKEN][005:021] ENDLINE
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/error/param_extra2.s[0m
+[0;36mexec test - champ_test/checker_test_files/error/param_extra2.s[0m
 [0;32mOur asm [0m
-[5:2] Syntax error
+arg [r99] - [5:6]
+arg [%:live] - [5:10]
+arg [%1] - [5:17]
+arg [r1] - [6:6]
+arg [%0] - [6:9]
+Invalid parameter number 2 for instruction and 
 [0;32mOriginal[0m
 Syntax error at token [TOKEN][006:013] INSTRUCTION "aaa"
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/error/param_mt_3.s[0m
+[0;36mexec test - champ_test/checker_test_files/error/param_mt_3.s[0m
 [0;32mOur asm [0m
-[11:5] Syntax error
+arg [%1] - [9:5]
+arg [%1] - [11:10]
+[11:13] Invalid parameter count for instruction live
 [0;32mOriginal[0m
 Invalid parameter 1 type indirect for instruction live
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/error/param_mt_r99.s[0m
+[0;36mexec test - champ_test/checker_test_files/error/param_mt_r99.s[0m
 [0;32mOur asm [0m
-[5:2] Syntax error
+arg [r99] - [5:6]
+arg [%:live] - [5:10]
+arg [%1] - [5:17]
+arg [r101] - [6:6]
+arg [%0] - [6:11]
+arg [r100] - [6:14]
+arg [%1] - [7:13]
+arg [%:live] - [8:7]
+[6:6] Invalid parameter number 0 type register for instruction and 
 [0;32mOriginal[0m
 Syntax error at token [TOKEN][006:007] INSTRUCTION "r101"
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/error/param_nonexistent_label.s[0m
+[0;36mexec test - champ_test/checker_test_files/error/param_nonexistent_label.s[0m
 [0;32mOur asm [0m
-[4:1] Syntax error
+arg [r1] - [4:4]
+arg [:truc] - [4:8]
+arg [%4] - [5:4]
+arg [r3] - [5:8]
+arg [%1] - [6:9]
+arg [%:l1] - [7:4]
+arg [r2] - [7:10]
+arg [%:bla] - [8:8]
+arg [r2] - [8:15]
+arg [r4] - [8:19]
+arg [r4] - [9:5]
+arg [%:l2] - [9:9]
+arg [r2] - [9:15]
+arg [r2] - [10:5]
+arg [r3] - [10:9]
+arg [r2] - [10:13]
+arg [%:l1] - [11:11]
+arg [%:l3] - [12:6]
+Lable not exist
 [0;32mOriginal[0m
 No such label truc while attempting to dereference token [TOKEN][004:009] INDIRECT_LABEL ":truc"
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/error/param_plus_minus.s[0m
+[0;36mexec test - champ_test/checker_test_files/error/param_plus_minus.s[0m
 [0;32mOur asm [0m
-[5:2] Syntax error
+arg [r90] - [5:6]
+arg [%:live] - [5:10]
+arg [%-1] - [5:17]
+arg [r1] - [6:6]
+arg [%0] - [6:9]
+arg [r1] - [6:12]
+arg [%+-+1] - [7:13]
+arg [%:live] - [8:7]
+[7:13] Invalid parameter number 0 type direct for instruction live 
 [0;32mOriginal[0m
 Lexical error at [7:14]
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/error/param_specialchars.s[0m
+[0;36mexec test - champ_test/checker_test_files/error/param_specialchars.s[0m
 [0;32mOur asm [0m
-[4:1] Syntax error
+arg [r1] - [4:5]
+arg [:l1+1] - [4:9]
+[4:14] Invalid parameter count for instruction sti
 [0;32mOriginal[0m
 Lexical error at [4:13]
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/error/zother_1.s[0m
+[0;36mexec test - champ_test/checker_test_files/error/space_before_name.s[0m
+[0;32mOur asm [0m
+arg [%42] - [5:4]
+Writing output program to champ_test/checker_test_files/error/space_before_name.cor
+[0;32mOriginal[0m
+Writing output program to champ_test/checker_test_files/error/space_before_name.cor
+[0;36mexec test - champ_test/checker_test_files/error/zother_1.s[0m
 [0;32mOur asm [0m
 [3:1] Syntax error
 [0;32mOriginal[0m
 Syntax error at token [TOKEN][003:001] INDIRECT "42"
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/error/zother_2.s[0m
+[0;36mexec test - champ_test/checker_test_files/error/zother_2.s[0m
 [0;32mOur asm [0m
-Error reading of name or comment
+[1:2] Syntax error
 [0;32mOriginal[0m
 Syntax error at token [TOKEN][002:001] END "(null)"
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/error/zother_3.s[0m
+[0;36mexec test - champ_test/checker_test_files/error/zother_3.s[0m
 [0;32mOur asm [0m
-Error reading of name or comment
+[1:4] Syntax error
 [0;32mOriginal[0m
 Syntax error at token [TOKEN][004:001] END "(null)"
-[0;36mexec test - /Users/aestella/42/corewar/asm/champ_test/checker_test_files/error/zother_4.s[0m
+[0;36mexec test - champ_test/checker_test_files/error/zother_4.s[0m
 [0;32mOur asm [0m
 [4:3] Syntax error
 [0;32mOriginal[0m
 Syntax error at token [TOKEN][004:003] INSTRUCTION "t"
-
-[1;32m VALID_ARGS [0m 
-
