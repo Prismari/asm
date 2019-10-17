@@ -104,22 +104,63 @@ void	del_comment(char *line)
 	line[i] = '\0';
 }
 
-void	check_separator_char(int *sep, int *i, char *c, t_player *player)
+int	check_separator_char(int *sep, int *i, char *c)
 {
 	if (*c != SEPARATOR_CHAR)
-		error_file("Syntax error", player->num_row,  player->num_col);
+		return (0);
 	else
 	{
 		free(c);
 		(*sep)++;
 		(*i)++;
 	}
+	return (1);
 }
 
-void 	check_arg_num(char **args, t_instruction *instr, t_player *player)
+void	change_col_num(t_player *player, char **arg_line, char *arg)
+{
+	int num;
+
+	num = ft_strstr(*arg_line, arg) - *arg_line;
+		player->num_col += num;
+		*arg_line = *arg_line + num;
+}
+
+//void 	check_arg_num(char **args, t_instruction *instr, t_player *player, char *arg_line)
+//{
+//	int i;
+//	int separ;
+//	t_type	type;
+//
+//	i = 0;
+//	separ = 0;
+//	while (args[i])
+//	{
+//		change_col_num(player, &arg_line, args[i]);
+//		if (i % 2 == 1 && !check_separator_char(&separ, &i, args[i]))
+//		{
+//			change_col_num(player, &arg_line, args[i - 1]);
+//			error_file("Syntax error",  player->num_row, player->num_col + 1);
+//		}
+//		if (i - separ >=  g_ins[instr->code_op - 1].args_num)
+//			error_name("Invalid parameter count for instruction", instr->instr, player->num_row, player->num_col + 1);
+//		if ( args[i + 1] == NULL)
+//			error_file("Syntax error",  player->num_row, player->num_col + 1);
+//		if (!(type = know_type(args[i])))
+//			error_type(instr->instr, type, separ + 1);
+//		check_type_arg(type, g_ins[instr->code_op - 1].args_types[separ], instr, separ);
+//		f_funk_array[type - 1](instr->args[separ], args[i], instr->code_op);
+//		i++;
+//	}
+//	if (i > 0 && args[i - 1])
+//		player->num_col += ft_strlen(args[i - 1]);
+//	if (i - separ !=  g_ins[instr->code_op - 1].args_num)
+//		error_name("Invalid parameter count for instruction", instr->instr, player->num_row, player->num_col + 1);
+//}
+
+void 	check_arg_num(char **args, t_instruction *instr, t_player *player, char *arg_line)
 {
 	int i;
-//	int num;
 	int separ;
 	t_type	type;
 
@@ -127,8 +168,13 @@ void 	check_arg_num(char **args, t_instruction *instr, t_player *player)
 	separ = 0;
 	while (args[i])
 	{
+		change_col_num(player, &arg_line, args[i]);
 		if (i % 2 == 1)
-			check_separator_char(&separ, &i, args[i], player);
+		{
+			check_separator_char(&separ, &i, args[i]);
+			if (args[i])
+				change_col_num(player, &arg_line, args[i]);
+		}
 		if (i - separ >=  g_ins[instr->code_op - 1].args_num)
 			error_name("Invalid parameter count for instruction", instr->instr, player->num_row, player->num_col - 1);
 		if (args[i] == NULL)
@@ -139,9 +185,12 @@ void 	check_arg_num(char **args, t_instruction *instr, t_player *player)
 		f_funk_array[type - 1](instr->args[separ], args[i], instr->code_op);
 		i++;
 	}
+	if (i > 0 && args[i - 1])
+		player->num_col += ft_strlen(args[i - 1]);
 	if (i - separ !=  g_ins[instr->code_op - 1].args_num)
-		error_name("Invalid parameter count for instruction", instr->instr, player->num_row, player->num_col);
+		error_name("Invalid parameter count for instruction", instr->instr, player->num_row, player->num_col + 1); // TODO : считает не правильно ндо проверить
 }
+
 
 int 	calculate_size(t_instruction *instr)
 {
@@ -171,8 +220,8 @@ int 	check_arguments(t_player *player, char *arg_line)
 		error_name("No arguments for instruction", player->last_instr->instr, player->num_col, player->num_row);
 	else
 	{
-		player->num_col += ft_strlen(arg_line);
-		check_arg_num(args, player->last_instr, player);
+		//player->num_col += ft_strlen(arg_line);
+		check_arg_num(args, player->last_instr, player, arg_line);
 		//args = NULL;
 		player->last_instr->size_exec_code = calculate_size(player->last_instr);
 	}
