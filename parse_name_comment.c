@@ -16,6 +16,7 @@ void	write_name(t_player *player, char *line)
 {
 	char	*tmp;
 	int		length;
+	char	*tmp_free;
 
 	if (skip_tab_space(player, line, STOP_BEFORE_QUOTE) != QUOTE)
 		error_file("Syntax error", player->num_row, player->num_col + 1);
@@ -24,8 +25,9 @@ void	write_name(t_player *player, char *line)
 	if (!tmp)
 	{
 		player->is_finished_name = 0;
-		player->name = ft_strdup(&line[player->num_col]);
-		player->name = ft_strjoin(player->name, "\n");
+		tmp_free = ft_strdup(&line[player->num_col]);
+		player->name = ft_strjoin(tmp_free, "\n");
+		free(tmp_free);
 		return ;
 	}
 	else if (player->name != NULL)
