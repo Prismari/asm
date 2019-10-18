@@ -104,10 +104,10 @@ void	del_comment(char *line)
 	line[i] = '\0';
 }
 
-int	check_separator_char(int *sep, int *i, char *c)
+int	check_separator_char(int *sep, int *i, char *c, t_tokens *arg)
 {
 	if (*c != SEPARATOR_CHAR)
-		return (0);
+		 error_file("Syntax error", arg->row, arg->col + ft_strlen(arg->data));
 	else
 	{
 		free(c);
@@ -174,7 +174,7 @@ void 	check_arg_num(char **args, t_instruction *instr, t_player *player, char *a
 		change_col_num(player, &arg_line, args[i]);
 		if (i % 2 == 1)
 		{
-			check_separator_char(&separ, &i, args[i]);
+			check_separator_char(&separ, &i, args[i], instr->args[separ]);
 			change_col_num(player, &arg_line, args[i]);
 		}
 		if (i - separ >=  g_ins[instr->code_op - 1].args_num)

@@ -1,6 +1,5 @@
-    .name"12
+.name"12zb #jhgjgh"
+.comment"1"
 
-  zbf"
-     .comment"1"
-liv:
-st	r1, r90
+li=v:
+st	r1, r9

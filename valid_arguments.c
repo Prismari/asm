@@ -120,7 +120,7 @@ void		lable_to_int(t_label *lables, t_instruction *instr, int arg_num, t_player 
 		tmp = tmp->next;
 	}
 	if (instr->args[arg_num]->data_int == -1)
-		error("Lable not exist"); // TODO: ПРОВЕРИТЬ ФОРМУЛИРОВКУ
+		error_name("Lable", "not exist", instr->args[arg_num]->row, instr->args[arg_num]->col); // TODO: ПРОВЕРИТЬ ФОРМУЛИРОВКУ
 }
 
 void		check_arg_is_digit(t_player *player)
