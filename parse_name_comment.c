@@ -120,29 +120,31 @@ void check_after_quote(t_player *player, char *line)
 	}
 }
 
-void search_continue(t_player *player, char *line)
+void	continue_name_comment(int flag, t_player *player, char *line, char **tmp)
 {
-	char	*quote;
-	char	*tmp;
-	char	*tmp_end;
-
-	tmp = NULL;
-	quote = ft_strchr(line, '"');
-	if (!player->is_finished_com && !quote)
+	if (flag == NAME)
 	{
-		tmp = ft_strjoin(player->comment, line);
+		*tmp = ft_strjoin(player->comment, line);
 		if (player->comment)
 			free(player->comment);
-		player->comment = ft_strjoin(tmp, "\n");
+		player->comment = ft_strjoin(*tmp, "\n");
 	}
-	else if (!player->is_finished_name && !quote)
+	else if (flag == COMMENT)
 	{
-		tmp = ft_strjoin(player->name, line);
+		*tmp = ft_strjoin(player->name, line);
 		if (player->name)
 			free(player->name);
-		player->name = ft_strjoin(tmp, "\n");
+		player->name = ft_strjoin(*tmp, "\n");
 	}
-	else if (!player->is_finished_com)
+}
+
+char	*fifnish_add_name_comment(int flag, t_player *player, char *line, char *quote)
+{
+	char	*tmp_end;
+	char 	*tmp;
+
+	tmp = NULL;
+	if (flag == COMMENT)
 	{
 		tmp = ft_strsub(line, 0, quote - line);
 		tmp_end = ft_strjoin(player->comment, tmp);
@@ -150,7 +152,7 @@ void search_continue(t_player *player, char *line)
 		player->comment = tmp_end;
 		player->is_finished_com = 1;
 	}
-	else if (!player->is_finished_name)
+	else if (flag == NAME)
 	{
 		tmp = ft_strsub(line, 0, quote - line);
 		tmp_end = ft_strjoin(player->name, tmp);
@@ -158,6 +160,25 @@ void search_continue(t_player *player, char *line)
 		player->name = tmp_end;
 		player->is_finished_name = 1;
 	}
+	return (tmp);
+}
+
+void search_continue(t_player *player, char *line)
+{
+	char	*quote;
+	char	*tmp;
+
+
+	tmp = NULL;
+	quote = ft_strchr(line, '"');
+	if (!player->is_finished_com && !quote)
+		continue_name_comment(NAME, player, line, &tmp);
+	else if (!player->is_finished_name && !quote)
+		continue_name_comment(COMMENT, player, line, &tmp);
+	else if (!player->is_finished_com)
+		tmp = fifnish_add_name_comment(COMMENT, player, line, quote);
+	else if (!player->is_finished_name)
+		tmp = fifnish_add_name_comment(COMMENT, player, line, quote);
 	if (quote)
 	{
 		player->num_col += quote - line;

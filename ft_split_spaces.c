@@ -76,6 +76,31 @@ static char		*word_allocation(char **arr, char *word, int size)
 	return (word);
 }
 
+int			ft_word_handling(char **res, char const **s, int *j)
+{
+	int i;
+
+	i = 0;
+	while (is_whitespace(**s) && **s != '\0')
+		(*s)++;
+	if (**s == SEPARATOR_CHAR)
+	{
+		(*res)[i++] = *(*s)++;
+		(*res)[i] = '\0';
+		(*j)++;
+		return (0);
+	}
+	while (!(is_whitespace(**s)) && **s && *(*s - 1))
+	{
+		(*res)[i++] = *(*s)++;
+		if (**s == SEPARATOR_CHAR)
+			break;
+	}
+	(*res)[i] = '\0';
+	(*j)++;
+	return (1);
+}
+
 char			**ft_split_argument(char const *s)
 {
 	char	**res;
@@ -88,8 +113,6 @@ char			**ft_split_argument(char const *s)
 		return (NULL);
 	if (!(w_count = word_count(s)))
 		return (NULL);
-//	if ((w_count = word_count(s)) > 5) //!= num
-//		exit(1);                            // TODO: ВЫВЕСТИ ОШИБКУ - СЛИШКОМ МНОГО АРГУМЕНТОВ
 	if (!(res = (char **)malloc(sizeof(char *) * (w_count + 1))))
 		return (NULL);
 	while (j < w_count)
@@ -97,23 +120,8 @@ char			**ft_split_argument(char const *s)
 		i = 0;
 		if (!(res[j] = word_allocation(res, res[j], word_size(s))))
 			return (NULL);
-		while (is_whitespace(*s) && s != '\0')
-			s++;
-		if (*s == SEPARATOR_CHAR)
-		{
-			res[j][i++] = *s++;
-			res[j][i] = '\0';
-			j++;
-			continue ;
-		}
-		while (!(is_whitespace(*s)) && *s && *(s - 1))
-		{
-			res[j][i++] = *s++;
-			if (*s == SEPARATOR_CHAR)
-				break;
-		}
-		res[j][i] = '\0';
-		j++;
+		if (!ft_word_handling(&(res[j]), &s, &j))
+			continue;
 	}
 	res[j] = NULL;
 	return (res);

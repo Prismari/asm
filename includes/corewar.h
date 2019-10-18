@@ -22,6 +22,9 @@
 # define QUOTE 1
 # define STOP_BEFORE_QUOTE 1
 # define SKIP_QUOTE 0
+# define NAME 1
+# define COMMENT 2
+
 
 typedef struct	s_op
 {

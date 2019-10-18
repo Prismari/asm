@@ -61,7 +61,7 @@ void	search_instruction(t_player *player, char *line)
 	{
 		if (is_comment(line[player->num_col]))
 			return ;
-		if (line[player->num_col] == SEPARATOR_CHAR) // INSTRACTIONS
+		if (line[player->num_col] == SEPARATOR_CHAR)
 			player->num_col++;
 		else if (is_whitespace(line[player->num_col]))
 			skip_tab_space(player, line, SKIP_QUOTE);
@@ -72,18 +72,13 @@ void	search_instruction(t_player *player, char *line)
 				handling_label(player, line, len_token - 1);
 			else if (!(is_instruction(player, line)))
 				error_file("Syntax error", player->num_row, player->num_col);
-//			else
-//				error_file("Syntax error", player->num_col, player->num_row);
-
 		}
 	}
 	if (len_token > 0 && player->last_instr && !player->flag_lable_exist)
 	{
 		player->last_instr->start_bit = player->current_bit;
-//		printf("[%s] - %d\n", player->last_instr->instr, player->last_instr->start_bit);
 		player->current_bit += player->last_instr->size_exec_code;
 	}
-//	printf("line ~%s~ \n\t row - %3d, col - %3d\n", line, player->num_row, player->num_col);
 }
 
 void	printf_struct(t_player *player)
@@ -332,7 +327,7 @@ void	assemble(int fd, char *file_name)
 
 	if (!(header = init_player(fd, file_name)))
 		error("Error allocating header memory");
-	if (!check_name_comment(fd, header)) //TODO : сделать проверку - внутри кавычек могут быть переносы строки + после коммента должен быть перенос строки - не может быть лейблов и команд
+	if (!check_name_comment(fd, header))
 		error("Error reading of name or comment");
 	reading_body_champion(fd, header);
 	calculate_size_exec_code(header);
@@ -341,20 +336,20 @@ void	assemble(int fd, char *file_name)
 	translate_to_bytecode(header);
 	ft_putstr("Writing output program to ");
 	ft_putendl(header->file_name);
-	printf("name = [%s]\n", header->name);
-	printf("comment = [%s]\n", header->comment);
-int i;
-	  while (header->instr)
-	  {
-	  	i = 0;
-	  	printf("instr = %s\nargs -> ", header->instr->instr);
-	  	while (header->instr->args[i])
-	  		printf(" %d ", header->instr->args[i++]->data_int);
-	  	//printf("size %d\n", header->instr->size_exec_code);
-//	  	printf("start %d\n", header->instr->start_bit);
-	  	printf("\n###############################\n");
-	  	header->instr = header->instr->next;
-	  }
+//	printf("name = [%s]\n", header->name);
+//	printf("comment = [%s]\n", header->comment);
+//int i;
+//	  while (header->instr)
+//	  {
+//	  	i = 0;
+//	  	printf("instr = %s\nargs -> ", header->instr->instr);
+//	  	while (header->instr->args[i])
+//	  		printf(" %d ", header->instr->args[i++]->data_int);
+////	  	printf("size %d\n", header->instr->size_exec_code);
+////	  	printf("start %d\n", header->instr->start_bit);
+//	  	printf("\n###############################\n");
+//	  	header->instr = header->instr->next;
+//	  }
 	free_asm(header);
 	// int i;
 	//  while (header->instr)

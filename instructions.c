@@ -167,9 +167,9 @@ void 	check_arg_num(char **args, t_instruction *instr, t_player *player, char *a
 	int separ;
 	t_type	type;
 
-	i = 0;
+	i = -1;
 	separ = 0;
-	while (args[i])
+	while (args[++i])
 	{
 		change_col_num(player, &arg_line, args[i]);
 		if (i % 2 == 1)
@@ -185,12 +185,11 @@ void 	check_arg_num(char **args, t_instruction *instr, t_player *player, char *a
 			error_type(instr->instr, type, separ + 1);
 		check_type_arg(type, g_ins[instr->code_op - 1].args_types[separ], instr, separ);
 		f_funk_array[type - 1](instr->args[separ], args[i], instr->code_op, player);
-		i++;
 	}
 	if (i > 0 && args[i - 1])
 		player->num_col += ft_strlen(args[i - 1]);
 	if (i - separ !=  g_ins[instr->code_op - 1].args_num)
-		error_name("Invalid parameter count for instruction", instr->instr, player->num_row, player->num_col); // TODO : считает не правильно ндо проверить
+		error_name("Invalid parameter count for instruction", instr->instr, player->num_row, player->num_col);
 }
 
 
