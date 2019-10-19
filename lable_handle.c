@@ -2,7 +2,7 @@
 // Created by Asafoetida Estella on 2019-09-27.
 //
 
-#include "includes/corewar.h"
+#include "corewar.h"
 
 int 	is_label(char *line, t_player *player, int len)
 {
@@ -14,7 +14,6 @@ int 	is_label(char *line, t_player *player, int len)
 
 void	check_label(t_player *player, char *label)
 {
-//	printf("label [%s]\n", label);
 	int	i;
 	t_label *new_label;
 
@@ -46,7 +45,7 @@ int 	handling_label(t_player *player, char *line, int len)
 	{
 		if (is_comment(line[player->num_col]))
 		{
-			printf("nothing after label\n");
+			printf("Nothing after label\n");
 			break;
 		}
 		else if (is_whitespace(line[player->num_col]))

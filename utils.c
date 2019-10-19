@@ -6,11 +6,11 @@
 /*   By: vurrigon <vurrigon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 16:40:19 by vurrigon          #+#    #+#             */
-/*   Updated: 2019/10/16 15:31:05 by vurrigon         ###   ########.fr       */
+/*   Updated: 2019/10/19 15:29:57 by vurrigon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/corewar.h"
+#include "corewar.h"
 
 char		*ft_strndup(const char *src, int i)
 {

@@ -6,11 +6,11 @@
 /*   By: vurrigon <vurrigon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/22 12:03:05 by vurrigon          #+#    #+#             */
-/*   Updated: 2019/10/16 16:42:05 by vurrigon         ###   ########.fr       */
+/*   Updated: 2019/10/19 15:08:09 by vurrigon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/corewar.h"
+#include "corewar.h"
 
 t_player	*init_player(int fd, char *file_name)
 {

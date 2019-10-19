@@ -6,11 +6,11 @@
 /*   By: vurrigon <vurrigon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/22 17:14:23 by vurrigon          #+#    #+#             */
-/*   Updated: 2019/10/16 16:42:09 by vurrigon         ###   ########.fr       */
+/*   Updated: 2019/10/19 15:30:50 by vurrigon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/corewar.h"
+#include "corewar.h"
 
 void	write_name(t_player *player, char *line)
 {
@@ -41,7 +41,6 @@ void	write_name(t_player *player, char *line)
  		error_file("Syntax error", player->num_row, player->num_col + 1);
  	player->name = ft_strndup(tmp, length);
 	line += player->num_col;
-// 	printf("[%s]\n", player->name);
 }
 
 void	write_comment(t_player *player, char *line)
@@ -73,7 +72,6 @@ void	write_comment(t_player *player, char *line)
  		error_file("Syntax error", player->num_row, player->num_col + 1);
  	player->comment = ft_strndup(tmp, length);
 	line += player->num_col;
- 	//printf("[%s]\n", player->comment);
 }
 
 int		check_command(char *line, t_player *player)
@@ -86,6 +84,8 @@ int		check_command(char *line, t_player *player)
 	if (!ft_strncmp(&(line[player->num_col]), NAME_CMD_STRING, len_name) &&
 	(line[len_name + player->num_col] == '\t' || line[len_name + player->num_col] == ' ' || line[len_name + player->num_col] == '"'))
 	{
+		if (player->name)
+			error_file("The name of the champion has already been determined", player->num_row, player->num_col + 1);
 		player->num_col += len_name;
 		write_name(player, line);
 		return (1);
@@ -93,6 +93,8 @@ int		check_command(char *line, t_player *player)
 	else if (!ft_strncmp(&(line[player->num_col]), COMMENT_CMD_STRING, len_comment) &&
 	(line[len_comment + player->num_col] == '\t' || line[len_comment + player->num_col] == ' ' || line[len_comment + player->num_col] == '"'))
 	{
+		if (player->comment)
+			error_file("The comment of the champion has already been determined", player->num_row, player->num_col + 1);
 		player->num_col += len_comment;
 		write_comment(player, line);
 		return (1);
@@ -138,7 +140,7 @@ void	continue_name_comment(int flag, t_player *player, char *line, char **tmp)
 	}
 }
 
-char	*fifnish_add_name_comment(int flag, t_player *player, char *line, char *quote)
+char	*finish_add_name_comment(int flag, t_player *player, char *line, char *quote)
 {
 	char	*tmp_end;
 	char 	*tmp;
@@ -176,9 +178,9 @@ void search_continue(t_player *player, char *line)
 	else if (!player->is_finished_name && !quote)
 		continue_name_comment(COMMENT, player, line, &tmp);
 	else if (!player->is_finished_com)
-		tmp = fifnish_add_name_comment(COMMENT, player, line, quote);
+		tmp = finish_add_name_comment(COMMENT, player, line, quote);
 	else if (!player->is_finished_name)
-		tmp = fifnish_add_name_comment(COMMENT, player, line, quote);
+		tmp = finish_add_name_comment(NAME, player, line, quote);
 	if (quote)
 	{
 		player->num_col += quote - line;

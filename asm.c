@@ -6,11 +6,11 @@
 /*   By: vurrigon <vurrigon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 11:50:59 by vurrigon          #+#    #+#             */
-/*   Updated: 2019/10/16 17:02:49 by vurrigon         ###   ########.fr       */
+/*   Updated: 2019/10/19 15:27:52 by vurrigon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/corewar.h"
+#include "corewar.h"
 
 
 int		check_extension(char *filename)
@@ -71,7 +71,7 @@ void	search_instruction(t_player *player, char *line)
 			if (is_label(line, player, len_token))
 				handling_label(player, line, len_token - 1);
 			else if (!(is_instruction(player, line)))
-				error_file("Syntax error", player->num_row, player->num_col);
+				error_file("Syntax error", player->num_row, player->num_col + 1);
 		}
 	}
 	if (len_token > 0 && player->last_instr && !player->flag_lable_exist)
@@ -102,7 +102,6 @@ void	printf_struct(t_player *player)
 		printf("lable - %s link with instr - %s\n", tmp->l_name, tmp->instr->instr);
 		tmp = tmp->next;
 	}
-
 }
 
 void	reading_body_champion(int fd, t_player *player)
@@ -143,8 +142,6 @@ void	int32_to_bytecode(unsigned char *bytes, int value, int size)
 	int	i;
 
 	i = 0;
-	//printf("value = %x, size = %d\n", value, size);
-	//printf("BYTES [%p]\n", bytes);
 	while (size)
 	{
 		bytes[size - 1] = (value >> i) & 0xFF;
@@ -175,7 +172,6 @@ int		get_code_types(t_tokens **args)
 		offset /= 4;
 		i++;
 	}
-	//printf("CODE TYPE %x\n", result);
 	return (result);
 }
 
@@ -226,14 +222,12 @@ void	translate_to_bytecode_ins(t_instruction	*instr, unsigned char **bytes)
 	}
 }
 
-void	translate_to_bytecode(t_player *player)
+void	translate_to_bytecode(t_player *player, int new_fd)
 {
-	int		new_fd;
 	int		length;
 	unsigned char	*bytes;
 	unsigned char	*begin;
 
-	new_fd = create_file_bytecode(player);
 	length = 4 + PROG_NAME_LENGTH + 4 + 4 + COMMENT_LENGTH + 4 +
 												player->sum_size_exec_code;
 	if (!(bytes = (unsigned char *)malloc((length + 1) * sizeof(unsigned char))))
@@ -278,7 +272,6 @@ void	check_comment(int fd, int lpos, char *buf)
 	{
 		lseek(fd, lpos, SEEK_SET);
 		read(fd, buf, 1);
-//		printf("%s\n", buf);
 		if (*buf == COMMENT_CHAR || *buf == ALT_COMMENT_CHAR)
 		{
 			lseek(fd, --lpos, SEEK_SET);
@@ -291,7 +284,6 @@ void	check_comment(int fd, int lpos, char *buf)
 		if (*buf == '\n')
 			error("Syntax error - no newline at the end");
 	}
-
 }
 
 void 	check_end_file(t_player *player)
@@ -324,6 +316,7 @@ void 	check_end_file(t_player *player)
 void	assemble(int fd, char *file_name)
 {
 	t_player *header;
+	int			new_fd;
 
 	if (!(header = init_player(fd, file_name)))
 		error("Error allocating header memory");
@@ -333,7 +326,8 @@ void	assemble(int fd, char *file_name)
 	calculate_size_exec_code(header);
 	check_arg_is_digit(header);
 	check_end_file(header);
-	translate_to_bytecode(header);
+	new_fd = create_file_bytecode(header);
+	translate_to_bytecode(header, new_fd);
 	ft_putstr("Writing output program to ");
 	ft_putendl(header->file_name);
 //	printf("name = [%s]\n", header->name);

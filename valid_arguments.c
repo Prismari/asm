@@ -2,7 +2,7 @@
 // Created by Asafoetida Estella on 2019-10-01.
 //
 
-#include "./includes/corewar.h"
+#include "corewar.h"
 
 t_func_pointer f_funk_array[5] = {
 		check_reg,
@@ -129,7 +129,7 @@ void		check_arg_is_digit(t_player *player)
 	int i;
 
 	if (!(instr = player->instr))
-		error_file("Syntax error", player->num_row, player->num_col);
+		error_file("Syntax error", player->num_row, player->num_col + 1);
 	while (instr)
 	{
 		i = 0;

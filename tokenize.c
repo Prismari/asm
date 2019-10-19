@@ -6,11 +6,11 @@
 /*   By: vurrigon <vurrigon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/22 17:16:41 by vurrigon          #+#    #+#             */
-/*   Updated: 2019/09/22 17:16:54 by vurrigon         ###   ########.fr       */
+/*   Updated: 2019/10/19 15:34:06 by vurrigon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/corewar.h"
+#include "corewar.h"
 
 int search_length_token(t_player *player, char	*line)
 {
@@ -19,7 +19,6 @@ int search_length_token(t_player *player, char	*line)
 
     i = player->num_col;
     len = 0;
-    //printf("line [%s]\n", &line[player->num_col]);
     while (line[i] && line[i] != SEPARATOR_CHAR && !is_whitespace(line[i]) &&
            !is_comment(line[i]))
     {
@@ -34,19 +33,14 @@ int search_length_token(t_player *player, char	*line)
         i++;
         len++;
     }
-    //printf("itog == [%s]\n", &line[i]);
     return (len);
 }
-
-
-
 
 void	check_op(t_player *player, char *op)
 {
     int	i;
 
     i = 0;
-    printf("OP == %s\n", op);
     while (i++ < 16)
         if (!ft_strcmp(op, g_ins[i - 1].name))
         {
@@ -87,9 +81,7 @@ void	check_arg(char *token, t_player *player)
         if (ft_strlen(token) > 2 || (token[0] == '0' && token[1] == '0') ||
             (token[0] == '0' && token[1] == '\0'))
             error_file("Invalid REGISTER", player->num_col + 1, player->num_row);
-
     }
-
     printf("type = %u\n", type);
 }
 

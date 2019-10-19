@@ -2,7 +2,7 @@
 // Created by Asafoetida Estella on 2019-09-27.
 //
 
-#include "includes/corewar.h"
+#include "corewar.h"
 extern  	t_func_pointer f_funk_array[5];
 
 void	link_lable_to_instr(t_instruction *instr, t_label *lable)
@@ -14,10 +14,14 @@ void	link_lable_to_instr(t_instruction *instr, t_label *lable)
 	tmp = lable;
 	while (tmp->prev && tmp->prev->instr == NULL)
 	{
-//		printf("lable %s links to %s\n", tmp->l_name, instr->instr);
 		tmp = tmp->prev;
 		tmp->instr = instr;
 	}
+}
+
+int		check_next_sign(char sign)
+{
+	return (is_whitespace(sign) || sign == '%' || sign == '-');
 }
 
 int		check_instr_name(char *line, int *i_names, t_player *player)
@@ -33,14 +37,13 @@ int		check_instr_name(char *line, int *i_names, t_player *player)
 		instr_name = g_ins[i_names[i] - 1].name;
 		while (instr_name[j] && !(is_whitespace(line[player->num_col + j])) && instr_name[j] == line[player->num_col + j])
 			j++;
-		if (instr_name[j] == '\0')
+		if (instr_name[j] == '\0' && check_next_sign(line[player->num_col + j]))
 		{
 			instr_name = ft_strsub(line, player->num_col, j);
 			player->num_col += j;
 			check_instruction(player, instr_name, &(line[player->num_col]), i_names[i]);
 			return (j);
 		}
-
 		i++;
 	}
 	return (0);
@@ -107,7 +110,7 @@ void	del_comment(char *line)
 int	check_separator_char(int *sep, int *i, char *c, t_tokens *arg)
 {
 	if (*c != SEPARATOR_CHAR)
-		 error_file("Syntax error", arg->row, arg->col + ft_strlen(arg->data));
+		 error_file("Syntax error", arg->row, arg->col + ft_strlen(arg->data) + 1);
 	else
 	{
 		free(c);
@@ -180,7 +183,7 @@ void 	check_arg_num(char **args, t_instruction *instr, t_player *player, char *a
 		if (i - separ >=  g_ins[instr->code_op - 1].args_num)
 			error_name("Invalid parameter count for instruction", instr->instr, player->num_row, player->num_col);
 		if (args[i] == NULL)
-			error_file("Syntax error", player->num_col, player->num_row);
+			error_file("Syntax error", player->num_row, player->num_col + 1);
 		if (!(type = know_type(args[i])))
 			error_type(instr->instr, type, separ + 1);
 		check_type_arg(type, g_ins[instr->code_op - 1].args_types[separ], instr, separ);
@@ -218,7 +221,7 @@ int 	check_arguments(t_player *player, char *arg_line)
 	del_comment(arg_line);
 	args = ft_split_argument(arg_line);
 	if (args == NULL)
-		error_name("No arguments for instruction", player->last_instr->instr, player->num_col, player->num_row);
+		error_name("No arguments for instruction", player->last_instr->instr, player->num_row, player->num_col);
 	else
 	{
 		//player->num_col += ft_strlen(arg_line);
