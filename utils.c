@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "corewar.h"
+//#include "corewar.h"
+#include "./includes/corewar.h" // TODO: удалить - это читсо для силайна
+
 
 char		*ft_strndup(const char *src, int i)
 {

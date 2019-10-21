@@ -1,8 +1,10 @@
-
-
-
-   			.comment	""
-.name		"error_bot_name not found"
+.name "zork
+f
+f
+asd"
+.comment "I'M ALLIII
+IVEфsss"
 
 				zdklsnv:
-	live %1
+	sti r4,%:zdklsnv, %1
+	ldi 4, r4, r4

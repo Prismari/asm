@@ -10,7 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "corewar.h"
+//#include "corewar.h"
+#include "./includes/corewar.h" // TODO: удалить - это читсо для силайна
 
 int		is_whitespace(int c)
 {

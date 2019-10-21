@@ -10,7 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "corewar.h"
+//#include "corewar.h"
+#include "./includes/corewar.h" // TODO: удалить - это читсо для силайна
 
 t_player	*init_player(int fd, char *file_name)
 {

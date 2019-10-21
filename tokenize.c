@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "corewar.h"
+//#include "corewar.h"
+#include "./includes/corewar.h" // TODO: удалить - это читсо для силайна
+
 
 int search_length_token(t_player *player, char	*line)
 {

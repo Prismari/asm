@@ -2,7 +2,9 @@
 // Created by Asafoetida Estella on 2019-10-01.
 //
 
-#include "corewar.h"
+//#include "corewar.h"
+#include "./includes/corewar.h" // TODO: удалить - это читсо для силайна
+
 
 t_func_pointer f_funk_array[5] = {
 		check_reg,
@@ -113,9 +115,6 @@ void		lable_to_int(t_label *lables, t_instruction *instr, int arg_num, t_player 
 				instr->args[arg_num]->data_int = pl->sum_size_exec_code - instr->start_bit;
 			else
 				instr->args[arg_num]->data_int = tmp->instr->start_bit - instr->start_bit;
-
-			//			printf("LAble_start [%d], instr_start [%d]\n, ", tmp->instr->start_bit, instr->start_bit);
-			//instr->args[arg_num]->data_int = tmp->instr->start_bit;
 		}
 		tmp = tmp->next;
 	}

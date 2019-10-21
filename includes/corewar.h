@@ -12,8 +12,10 @@
 
 #ifndef COREWAR_H
 # define COREWAR_H
-# include "libft.h"
-# include "ft_printf.h"
+//# include "libft.h"
+//# include "ft_printf.h"
+# include "../libft/libft.h" //TODO:УДАЛИТЬ - вернуть то что выше
+# include "../libft/ft_printf.h" //TODO:УДАЛИТЬ - вернуть то что выше
 # include "op.h"
 # include "asm_operations.h"
 # include <sys/types.h>

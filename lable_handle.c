@@ -2,7 +2,9 @@
 // Created by Asafoetida Estella on 2019-09-27.
 //
 
-#include "corewar.h"
+//#include "corewar.h"
+#include "./includes/corewar.h" // TODO: удалить - это читсо для силайна
+
 
 int 	is_label(char *line, t_player *player, int len)
 {

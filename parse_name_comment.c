@@ -10,7 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "corewar.h"
+//#include "corewar.h"
+#include "./includes/corewar.h" // TODO: удалить - это читсо для силайна
+
+void	check_len_name_comment(int flag, int len)
+{
+	if (flag == NAME)
+	{
+		if (len > PROG_NAME_LENGTH)
+			error("Champion name too long (Max length 128)");
+	}
+	else if (flag == COMMENT)
+	{
+		if (len > COMMENT_LENGTH)
+			error("Champion comment too long (Max length 2048)");
+	}
+}
+
+void	check_end_comment(t_player *player, char *line)
+{
+	if (skip_tab_space(player, line, STOP_BEFORE_QUOTE) && !is_comment(line[player->num_col]))
+		error_file("Syntax error", player->num_row, player->num_col + 1);
+}
 
 void	write_name(t_player *player, char *line)
 {
@@ -33,13 +54,11 @@ void	write_name(t_player *player, char *line)
 	else if (player->name != NULL)
 		error_file("Syntax error", player->num_row, player->num_col + 1);
 	length = tmp - &line[player->num_col];
-	if (length > PROG_NAME_LENGTH)
- 		error("Champion name too long (Max length 128)");
+	check_len_name_comment(NAME, length);
  	tmp = &line[player->num_col];
  	player->num_col += length + 1;
- 	if (skip_tab_space(player, line, STOP_BEFORE_QUOTE) && !is_comment(line[player->num_col]))
- 		error_file("Syntax error", player->num_row, player->num_col + 1);
- 	player->name = ft_strndup(tmp, length);
+ 	check_end_comment(player, line);
+	player->name = ft_strndup(tmp, length);
 	line += player->num_col;
 }
 
@@ -64,12 +83,10 @@ void	write_comment(t_player *player, char *line)
 	else if (player->comment != NULL)
 		error_file("Syntax error", player->num_row, player->num_col + 1);
 	length = tmp - &line[player->num_col];
-	if (length > COMMENT_LENGTH)
-		error("Champion comment too long (Max length 2048)");
+	check_len_name_comment(COMMENT, length);
  	tmp = &line[player->num_col];
  	player->num_col += length + 1;
- 	if (skip_tab_space(player, line, STOP_BEFORE_QUOTE) && !is_comment(line[player->num_col]))
- 		error_file("Syntax error", player->num_row, player->num_col + 1);
+	check_end_comment(player, line);
  	player->comment = ft_strndup(tmp, length);
 	line += player->num_col;
 }

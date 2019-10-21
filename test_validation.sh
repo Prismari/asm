@@ -15,11 +15,11 @@ do
 ./asm $f
 echo "${GREEN}Original${NC}"
 ./champ_test/asm $f
-echo 
+echo
 done
 rm -rf champ_test/checker_test_files/error/*.cor
 
-
+#
 #echo "\n${YEL} VALID_ARGS ${NC} \n"
 #
 #
