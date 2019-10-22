@@ -13,8 +13,7 @@
 //#include "corewar.h"
 #include "./includes/corewar.h" // TODO: удалить - это читсо для силайна
 
-
-char		*ft_strndup(const char *src, int i)
+char	*ft_strndup(const char *src, int i)
 {
 	int		a;
 	char	*result_string;
@@ -30,14 +29,12 @@ char		*ft_strndup(const char *src, int i)
 	return (result_string);
 }
 
-int	is_comment(int chr)
+int		is_comment(int chr)
 {
 	return (chr == ALT_COMMENT_CHAR || chr == COMMENT_CHAR);
 }
 
-
-
-int	skip_tab_space(t_player *player, char *line, int flag)
+int		skip_tab_space(t_player *player, char *line, int flag)
 {
 	while (line[player->num_col])
 	{

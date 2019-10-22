@@ -42,7 +42,7 @@ void	args_to_bcode(t_tokens **args, unsigned char **bytes, int code_op)
 	}
 }
 
-void	translate_to_bytecode_ins(t_instruction *instr, unsigned char **bytes)
+void	translate_to_bytecode_ins(t_instr *instr, unsigned char **bytes)
 {
 	while (instr)
 	{

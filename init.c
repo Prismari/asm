@@ -37,10 +37,10 @@ t_player	*init_player(int fd, char *file_name)
 	return (player);
 }
 
-t_instruction	*init_instr(char *instr)
+t_instr	*init_instr(char *instr)
 {
-	t_instruction *op;
-	if (!(op = malloc(sizeof(t_instruction))))
+	t_instr *op;
+	if (!(op = malloc(sizeof(t_instr))))
 		return (NULL);
 	op->instr = instr;
 	op->code_op = 0;

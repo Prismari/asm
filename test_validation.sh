@@ -54,7 +54,7 @@ if diff ./CHECKER_ASM/our_output_file ./CHECKER_ASM/orig_output_file &> /dev/nul
     echo "bytecode -> ${GREEN}OK${NC}"
   else
     echo "${CYAN}exec test - $i${NC}${GREEN}"
-    echo "${RED}KO${NC}"
+    echo "bytecode -> ${RED}KO${NC}"
 fi
 
 
@@ -62,7 +62,7 @@ if diff ./CHECKER_ASM/test_valid_origin ./CHECKER_ASM/test_valid_our &> /dev/nul
   echo "error handling -> ${GREEN}OK${NC}"
   else
     echo "${CYAN}exec test - $i${NC}"
-    echo "${RED}KO${NC}"
+    echo "error handling -> ${RED}KO${NC}"
     echo "${GREEN}Our asm ${NC}"
     cat test_valid_our
     echo "${GREEN}Original${NC}"

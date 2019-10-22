@@ -27,6 +27,7 @@
 # define SKIP_QUOTE 0
 # define NAME 1
 # define COMMENT 2
+# define US unsigned short
 
 typedef enum // TODO: переделать в Define
 {
@@ -47,7 +48,7 @@ typedef struct		s_tokens
 	int 			row;
 }					t_tokens;
 
-typedef struct		s_instruction
+typedef struct		s_instr
 {
 	char					*instr;
 	unsigned short			code_op;
@@ -57,8 +58,8 @@ typedef struct		s_instruction
 	struct s_label			*label;
 	int 					start_bit;
 	int						size_exec_code;
-	struct s_instruction	*next; 
-}					t_instruction;
+	struct s_instr	*next;
+}					t_instr;
 
 typedef struct		s_player
 {
@@ -68,8 +69,8 @@ typedef struct		s_player
 	int 					fd;
 	int						is_finished_name;
 	int						is_finished_com;
-	struct s_instruction	*instr;
-	struct s_instruction	*last_instr;
+	struct s_instr	*instr;
+	struct s_instr	*last_instr;
 	struct s_label			*labels;
 	struct s_label			*last_label;
 	struct s_label			*flag_lable_exist;
@@ -83,7 +84,7 @@ typedef struct		s_player
 typedef struct		s_label
 {
     char					*l_name;
-    struct s_instruction	*instr;
+    struct s_instr	*instr;
     int						sum_size_exec_code;
     struct s_label			*next;
 	struct s_label			*prev;
@@ -100,21 +101,19 @@ char			*ft_strndup(const char *src, int i);
 int				is_comment(int chr);
 t_player		*init_player(int fd, char *file_name);
 int				is_whitespace(int c);
-t_instruction	*init_instr(char *label); //??????
+t_instr	*init_instr(char *label); //??????
 t_label			*init_label(char *label);
 t_tokens		*init_tokens(t_type type);
 int				check_name_comment(int fd, t_player *player);
 void			check_comment(int fd, int lpos, char *buf);
 void			check_arg_is_digit(t_player *player);
 int				skip_tab_space(t_player *player, char *line, int flag);
-void			handling_token(t_player *player, int len, char *line);
 int 			search_length_token(t_player *player, char	*line);
-void			add_instruction(t_player *player, t_instruction *instr);
+void			add_instruction(t_player *player, t_instr *instr);
 int 			handling_label(t_player *player, char *line, int len);
 int 			is_instruction(t_player *player, char *line);
 int 			is_label(char *line, t_player *player, int len);
 void			check_instruction(t_player *player, char *instr, char *line, int i);
-void			check_lable_links(t_label *labels);
 char			**ft_split_argument(char const *s);
 int 			check_arguments(t_player *player, char *instr);
 t_type			know_type(char *token);
@@ -123,7 +122,7 @@ void 			check_dir(t_tokens *token, char *name, unsigned short instr, t_player *p
 void			check_dir_label(t_tokens *token, char *name, unsigned short instr, t_player *pl);
 void			check_indir(t_tokens *token, char *name, unsigned short instr, t_player *pl);
 void			check_indir_label(t_tokens *token, char *name, unsigned short instr, t_player *pl);
-void			check_type_arg(t_type	type, int needed_type, t_instruction *instr, int num);
+void			check_type_arg(t_type	type, int need_type, t_instr *instr, int num);
 
 void			del_comment(char *line);
 void			reading_body_champion(int fd, t_player *player);
@@ -143,7 +142,7 @@ void			search_continue(t_player *player, char *line);
 
 void			error(char *str);
 void			error_file(char *str, int col, int row);
-void			error_arg(t_instruction *inst, t_type type, int arg);
+void			error_arg(t_instr *inst, t_type type, int arg);
 void			error_type(char *instr, t_type type, int arg);
 void 			error_name(char *str, char *name, int row, int col);
 

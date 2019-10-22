@@ -39,7 +39,7 @@ int		check_extension(char *filename)
 void	printf_struct(t_player *player)
 {
 	t_label *tmp;
-	t_instruction *tmp_i;
+	t_instr *tmp_i;
 
 	tmp = player->labels;
 	tmp_i = player->instr;

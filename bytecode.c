@@ -73,7 +73,7 @@ int		get_code_types(t_tokens **args)
 
 void	calculate_size_exec_code(t_player *player)
 {
-	t_instruction	*instr;
+	t_instr	*instr;
 	int				size;
 
 	size = 0;

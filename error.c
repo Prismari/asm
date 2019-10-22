@@ -52,7 +52,7 @@ void	error_type(char *instr, t_type type, int arg)
 	exit(1);
 }
 
-void	error_arg(t_instruction *inst, t_type type, int arg)
+void	error_arg(t_instr *inst, t_type type, int arg)
 {
 	t_tokens *a;
 

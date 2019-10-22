@@ -13,9 +13,9 @@
 //#include "corewar.h"
 #include "./includes/corewar.h" // TODO: удалить - это читсо для силайна
 
-void	add_instruction(t_player *player, t_instruction *instr)
+void	add_instruction(t_player *player, t_instr *instr)
 {
-	t_instruction *tmp;
+	t_instr *tmp;
 
 	tmp = player->instr;
 	if (!tmp)

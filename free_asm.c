@@ -26,9 +26,9 @@ static void	free_arg_asm(t_tokens **args)
 	free(args);
 }
 
-static void	free_instr_asm(t_instruction *instr)
+static void	free_instr_asm(t_instr *instr)
 {
-	t_instruction	*tmp;
+	t_instr	*tmp;
 
 	while (instr)
 	{
