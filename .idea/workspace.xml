@@ -12,25 +12,87 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4fb1f1c-bae4-4444-b809-a5927f11f9c9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/test_validation.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asm.c" beforeDir="false" afterPath="$PROJECT_DIR$/asm.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/5.cor" beforeDir="false" afterPath="$PROJECT_DIR$/champ_test/5.cor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/5.s" beforeDir="false" afterPath="$PROJECT_DIR$/champ_test/5.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/2.s" beforeDir="false" afterPath="$PROJECT_DIR$/champ_test/2.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid/Survivor.s" beforeDir="false" afterPath="$PROJECT_DIR$/champ_test/checker_test_files/error/Survivor.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/42.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/Asombra.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/Car.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/Douceur_power.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/Explosive_Kitty.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/Gagnant.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/Kappa.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/Kittystrophic.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/Machine-gun.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/MarineKing.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/Misaka_Mikoto.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/Octobre_Rouge_V4.2.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/Rainbow_dash.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/Survivor.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/THUNDER.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/Varimathras.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/Wall.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/_honeybadger.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/aff_no_OCP.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/barriere.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/bee_gees.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/big_feet.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/bigzork.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/casimir.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/champ.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/comment_len_2048.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/corelol.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/darksasuke.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/doge.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/dubo.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/empty_namecomment.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/end_comment.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/ex.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/ex1.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/flipped_name_comment.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/fluttershy.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/gateau.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/gedeon.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/hash_and_tab_at_EOF.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/hash_at_header.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/helltrain.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/jinx.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/jumper.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/justin_bee.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/littlepuppy.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/live.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/loose.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/mandragore.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/maxidef.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/meowluigi.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/mise_a_jour_windows95.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/mortel.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/name_len_128.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/neg_indirect_error.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/nl_at_header.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/nl_at_header_flipped.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/no_space_between_op_and_param.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/overwatch.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/run_Kitty_RUN.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/salamahenagalabadoun.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/sam_2.0.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/skynet.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/slider2.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/sq_at_header.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/tab_at_end_of_file.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/terminator.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/toto.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/turtle.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/ultima.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/ultimate-surrender.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/weirdest_error_ever.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/youforkmytralala.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/zork.s" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/checker/tests/asm/valid/big_feet.s" beforeDir="false" afterPath="$PROJECT_DIR$/checker/tests/asm/valid/big_feet.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checker/tests/asm/valid2/big_feet.s" beforeDir="false" afterPath="$PROJECT_DIR$/checker/tests/asm/valid2/big_feet.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checker/tests/vm/champ/big_feet.s" beforeDir="false" afterPath="$PROJECT_DIR$/checker/tests/vm/champ/big_feet.s" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/error.c" beforeDir="false" afterPath="$PROJECT_DIR$/error.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/free_asm.c" beforeDir="false" afterPath="$PROJECT_DIR$/free_asm.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ft_split_spaces.c" beforeDir="false" afterPath="$PROJECT_DIR$/ft_split_spaces.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/corewar.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/corewar.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/init.c" beforeDir="false" afterPath="$PROJECT_DIR$/init.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/instructions.c" beforeDir="false" afterPath="$PROJECT_DIR$/instructions.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lable_handle.c" beforeDir="false" afterPath="$PROJECT_DIR$/lable_handle.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parse_name_comment.c" beforeDir="false" afterPath="$PROJECT_DIR$/parse_name_comment.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_validation.sh" beforeDir="false" afterPath="$PROJECT_DIR$/test_validation.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tokenize.c" beforeDir="false" afterPath="$PROJECT_DIR$/tokenize.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils.c" beforeDir="false" afterPath="$PROJECT_DIR$/utils.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/valid_arguments.c" beforeDir="false" afterPath="$PROJECT_DIR$/valid_arguments.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_validation.sh" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -61,14 +123,15 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/champ_test/checker_test_files/error" />
+      <recent name="$PROJECT_DIR$/CHECKER_ASM" />
+      <recent name="$PROJECT_DIR$/champ_test/checker_test_files/valid" />
+      <recent name="$PROJECT_DIR$/champ_test" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/champ_test" />
       <recent name="$PROJECT_DIR$/libft" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/champ_test/checker_test_files/valid" />
-      <recent name="$PROJECT_DIR$/champ_test/checker_test_files/error" />
-      <recent name="$PROJECT_DIR$/champ_test" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -202,74 +265,34 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/valid_arguments.c</url>
-          <line>24</line>
-          <option name="timeStamp" value="67" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/tokenize.c</url>
-          <line>78</line>
+          <line>74</line>
           <option name="timeStamp" value="69" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/valid_arguments.c</url>
-          <line>21</line>
-          <option name="timeStamp" value="81" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/instructions.c</url>
-          <line>209</line>
+          <line>197</line>
           <option name="timeStamp" value="103" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/ft_split_spaces.c</url>
-          <line>116</line>
+          <line>124</line>
           <option name="timeStamp" value="106" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/ft_split_spaces.c</url>
-          <line>114</line>
-          <option name="timeStamp" value="107" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/ft_split_spaces.c</url>
-          <line>112</line>
-          <option name="timeStamp" value="108" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/ft_split_spaces.c</url>
-          <line>121</line>
-          <option name="timeStamp" value="109" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/asm.c</url>
-          <line>367</line>
+          <line>360</line>
           <option name="timeStamp" value="156" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/parse_name_comment.c</url>
-          <line>136</line>
+          <line>149</line>
           <option name="timeStamp" value="166" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/parse_name_comment.c</url>
-          <line>42</line>
+          <line>61</line>
           <option name="timeStamp" value="168" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/valid_arguments.c</url>
-          <line>130</line>
-          <option name="timeStamp" value="176" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/valid_arguments.c</url>
-          <line>121</line>
-          <option name="timeStamp" value="177" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/valid_arguments.c</url>
-          <line>92</line>
-          <option name="timeStamp" value="178" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/asm.c</url>
@@ -278,7 +301,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/lable_handle.c</url>
-          <line>24</line>
+          <line>25</line>
           <option name="timeStamp" value="185" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
@@ -287,34 +310,14 @@
           <option name="timeStamp" value="190" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/valid_arguments.c</url>
-          <line>89</line>
-          <option name="timeStamp" value="195" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/asm.c</url>
-          <line>335</line>
+          <line>327</line>
           <option name="timeStamp" value="197" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/parse_name_comment.c</url>
-          <line>224</line>
-          <option name="timeStamp" value="198" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/instructions.c</url>
-          <line>168</line>
+          <line>160</line>
           <option name="timeStamp" value="199" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/ft_split_spaces.c</url>
-          <line>110</line>
-          <option name="timeStamp" value="202" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/ft_split_spaces.c</url>
-          <line>126</line>
-          <option name="timeStamp" value="203" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
