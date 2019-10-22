@@ -127,6 +127,15 @@ void			check_type_arg(t_type	type, int needed_type, t_instruction *instr, int nu
 
 void			del_comment(char *line);
 void			reading_body_champion(int fd, t_player *player);
+void			check_len_name_comment(int flag, int len);
+void			check_end_comment(t_player *player, char *line);
+void 			check_after_quote(t_player *player, char *line);
+void			write_name(t_player *player, char *line);
+void			write_comment(t_player *player, char *line);
+void			continue_name_com(int flag, t_player *player, char *line, char **tmp);
+char			*finish_add_nam_com(int flag, t_player *player, char *line, char *quote);
+void			search_comment_name(t_player *player, char *line);
+void			search_continue(t_player *player, char *line);
 
 /*
 **	Error

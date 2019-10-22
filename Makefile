@@ -40,7 +40,9 @@ COMMON_FILES =	asm.c \
                 bytecode.c\
                 bytecode_translate.c\
                 parse_body.c\
-                is_something_check.c
+                is_something_check.c\
+                parse_name_comment_check_error.c\
+                parse_name_comment_check.c
 
 SRC_DIRECTORY = ./
 SRC_COMMON_FILES = $(addprefix $(SRC_DIRECTORY), $(COMMON_FILES))

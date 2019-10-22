@@ -12,24 +12,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4fb1f1c-bae4-4444-b809-a5927f11f9c9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/bytecode.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bytecode_translate.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/is_something_check.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/parse_body.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parse_name_comment_check.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parse_name_comment_check_error.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/asm" beforeDir="false" afterPath="$PROJECT_DIR$/asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asm.c" beforeDir="false" afterPath="$PROJECT_DIR$/asm.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checker/tests/asm/valid/big_feet.s" beforeDir="false" afterPath="$PROJECT_DIR$/checker/tests/asm/valid/big_feet.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checker/tests/asm/valid2/big_feet.s" beforeDir="false" afterPath="$PROJECT_DIR$/checker/tests/asm/valid2/big_feet.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checker/tests/vm/champ/big_feet.s" beforeDir="false" afterPath="$PROJECT_DIR$/checker/tests/vm/champ/big_feet.s" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/error.c" beforeDir="false" afterPath="$PROJECT_DIR$/error.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/free_asm.c" beforeDir="false" afterPath="$PROJECT_DIR$/free_asm.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ft_split_spaces.c" beforeDir="false" afterPath="$PROJECT_DIR$/ft_split_spaces.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/corewar.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/corewar.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lable_handle.c" beforeDir="false" afterPath="$PROJECT_DIR$/lable_handle.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/parse_name_comment.c" beforeDir="false" afterPath="$PROJECT_DIR$/parse_name_comment.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_validation.sh" beforeDir="false" afterPath="$PROJECT_DIR$/test_validation.sh" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -139,7 +131,7 @@
       <workItem from="1571311873732" duration="4591000" />
       <workItem from="1571387116833" duration="8439000" />
       <workItem from="1571652732617" duration="3927000" />
-      <workItem from="1571752208512" duration="3264000" />
+      <workItem from="1571752208512" duration="5521000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <created>1569590889675</created>
@@ -225,16 +217,6 @@
           <option name="timeStamp" value="156" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/parse_name_comment.c</url>
-          <line>169</line>
-          <option name="timeStamp" value="166" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/parse_name_comment.c</url>
-          <line>61</line>
-          <option name="timeStamp" value="168" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/lable_handle.c</url>
           <line>17</line>
           <option name="timeStamp" value="185" />
@@ -258,6 +240,11 @@
           <url>file://$PROJECT_DIR$/error.c</url>
           <line>58</line>
           <option name="timeStamp" value="200" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/parse_name_comment.c</url>
+          <line>12</line>
+          <option name="timeStamp" value="201" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

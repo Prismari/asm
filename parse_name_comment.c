@@ -6,117 +6,51 @@
 /*   By: vurrigon <vurrigon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/22 17:14:23 by vurrigon          #+#    #+#             */
-/*   Updated: 2019/10/19 15:30:50 by vurrigon         ###   ########.fr       */
+/*   Updated: 2019/10/22 18:19:33 by aestella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include "corewar.h"
 #include "./includes/corewar.h" // TODO: удалить - это читсо для силайна
 
-void	check_len_name_comment(int flag, int len)
+int		is_space_after_name_comment(t_player *player, char *line, int len)
 {
-	if (flag == NAME)
-	{
-		if (len > PROG_NAME_LENGTH)
-			error("Champion name too long (Max length 128)");
-	}
-	else if (flag == COMMENT)
-	{
-		if (len > COMMENT_LENGTH)
-			error("Champion comment too long (Max length 2048)");
-	}
-}
-
-void	check_end_comment(t_player *player, char *line)
-{
-	if (skip_tab_space(player, line, STOP_BEFORE_QUOTE) && !is_comment(line[player->num_col]))
-		error_file("Syntax error", player->num_row, player->num_col + 1);
-}
-
-void	write_name(t_player *player, char *line)
-{
-	char	*tmp;
-	int		length;
-	char	*tmp_free;
-
-	if (skip_tab_space(player, line, STOP_BEFORE_QUOTE) != QUOTE)
-		error_file("Syntax error", player->num_row, player->num_col + 1);
-	player->num_col++;
-	tmp = ft_strchr(&line[player->num_col], '"');
-	if (!tmp)
-	{
-		player->is_finished_name = 0;
-		tmp_free = ft_strdup(&line[player->num_col]);
-		player->name = ft_strjoin(tmp_free, "\n");
-		free(tmp_free);
-		return ;
-	}
-	else if (player->name != NULL)
-		error_file("Syntax error", player->num_row, player->num_col + 1);
-	length = tmp - &line[player->num_col];
-	check_len_name_comment(NAME, length);
- 	tmp = &line[player->num_col];
- 	player->num_col += length + 1;
- 	check_end_comment(player, line);
-	player->name = ft_strndup(tmp, length);
-	line += player->num_col;
-}
-
-void	write_comment(t_player *player, char *line)
-{
-	char	*tmp;
-	int		length;
-	char	*tmp_free;
-
-	if (skip_tab_space(player, line, STOP_BEFORE_QUOTE) != QUOTE)
-		error_file("Syntax error", player->num_row, player->num_col + 1);
-	player->num_col++;
-	tmp = ft_strchr(&line[player->num_col], '"');
-	if (!tmp)
-	{
-		player->is_finished_com = 0;
-		tmp_free = ft_strdup(&line[player->num_col]);
-		player->comment = ft_strjoin(tmp_free, "\n");
-		free(tmp_free);
-		return ;
-	}
-	else if (player->comment != NULL)
-		error_file("Syntax error", player->num_row, player->num_col + 1);
-	length = tmp - &line[player->num_col];
-	check_len_name_comment(COMMENT, length);
- 	tmp = &line[player->num_col];
- 	player->num_col += length + 1;
-	check_end_comment(player, line);
- 	player->comment = ft_strndup(tmp, length);
-	line += player->num_col;
-}
-
-int		check_command(char *line, t_player *player)
-{	
-	int	len_name;
-	int len_comment;
-
-	len_name = ft_strlen(NAME_CMD_STRING);
-	len_comment = ft_strlen(COMMENT_CMD_STRING);
-	if (!ft_strncmp(&(line[player->num_col]), NAME_CMD_STRING, len_name) &&
-	(line[len_name + player->num_col] == '\t' || line[len_name + player->num_col] == ' ' || line[len_name + player->num_col] == '"'))
-	{
-		if (player->name)
-			error_file("The name of the champion has already been determined", player->num_row, player->num_col + 1);
-		player->num_col += len_name;
-		write_name(player, line);
+	if ((line[len + player->num_col] == '\t'
+				|| line[len + player->num_col] == ' '
+				|| line[len + player->num_col] == '"'))
 		return (1);
-	}
-	else if (!ft_strncmp(&(line[player->num_col]), COMMENT_CMD_STRING, len_comment) &&
-	(line[len_comment + player->num_col] == '\t' || line[len_comment + player->num_col] == ' ' || line[len_comment + player->num_col] == '"'))
+	else
+		return (0);
+}
+
+int		check_command(char *line, t_player *pl)
+{
+	int	len_n;
+	int len_c;
+
+	len_n = ft_strlen(NAME_CMD_STRING);
+	len_c = ft_strlen(COMMENT_CMD_STRING);
+	if (!ft_strncmp(&(line[pl->num_col]), NAME_CMD_STRING, len_n)
+			&& is_space_after_name_comment(pl, line, len_n))
 	{
-		if (player->comment)
-			error_file("The comment of the champion has already been determined", player->num_row, player->num_col + 1);
-		player->num_col += len_comment;
-		write_comment(player, line);
-		return (1);
+		if (pl->name)
+			error_file("The name of the champion has already been determined",
+					pl->num_row, pl->num_col + 1);
+		pl->num_col += len_n;
+		write_name(pl, line);
 	}
-	return (0);
+	else if (!ft_strncmp(&(line[pl->num_col]), COMMENT_CMD_STRING, len_c)
+			&& is_space_after_name_comment(pl, line, len_c))
+	{
+		if (pl->comment)
+			error_file("The comment of the champion has already been "
+					"determined", pl->num_row, pl->num_col + 1);
+		pl->num_col += len_c;
+		write_comment(pl, line);
+	}
+	else
+		return (0);
+	return (1);
 }
 
 void	check_comment(int fd, int lpos, char *buf)
@@ -130,7 +64,7 @@ void	check_comment(int fd, int lpos, char *buf)
 			lseek(fd, --lpos, SEEK_SET);
 			read(fd, buf, 1);
 			if (*buf == '\n')
-				return;
+				return ;
 			else
 				error("Syntax error - no newline at the end");
 		}
@@ -139,85 +73,21 @@ void	check_comment(int fd, int lpos, char *buf)
 	}
 }
 
-void check_after_quote(t_player *player, char *line)
-{
-	int i;
-
-	i = 1;
-	while (line[i])
-	{
-		if (is_whitespace(line[i]))
-		{
-			i++;
-			continue;
-		}
-		if (is_comment(line[i]))
-			break;
-		if (line[i] != '\0')
-			error_file("Syntax error", player->num_row, player->num_col + i + 1);
-		i++;
-	}
-}
-
-void	continue_name_comment(int flag, t_player *player, char *line, char **tmp)
-{
-	if (flag == NAME)
-	{
-		*tmp = ft_strjoin(player->comment, line);
-		if (player->comment)
-			free(player->comment);
-		player->comment = ft_strjoin(*tmp, "\n");
-	}
-	else if (flag == COMMENT)
-	{
-		*tmp = ft_strjoin(player->name, line);
-		if (player->name)
-			free(player->name);
-		player->name = ft_strjoin(*tmp, "\n");
-	}
-}
-
-char	*finish_add_name_comment(int flag, t_player *player, char *line, char *quote)
-{
-	char	*tmp_end;
-	char 	*tmp;
-
-	tmp = NULL;
-	if (flag == COMMENT)
-	{
-		tmp = ft_strsub(line, 0, quote - line);
-		tmp_end = ft_strjoin(player->comment, tmp);
-		free(player->comment);
-		player->comment = tmp_end;
-		player->is_finished_com = 1;
-	}
-	else if (flag == NAME)
-	{
-		tmp = ft_strsub(line, 0, quote - line);
-		tmp_end = ft_strjoin(player->name, tmp);
-		free(player->name);
-		player->name = tmp_end;
-		player->is_finished_name = 1;
-	}
-	return (tmp);
-}
-
-void search_continue(t_player *player, char *line)
+void	search_continue(t_player *player, char *line)
 {
 	char	*quote;
 	char	*tmp;
 
-
 	tmp = NULL;
 	quote = ft_strchr(line, '"');
 	if (!player->is_finished_com && !quote)
-		continue_name_comment(NAME, player, line, &tmp);
+		continue_name_com(NAME, player, line, &tmp);
 	else if (!player->is_finished_name && !quote)
-		continue_name_comment(COMMENT, player, line, &tmp);
+		continue_name_com(COMMENT, player, line, &tmp);
 	else if (!player->is_finished_com)
-		tmp = finish_add_name_comment(COMMENT, player, line, quote);
+		tmp = finish_add_nam_com(COMMENT, player, line, quote);
 	else if (!player->is_finished_name)
-		tmp = finish_add_name_comment(NAME, player, line, quote);
+		tmp = finish_add_nam_com(NAME, player, line, quote);
 	if (quote)
 	{
 		player->num_col += quote - line;
@@ -238,45 +108,12 @@ void	search_comment_name(t_player *player, char *line)
 		else if (line[player->num_col] == '.')
 		{
 			if (!check_command(line, player))
-				error_file("Unknown command", player->num_row, player->num_col + 1);
+				error_file("Unknown command", player->num_row,
+						player->num_col + 1);
 			return ;
 		}
 		else if (line[player->num_col] != ' ' && line[player->num_col] != '\t')
 			error_file("Syntax error", player->num_row, player->num_col + 1);
 		player->num_col++;
 	}
-}
-
-void	check_len_name_com(t_player *player)
-{
-	if (ft_strlen(player->name) > PROG_NAME_LENGTH)
-		error("Champion name too long (Max length 128)");
-	else if (ft_strlen(player->comment) > COMMENT_LENGTH)
-		error("Champion comment too long (Max length 2048)");
-}
-
-int		check_name_comment(int fd, t_player *player)
-{
-	char	*line;
-
-	while (get_next_line(fd, &line) == 1)
-	{
-		player->num_row++;
-		if (!player->is_finished_name || !player->is_finished_com)
-			search_continue(player, line);
-		else
-		{
-			search_comment_name(player, line);
-			if (player->comment && player->name && player->is_finished_com && player->is_finished_name)
-			{
-				player->num_col = 0;
-				check_len_name_com(player);
-				free(line);
-				return (1);
-			}
-		}
-		player->num_col = 0;
-		free(line);
-	}
-	return (0);
 }
