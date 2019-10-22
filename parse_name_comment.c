@@ -119,6 +119,26 @@ int		check_command(char *line, t_player *player)
 	return (0);
 }
 
+void	check_comment(int fd, int lpos, char *buf)
+{
+	while (lpos-- > 0)
+	{
+		lseek(fd, lpos, SEEK_SET);
+		read(fd, buf, 1);
+		if (*buf == COMMENT_CHAR || *buf == ALT_COMMENT_CHAR)
+		{
+			lseek(fd, --lpos, SEEK_SET);
+			read(fd, buf, 1);
+			if (*buf == '\n')
+				return;
+			else
+				error("Syntax error - no newline at the end");
+		}
+		if (*buf == '\n')
+			error("Syntax error - no newline at the end");
+	}
+}
+
 void check_after_quote(t_player *player, char *line)
 {
 	int i;

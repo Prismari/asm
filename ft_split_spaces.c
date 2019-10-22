@@ -13,11 +13,6 @@
 //#include "corewar.h"
 #include "./includes/corewar.h" // TODO: удалить - это читсо для силайна
 
-int		is_whitespace(int c)
-{
-	return (c == '\t' || c == '\v' || c == '\f' || c == '\r' || c == ' ');
-}
-
 static int		word_count(char const *s)
 {
 	int	w;
@@ -28,9 +23,10 @@ static int		word_count(char const *s)
 	while (s[i])
 	{
 		if (!(is_whitespace(s[i])) && (is_whitespace(s[i + 1])
-			|| s[i + 1] == '\0' || s[i + 1] == SEPARATOR_CHAR) && s[i] != SEPARATOR_CHAR)
+			|| s[i + 1] == '\0' || s[i + 1] == SEPARATOR_CHAR) &&
+			s[i] != SEPARATOR_CHAR)
 			w++;
-		if ( s[i] == SEPARATOR_CHAR)
+		if (s[i] == SEPARATOR_CHAR)
 			w++;
 		i++;
 	}
@@ -49,7 +45,7 @@ static int		word_size(const char *s)
 	while (!(is_whitespace(*s)) && *s != '\0')
 	{
 		if (*s == SEPARATOR_CHAR)
-			break;
+			break ;
 		s++;
 		i++;
 	}
@@ -76,7 +72,7 @@ static char		*word_allocation(char **arr, char *word, int size)
 	return (word);
 }
 
-int			ft_word_handling(char **res, char const **s, int *j)
+int				ft_word_handling(char **res, char const **s, int *j)
 {
 	int i;
 
@@ -94,7 +90,7 @@ int			ft_word_handling(char **res, char const **s, int *j)
 	{
 		(*res)[i++] = *(*s)++;
 		if (**s == SEPARATOR_CHAR)
-			break;
+			break ;
 	}
 	(*res)[i] = '\0';
 	(*j)++;

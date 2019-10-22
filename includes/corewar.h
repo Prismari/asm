@@ -95,10 +95,7 @@ typedef void (*t_func_pointer)(t_tokens *token, char *name, unsigned short instr
 ** Assembler
 */
 
-void			error(char *str);
-void			error_file(char *str, int col, int row);
-void			error_arg(t_instruction *instr, t_type type, int arg);
-void			error_type(char *instr, t_type type, int arg);
+
 char			*ft_strndup(const char *src, int i);
 int				is_comment(int chr);
 t_player		*init_player(int fd, char *file_name);
@@ -107,6 +104,7 @@ t_instruction	*init_instr(char *label); //??????
 t_label			*init_label(char *label);
 t_tokens		*init_tokens(t_type type);
 int				check_name_comment(int fd, t_player *player);
+void			check_comment(int fd, int lpos, char *buf);
 void			check_arg_is_digit(t_player *player);
 int				skip_tab_space(t_player *player, char *line, int flag);
 void			handling_token(t_player *player, int len, char *line);
@@ -126,8 +124,30 @@ void			check_dir_label(t_tokens *token, char *name, unsigned short instr, t_play
 void			check_indir(t_tokens *token, char *name, unsigned short instr, t_player *pl);
 void			check_indir_label(t_tokens *token, char *name, unsigned short instr, t_player *pl);
 void			check_type_arg(t_type	type, int needed_type, t_instruction *instr, int num);
-void 			error_name(char *str, char *name, int row, int col);
+
 void			del_comment(char *line);
+void			reading_body_champion(int fd, t_player *player);
+
+/*
+**	Error
+*/
+
+void			error(char *str);
+void			error_file(char *str, int col, int row);
+void			error_arg(t_instruction *inst, t_type type, int arg);
+void			error_type(char *instr, t_type type, int arg);
+void 			error_name(char *str, char *name, int row, int col);
+
+/*
+**	Bytecode
+*/
+
+
+int		create_file_bytecode(t_player *player);
+void	int32_to_bytecode(unsigned char *bytes, int value, int size);
+int		get_code_types(t_tokens **args);
+void	translate_to_bytecode(t_player *player, int new_fd);
+void	calculate_size_exec_code(t_player *player);
 
 /*
 **	Free asm

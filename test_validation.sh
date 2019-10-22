@@ -75,6 +75,6 @@ rm ./CHECKER_ASM/test_valid_origin ./CHECKER_ASM/test_valid_our
 rm ./CHECKER_ASM/orig_output_file
 rm ./CHECKER_ASM/our_output_file
 rm ${PATH_CHECKER}valid/*.cor
-
+#TODO: сделать файлы с тестами из бэкапа в слаке -> добавить их в папку ВАЛИД
 done
 

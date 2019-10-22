@@ -13,8 +13,7 @@
 //#include "corewar.h"
 #include "./includes/corewar.h" // TODO: удалить - это читсо для силайна
 
-
-static void free_arg_asm(t_tokens **args)
+static void	free_arg_asm(t_tokens **args)
 {
 	int	i;
 
@@ -41,7 +40,7 @@ static void	free_instr_asm(t_instruction *instr)
 	}
 }
 
-static	void free_labels(t_label *labels)
+static void	free_labels(t_label *labels)
 {
 	t_label *tmp;
 
@@ -52,10 +51,9 @@ static	void free_labels(t_label *labels)
 		free(tmp->l_name);
 		free(tmp);
 	}
-
 }
 
-void	free_asm(t_player *player)
+void		free_asm(t_player *player)
 {
 	free(player->name);
 	free(player->comment);

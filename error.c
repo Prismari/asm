@@ -6,7 +6,7 @@
 /*   By: vurrigon <vurrigon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 14:53:24 by vurrigon          #+#    #+#             */
-/*   Updated: 2019/10/19 15:07:49 by vurrigon         ###   ########.fr       */
+/*   Updated: 2019/10/22 17:34:09 by aestella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	error_file(char *str, int row, int col)
 	exit(1);
 }
 
-void 	error_name(char *str, char *name, int row, int col)
+void	error_name(char *str, char *name, int row, int col)
 {
 	row = row == 0 ? row + 1 : row;
 	col = col == 0 ? col + 1 : col;
@@ -38,36 +38,43 @@ void 	error_name(char *str, char *name, int row, int col)
 void	error_type(char *instr, t_type type, int arg)
 {
 	if (type == INDIRECT || type == INDIRECT_LABEL)
-		ft_printf("Invalid parameter number %d type indirect for instruction %s \n", arg, instr);
+		ft_printf("Invalid parameter number %d type "
+				"indirect for instruction %s \n", arg, instr);
 	else if (type == DIRECT || type == DIRECT_LABEL)
-		ft_printf("Invalid parameter number %d type direct for instruction %s \n", arg, instr);
+		ft_printf("Invalid parameter number %d type "
+				"direct for instruction %s \n", arg, instr);
 	else if (type == REGISTER)
-		ft_printf("Invalid parameter number %d type register for instruction %s \n", arg, instr);
+		ft_printf("Invalid parameter number %d "
+				"type register for instruction %s \n", arg, instr);
 	else
-		ft_printf("Invalid parameter number %d for instruction %s \n", arg, instr);
+		ft_printf("Invalid parameter number %d "
+				"for instruction %s \n", arg, instr);
 	exit(1);
 }
 
-void	error_arg(t_instruction *instr, t_type type, int arg)
+void	error_arg(t_instruction *inst, t_type type, int arg)
 {
+	t_tokens *a;
+
+
 	if (arg)
 		arg--;
-	if (instr->args != NULL)
+	if (inst->args != NULL)
 	{
-
+		a = inst->args[arg];
 		if (type == INDIRECT || type == INDIRECT_LABEL)
-			ft_printf("[%d:%d] Invalid parameter number %d type indirect for instruction %s \n",
-					  instr->args[arg]->row, instr->args[arg]->col + 1, arg, instr->instr);
+			ft_printf("[%d:%d] Invalid parameter number %d type indirect for"
+					" instruction %s \n", a->row, a->col + 1, arg, inst->instr);
 		else if (type == DIRECT || type == DIRECT_LABEL)
-			ft_printf("[%d:%d] Invalid parameter number %d type direct for instruction %s \n",
-					  instr->args[arg]->row, instr->args[arg]->col + 1, arg, instr->instr);
+			ft_printf("[%d:%d] Invalid parameter number %d type direct for "
+					"instruction %s \n", a->row, a->col + 1, arg, inst->instr);
 		else if (type == REGISTER)
-			ft_printf("[%d:%d] Invalid parameter number %d type register for instruction %s \n",
-					  instr->args[arg]->row, instr->args[arg]->col + 1, arg, instr->instr);
+			ft_printf("[%d:%d] Invalid parameter number %d type register for "
+					"instruction %s \n", a->row, a->col + 1, arg, inst->instr);
 		else
-			ft_printf("[%d:%d] Invalid parameter number %d for instruction %s \n",
-					  instr->args[arg]->row, instr->args[arg]->col + 1, arg, instr->instr);
+			ft_printf("[%d:%d] Invalid parameter number %d for "
+					"instruction %s \n", a->row, a->col + 1, arg, inst->instr);
 		exit(1);
 	}
-	error_type(instr->instr, type, arg);
+	error_type(inst->instr, type, arg);
 }

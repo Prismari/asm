@@ -36,7 +36,11 @@ COMMON_FILES =	asm.c \
                 instructions.c \
                 ft_split_spaces.c \
                 valid_arguments.c \
-                free_asm.c
+                free_asm.c\
+                bytecode.c\
+                bytecode_translate.c\
+                parse_body.c\
+                is_something_check.c
 
 SRC_DIRECTORY = ./
 SRC_COMMON_FILES = $(addprefix $(SRC_DIRECTORY), $(COMMON_FILES))
