@@ -85,3 +85,19 @@ void	calculate_size_exec_code(t_player *player)
 	}
 	player->sum_size_exec_code = size;
 }
+
+int		calculate_size(t_instr *instr)
+{
+	int i;
+	int size;
+
+	i = 0;
+	size = 0;
+	while (i < g_ins[instr->code_op - 1].args_num)
+	{
+		size += (int)instr->args[i]->size;
+		i++;
+	}
+	size += (1 + g_ins[instr->code_op - 1].arg_type_code);
+	return (size);
+}

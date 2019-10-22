@@ -1,6 +1,14 @@
-//
-// Created by Asafoetida Estella on 2019-09-27.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   lable_handle.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aestella <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/22 22:01:25 by aestella          #+#    #+#             */
+/*   Updated: 2019/10/22 22:01:33 by aestella         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 //#include "corewar.h"
 #include "./includes/corewar.h" // TODO: удалить - это читсо для силайна
@@ -53,4 +61,18 @@ int		handling_label(t_player *player, char *line, int len)
 		}
 	}
 	return (0);
+}
+
+void	link_lable_to_instr(t_instr *instr, t_label *label)
+{
+	t_label *tmp;
+
+	label->instr = instr;
+	instr->label = label;
+	tmp = label;
+	while (tmp->prev && tmp->prev->instr == NULL)
+	{
+		tmp = tmp->prev;
+		tmp->instr = instr;
+	}
 }

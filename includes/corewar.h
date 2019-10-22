@@ -123,7 +123,9 @@ void			check_dir_label(t_tokens *token, char *name, unsigned short instr, t_play
 void			check_indir(t_tokens *token, char *name, unsigned short instr, t_player *pl);
 void			check_indir_label(t_tokens *token, char *name, unsigned short instr, t_player *pl);
 void			check_type_arg(t_type	type, int need_type, t_instr *instr, int num);
-
+int				check_next_sign(char sign);
+int				check_separator_char(int *sep, int *i, char *c, t_tokens *arg);
+int				calculate_size(t_instr *instr);
 void			del_comment(char *line);
 void			reading_body_champion(int fd, t_player *player);
 void			check_len_name_comment(int flag, int len);
@@ -135,6 +137,8 @@ void			continue_name_com(int flag, t_player *player, char *line, char **tmp);
 char			*finish_add_nam_com(int flag, t_player *player, char *line, char *quote);
 void			search_comment_name(t_player *player, char *line);
 void			search_continue(t_player *player, char *line);
+void			link_lable_to_instr(t_instr *instr, t_label *label);
+void			change_col_num(t_player *player, char **arg_line, char *arg);
 
 /*
 **	Error

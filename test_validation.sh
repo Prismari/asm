@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-ZERO=$(wc -l < ./CHECKER_ASM/nothing)
 PATH_CHECKER=./CHECKER_ASM/src_test_files/
 PATH_OUR_ASM=./
 PATH_ORIG_ASM=./CHECKER_ASM
@@ -29,10 +28,18 @@ do
   ERROR_SIZE=$(wc -l < ./CHECKER_ASM/grep_result)
   rm ./CHECKER_ASM/grep_result
   rm ./CHECKER_ASM/error_output
-  if [ "$ERROR_SIZE" == "$ZERO" ]; then
+
+  ${PATH_ORIG_ASM}/asm $f >  ./CHECKER_ASM/error_output
+  grep 'Writing output program to' ./CHECKER_ASM/error_output > ./CHECKER_ASM/grep_result
+  ERROR_ORIG_SIZE=$(wc -l < ./CHECKER_ASM/grep_result)
+  rm ./CHECKER_ASM/grep_result
+  rm ./CHECKER_ASM/error_output
+
+  if [ "$ERROR_SIZE" == "$ERROR_ORIG_SIZE" ]; then
     echo "${GREEN}OK${NC}"
   else
     echo "${RED}KO${NC}   By test - $f"
+    rm -rf ${OUTPUT_ERR}
   fi
 done
 rm -rf ${PATH_CHECKER}/*.cor
@@ -75,6 +82,6 @@ rm ./CHECKER_ASM/test_valid_origin ./CHECKER_ASM/test_valid_our
 rm ./CHECKER_ASM/orig_output_file
 rm ./CHECKER_ASM/our_output_file
 rm ${PATH_CHECKER}valid/*.cor
-#TODO: сделать файлы с тестами из бэкапа в слаке -> добавить их в папку ВАЛИД
+
 done
 

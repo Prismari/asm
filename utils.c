@@ -6,7 +6,7 @@
 /*   By: vurrigon <vurrigon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 16:40:19 by vurrigon          #+#    #+#             */
-/*   Updated: 2019/10/19 15:29:57 by vurrigon         ###   ########.fr       */
+/*   Updated: 2019/10/22 22:01:08 by aestella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,20 @@ int		skip_tab_space(t_player *player, char *line, int flag)
 	return (0);
 }
 
+void	del_comment(char *line)
+{
+	int i;
+
+	i = 0;
+	while (line[i] && line[i] != COMMENT_CHAR && line[i]
+			&& line[i] != ALT_COMMENT_CHAR)
+		i++;
+	line[i] = '\0';
+}
+
 /*
-** Есть в DASM
-*/
+ ** Есть в DASM
+ */
 
 void	free_split(char **str)
 {

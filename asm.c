@@ -104,7 +104,7 @@ void	assemble(int fd, char *file_name)
 	free_asm(header);
 }
 
-int	main(int argc, char **argv)
+int		main(int argc, char **argv)
 {
 	int	fd;
 	int	exten;
