@@ -12,87 +12,132 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4fb1f1c-bae4-4444-b809-a5927f11f9c9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/test_validation.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/asm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error/Survivor.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error/comment_len_2049.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error/direct_param_no_value.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error/four_arg_malloc_free_pointer_error.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error/header_double_comments.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error/header_double_names.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error/header_max_comment.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error/header_max_name.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error/header_nl.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error/header_nl_unclosed.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error/header_null_name.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error/label_contain_badchar.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error/label_error_1.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error/label_error_2.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error/label_error_3.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error/label_invalidname.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error/label_noending.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error/label_space.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error/label_without_double_dot_at_the_end.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error/name_len_129.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error/no_endline.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error/op_double_operation_on_single_line.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error/op_extra.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error/op_extreme.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error/op_no_code.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error/param_badtypes.cor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error/param_badtypes.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error/param_commas.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error/param_direct_no_sp.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error/param_direct_no_value.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error/param_double_commas.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error/param_extra2.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error/param_mt_3.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error/param_mt_r99.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error/param_nonexistent_label.cor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error/param_nonexistent_label.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error/param_plus_minus.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error/param_specialchars.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error/zother_1.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error/zother_2.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error/zother_3.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error/zother_4.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/42.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/Asombra.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/Car.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/Douceur_power.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/Explosive_Kitty.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/Gagnant.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/Kappa.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/Kittystrophic.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/Machine-gun.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/MarineKing.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/Misaka_Mikoto.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/Octobre_Rouge_V4.2.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/Rainbow_dash.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/THUNDER.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/Varimathras.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/Wall.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/_honeybadger.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/aff_no_OCP.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/barriere.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/bee_gees.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/big_feet.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/bigzork.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/casimir.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/champ.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/comment_len_2048.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/corelol.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/darksasuke.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/doge.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/dubo.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/empty_namecomment.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/end_comment.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/ex.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/ex1.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/flipped_name_comment.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/fluttershy.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/gateau.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/gedeon.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/hash_and_tab_at_EOF.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/hash_at_header.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/helltrain.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/jinx.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/jumper.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/justin_bee.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/littlepuppy.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/live.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/loose.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/mandragore.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/maxidef.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/meowluigi.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/mise_a_jour_windows95.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/mortel.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/name_len_128.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/neg_indirect_error.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/nl_at_header.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/nl_at_header_flipped.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/no_space_between_op_and_param.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/overwatch.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/run_Kitty_RUN.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/salamahenagalabadoun.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/sam_2.0.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/skynet.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/slider2.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/space_before_name.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/sq_at_header.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/tab_at_end_of_file.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/terminator.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/toto.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/turtle.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/ultima.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/ultimate-surrender.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/weirdest_error_ever.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/youforkmytralala.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHECKER_ASM/src_test_files/valid/zork.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/2.s" beforeDir="false" afterPath="$PROJECT_DIR$/champ_test/2.s" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid/Survivor.s" beforeDir="false" afterPath="$PROJECT_DIR$/champ_test/checker_test_files/error/Survivor.s" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/42.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/Asombra.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/Car.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/Douceur_power.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/Explosive_Kitty.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/Gagnant.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/Kappa.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/Kittystrophic.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/Machine-gun.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/MarineKing.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/Misaka_Mikoto.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/Octobre_Rouge_V4.2.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/Rainbow_dash.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/Survivor.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/THUNDER.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/Varimathras.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/Wall.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/_honeybadger.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/aff_no_OCP.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/barriere.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/bee_gees.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/big_feet.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/bigzork.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/casimir.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/champ.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/comment_len_2048.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/corelol.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/darksasuke.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/doge.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/dubo.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/empty_namecomment.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/end_comment.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/ex.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/ex1.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/flipped_name_comment.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/fluttershy.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/gateau.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/gedeon.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/hash_and_tab_at_EOF.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/hash_at_header.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/helltrain.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/jinx.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/jumper.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/justin_bee.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/littlepuppy.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/live.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/loose.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/mandragore.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/maxidef.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/meowluigi.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/mise_a_jour_windows95.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/mortel.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/name_len_128.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/neg_indirect_error.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/nl_at_header.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/nl_at_header_flipped.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/no_space_between_op_and_param.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/overwatch.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/run_Kitty_RUN.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/salamahenagalabadoun.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/sam_2.0.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/skynet.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/slider2.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/sq_at_header.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/tab_at_end_of_file.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/terminator.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/toto.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/turtle.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/ultima.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/ultimate-surrender.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/weirdest_error_ever.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/youforkmytralala.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/valid2/zork.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHECKER_ASM/our_output_file" beforeDir="false" afterPath="$PROJECT_DIR$/CHECKER_ASM/our_output_file" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHECKER_ASM/test_valid_origin" beforeDir="false" afterPath="$PROJECT_DIR$/CHECKER_ASM/test_valid_origin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHECKER_ASM/test_valid_our" beforeDir="false" afterPath="$PROJECT_DIR$/CHECKER_ASM/test_valid_our" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHECKER_ASM/test_validation.sh" beforeDir="false" afterPath="$PROJECT_DIR$/test_validation.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/champ_test/checker_test_files/error/param_nonexistent_label.cor" beforeDir="false" afterPath="$PROJECT_DIR$/champ_test/checker_test_files/error/param_nonexistent_label.cor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checker/tests/asm/valid/big_feet.s" beforeDir="false" afterPath="$PROJECT_DIR$/checker/tests/asm/valid/big_feet.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checker/tests/asm/valid2/big_feet.s" beforeDir="false" afterPath="$PROJECT_DIR$/checker/tests/asm/valid2/big_feet.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checker/tests/vm/champ/big_feet.s" beforeDir="false" afterPath="$PROJECT_DIR$/checker/tests/vm/champ/big_feet.s" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_validation.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_test_validation.sh" beforeDir="false" afterPath="$PROJECT_DIR$/my_test_validation.sh" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -117,19 +162,21 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/CMakeLists.txt" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/champ_test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/CHECKER_ASM" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/champ_test/checker_test_files/error" />
       <recent name="$PROJECT_DIR$/CHECKER_ASM" />
       <recent name="$PROJECT_DIR$/champ_test/checker_test_files/valid" />
       <recent name="$PROJECT_DIR$/champ_test" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/CHECKER_ASM" />
       <recent name="$PROJECT_DIR$/champ_test" />
       <recent name="$PROJECT_DIR$/libft" />
     </key>
