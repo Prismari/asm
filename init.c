@@ -37,9 +37,10 @@ t_player	*init_player(int fd, char *file_name)
 	return (player);
 }
 
-t_instr	*init_instr(char *instr)
+t_instr		*init_instr(char *instr)
 {
 	t_instr *op;
+
 	if (!(op = malloc(sizeof(t_instr))))
 		return (NULL);
 	op->instr = instr;
@@ -52,9 +53,10 @@ t_instr	*init_instr(char *instr)
 	return (op);
 }
 
-t_label	*init_label(char *label)
+t_label		*init_label(char *label)
 {
 	t_label *new;
+
 	if (!(new = malloc(sizeof(t_label))))
 		return (NULL);
 	new->instr = NULL;
@@ -65,9 +67,10 @@ t_label	*init_label(char *label)
 	return (new);
 }
 
-t_tokens		*init_tokens(t_type type)
+t_tokens	*init_tokens(t_type type)
 {
 	t_tokens *token;
+
 	if (!(token = malloc(sizeof(t_tokens))))
 		return (NULL);
 	token->type = type;

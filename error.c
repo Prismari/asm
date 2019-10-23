@@ -56,7 +56,6 @@ void	error_arg(t_instr *inst, t_type type, int arg)
 {
 	t_tokens *a;
 
-
 	if (arg)
 		arg--;
 	if (inst->args != NULL)

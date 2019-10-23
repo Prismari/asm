@@ -60,7 +60,7 @@ cp $OUTPUT_VALID ./CHECKER_ASM/orig_output_file
 if diff ./CHECKER_ASM/our_output_file ./CHECKER_ASM/orig_output_file &> /dev/null; then
     echo "bytecode -> ${GREEN}OK${NC}"
   else
-    echo "${CYAN}exec test - $i${NC}${GREEN}"
+    echo "${RED}exec test - $i${NC}"
     echo "bytecode -> ${RED}KO${NC}"
 fi
 

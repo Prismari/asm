@@ -79,7 +79,8 @@ void	check_instruction(t_player *player, char *instr, char *line, int i)
 	t_instr *new_instr;
 
 	if (!(new_instr = init_instr(instr)) ||
-			!(new_instr->args = (t_tokens**)malloc(sizeof(t_tokens*) * (g_ins[i - 1].args_num + 1))))
+			!(new_instr->args = (t_tokens**)malloc(sizeof(t_tokens*)
+					* (g_ins[i - 1].args_num + 1))))
 		error("Memory allocation error");
 	ft_link_new_instr(new_instr, player);
 	player->last_instr->code_op = g_ins[i - 1].code;

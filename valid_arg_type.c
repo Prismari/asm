@@ -13,7 +13,7 @@
 //#include "corewar.h"
 #include "./includes/corewar.h" // TODO: удалить - это читсо для силайна
 
-t_func_pointer f_funk_array[5] = {
+t_func_pointer g_funk_array[5] = {
 	check_reg,
 	check_dir,
 	check_dir_label,

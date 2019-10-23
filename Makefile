@@ -43,7 +43,8 @@ COMMON_FILES =	asm.c \
                 is_something_check.c\
                 parse_name_comment_check_error.c\
                 parse_name_comment_check.c\
-                valid_arg_type.c
+                valid_arg_type.c\
+                instructions_arguments.c
 
 SRC_DIRECTORY = ./
 SRC_COMMON_FILES = $(addprefix $(SRC_DIRECTORY), $(COMMON_FILES))
