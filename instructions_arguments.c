@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "corewar.h"
-#include "./includes/corewar.h" // TODO: удалить - это читсо для силайна
+#include "corewar.h"
 
 extern	t_func_pointer g_funk_array[5];
 

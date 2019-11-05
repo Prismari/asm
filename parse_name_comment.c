@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "corewar.h"
-#include "./includes/corewar.h" // TODO: удалить - это читсо для силайна
+#include "corewar.h"
 
 int		is_space_after_name_comment(t_player *player, char *line, int len)
 {

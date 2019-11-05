@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "corewar.h"
-#include "./includes/corewar.h" // TODO: удалить - это читсо для силайна
+#include "corewar.h"
 
 void	check_type_arg(t_type type, int need_type, t_instr *instr, int num)
 {

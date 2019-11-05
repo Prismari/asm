@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "corewar.h"
-#include "./includes/corewar.h" // TODO: удалить - это читсо для силайна
+#include "corewar.h"
 
 void	check_label(t_player *player, char *label)
 {

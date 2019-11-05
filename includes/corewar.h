@@ -12,10 +12,8 @@
 
 #ifndef COREWAR_H
 # define COREWAR_H
-//# include "libft.h"
-//# include "ft_printf.h"
-# include "../libft/libft.h" //TODO:УДАЛИТЬ - вернуть то что выше
-# include "../libft/ft_printf.h" //TODO:УДАЛИТЬ - вернуть то что выше
+# include "libft.h"
+# include "ft_printf.h"
 # include "op.h"
 # include "asm_operations.h"
 # include <sys/types.h>
@@ -29,7 +27,7 @@
 # define COMMENT 2
 # define US unsigned short
 
-typedef enum // TODO: переделать в Define
+typedef enum
 {
 	REGISTER = 1,
 	DIRECT,
@@ -101,7 +99,7 @@ char			*ft_strndup(const char *src, int i);
 int				is_comment(int chr);
 t_player		*init_player(int fd, char *file_name);
 int				is_whitespace(int c);
-t_instr	*init_instr(char *label); //??????
+t_instr			*init_instr(char *label);
 t_label			*init_label(char *label);
 t_tokens		*init_tokens(t_type type);
 int				check_name_comment(int fd, t_player *player);
