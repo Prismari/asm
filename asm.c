@@ -35,30 +35,6 @@ int		check_extension(char *filename)
 	free_split(tmp);
 	return (0);
 }
-/*
-void	printf_struct(t_player *player)
-{
-	t_label *tmp;
-	t_instr *tmp_i;
-
-	tmp = player->labels;
-	tmp_i = player->instr;
-
-	while (tmp_i)
-	{
-		if (tmp_i->label)
-			printf("link with label - %s:\n", tmp_i->label->l_name);
-		printf("instr - %s\n", tmp_i->instr);
-		tmp_i = tmp_i->next;
-	}
-	printf("\nLABLES\n\n");
-	while (tmp)
-	{
-		printf("lable - %s link with instr - %s\n", tmp->l_name, tmp->instr->instr);
-		tmp = tmp->next;
-	}
-}
-*/
 
 void	check_end_file(t_player *player)
 {

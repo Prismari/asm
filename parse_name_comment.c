@@ -6,7 +6,7 @@
 /*   By: vurrigon <vurrigon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/22 17:14:23 by vurrigon          #+#    #+#             */
-/*   Updated: 2019/10/22 18:19:33 by aestella         ###   ########.fr       */
+/*   Updated: 2019/11/05 12:32:06 by aestella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,8 @@ int		is_space_after_name_comment(t_player *player, char *line, int len)
 		return (0);
 }
 
-int		check_command(char *line, t_player *pl)
+int		check_command(char *line, t_player *pl, int len_n, int len_c)
 {
-	int	len_n;
-	int len_c;
-
-	len_n = ft_strlen(NAME_CMD_STRING);
-	len_c = ft_strlen(COMMENT_CMD_STRING);
 	if (!ft_strncmp(&(line[pl->num_col]), NAME_CMD_STRING, len_n)
 			&& is_space_after_name_comment(pl, line, len_n))
 	{
@@ -107,7 +102,8 @@ void	search_comment_name(t_player *player, char *line)
 			return ;
 		else if (line[player->num_col] == '.')
 		{
-			if (!check_command(line, player))
+			if (!check_command(line, player, ft_strlen(NAME_CMD_STRING),
+						ft_strlen(COMMENT_CMD_STRING)))
 				error_file("Unknown command", player->num_row,
 						player->num_col + 1);
 			return ;
