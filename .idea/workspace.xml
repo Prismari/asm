@@ -13,29 +13,11 @@
   <component name="ChangeListManager">
     <list default="true" id="f4fb1f1c-bae4-4444-b809-a5927f11f9c9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asm.c" beforeDir="false" afterPath="$PROJECT_DIR$/asm.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bytecode.c" beforeDir="false" afterPath="$PROJECT_DIR$/bytecode.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bytecode_translate.c" beforeDir="false" afterPath="$PROJECT_DIR$/bytecode_translate.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHECKER_ASM.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/asm" beforeDir="false" afterPath="$PROJECT_DIR$/asm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checker/tests/asm/valid/big_feet.s" beforeDir="false" afterPath="$PROJECT_DIR$/checker/tests/asm/valid/big_feet.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checker/tests/asm/valid2/big_feet.s" beforeDir="false" afterPath="$PROJECT_DIR$/checker/tests/asm/valid2/big_feet.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checker/tests/vm/champ/big_feet.s" beforeDir="false" afterPath="$PROJECT_DIR$/checker/tests/vm/champ/big_feet.s" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/error.c" beforeDir="false" afterPath="$PROJECT_DIR$/error.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/free_asm.c" beforeDir="false" afterPath="$PROJECT_DIR$/free_asm.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ft_split_spaces.c" beforeDir="false" afterPath="$PROJECT_DIR$/ft_split_spaces.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/corewar.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/corewar.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/init.c" beforeDir="false" afterPath="$PROJECT_DIR$/init.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/instructions.c" beforeDir="false" afterPath="$PROJECT_DIR$/instructions.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/instructions_arguments.c" beforeDir="false" afterPath="$PROJECT_DIR$/instructions_arguments.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/is_something_check.c" beforeDir="false" afterPath="$PROJECT_DIR$/is_something_check.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lable_handle.c" beforeDir="false" afterPath="$PROJECT_DIR$/lable_handle.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parse_body.c" beforeDir="false" afterPath="$PROJECT_DIR$/parse_body.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parse_name_comment.c" beforeDir="false" afterPath="$PROJECT_DIR$/parse_name_comment.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parse_name_comment_check.c" beforeDir="false" afterPath="$PROJECT_DIR$/parse_name_comment_check.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parse_name_comment_check_error.c" beforeDir="false" afterPath="$PROJECT_DIR$/parse_name_comment_check_error.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tokenize.c" beforeDir="false" afterPath="$PROJECT_DIR$/tokenize.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils.c" beforeDir="false" afterPath="$PROJECT_DIR$/utils.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/valid_arg_type.c" beforeDir="false" afterPath="$PROJECT_DIR$/valid_arg_type.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/valid_arguments.c" beforeDir="false" afterPath="$PROJECT_DIR$/valid_arguments.c" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,24 +42,25 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/CMakeLists.txt" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/CHECKER_VM/champ1" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error" />
-      <recent name="$PROJECT_DIR$/CHECKER_ASM" />
-      <recent name="$PROJECT_DIR$/champ_test" />
-      <recent name="$PROJECT_DIR$/libft" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/champ_test/checker_test_files/error" />
       <recent name="$PROJECT_DIR$/CHECKER_ASM" />
       <recent name="$PROJECT_DIR$/champ_test/checker_test_files/valid" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/CHECKER_VM/champ1" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/CHECKER_VM" />
+      <recent name="$PROJECT_DIR$/CHECKER_VM/champ" />
+      <recent name="$PROJECT_DIR$/CHECKER_ASM/src_test_files/error" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -150,7 +133,7 @@
       <workItem from="1571766018181" duration="3495000" />
       <workItem from="1571816103401" duration="3092000" />
       <workItem from="1571824512921" duration="599000" />
-      <workItem from="1572946080088" duration="930000" />
+      <workItem from="1572946080088" duration="7594000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <created>1569590889675</created>
