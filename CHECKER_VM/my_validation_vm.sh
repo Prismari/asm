@@ -6,12 +6,16 @@ RED='\033[0;31m'
 YEL='\033[1;32m'
 NC='\033[0m'
 
-# Создать три массива
+# путь до родного файла
 PATH_TO_VM=..
-FIRST_ARRAY_CH=./champ1/*.cor
-SEC_ARRAY_CH=./champ1/*.cor
-TH_ARRAY_CH=./champ1/*.cor
+OUR_VM=corewar
+ORIG_VM=corewar_original
+FIRST_ARRAY_CH=./champ/*.cor
+SEC_ARRAY_CH=./champ/*.cor
+TH_ARRAY_CH=./champ/*.cor
 i=0
+
+rm error*
 
 # Цикл 1 - проход по каждому игроку
 
@@ -19,12 +23,12 @@ echo "\n${YEL}ONE_CHAMP ${NC} \n"
 
 for f in $FIRST_ARRAY_CH
 do
-  $PATH_TO_VM/corewar $f > our_output
-  ./corewar_original -v 4 $f > origin_output
+  $PATH_TO_VM/$OUR_VM $f > our_output
+  ./$ORIG_VM -v 4 $f > origin_output
   if diff ./our_output ./origin_output &> /dev/null; then
     echo "${f} - ${GREEN}[OK]${NC}"
   else
-    echo "${f} - [KO]"
+    echo "${f} - ${RED}[KO]${NC}"
     echo "${f}
     __________
     " > error_$i
@@ -39,17 +43,17 @@ done
 # Цикл 2 - проход по каждому игроку с каждым игроком из массива 2 (1 - 2 массивы)
 
 echo "\n${YEL}TWO CHAMPIONS ${NC} \n"
-
+array_two=()
 for f in $FIRST_ARRAY_CH
 do
   for fo in $SEC_ARRAY_CH
   do
-    $PATH_TO_VM/corewar $f $fo  > our_output
-    ./corewar_original -v 4 $f $fo > origin_output
+    $PATH_TO_VM/$OUR_VM $f $fo > our_output
+    ./$ORIG_VM -v 4 $f $fo > origin_output
     if diff ./our_output ./origin_output &> /dev/null; then
     echo "${f} ${fo} - ${GREEN}[OK]${NC}"
   else
-    echo "${f} ${fo} - [KO]"
+    echo "${f} ${fo} - ${RED}[KO]${NC}"
     echo "${f} ${fo}\n________________________________\n" > error_$i
     diff ./our_output ./origin_output >> error_$i
     echo "________________________________\n" >> error_$i
@@ -68,17 +72,19 @@ do
   do
     for foo in $TH_ARRAY_CH
     do
-    $PATH_TO_VM/corewar $f $fo $foo  > our_output
-    ./corewar_original -v 4 $f $fo $foo > origin_output
-    if diff ./our_output ./origin_output &> /dev/null; then
-    echo "${f} ${fo} ${foo}- ${GREEN}[OK]${NC}"
-  else
-    echo "${f} ${fo} ${foo} - ${RED}[KO]${NC}"
-    echo "${f} ${fo} ${foo}\n________________________________\n" > error_$i
-    diff ./our_output ./origin_output >> error_$i
-    echo "________________________________\n" >> error_$i
-    fi
-    i=$((i+1))
+      $PATH_TO_VM/$OUR_VM $f $fo $foo > our_output
+      ./$ORIG_VM -v 4 $f $fo $foo > origin_output
+      if diff ./our_output ./origin_output &> /dev/null; then
+       echo "${f} ${fo} ${foo}- ${GREEN}[OK]${NC}"
+      else
+       echo "${f} ${fo} ${foo} - ${RED}[KO]${NC}"
+        echo "${f} ${fo} ${foo}\n________________________________\n" > error_$i
+       diff ./our_output ./origin_output >> error_$i
+      echo "________________________________\n" >> error_$i
+     fi
+     i=$((i+1))
     done
   done
 done
+
+rm origin_output our_output
